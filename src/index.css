@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html, 
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on Hover */
+::-webkit-scrollbar-track:hover {
+  background: #555;
+}
+
+.sidebar {
+  width: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: width 0.3s ease;
+  position: fixed;
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  bottom: 0; /* Take full height */
+  z-index: 999;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.main-content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.with-sidebar {
+  margin-left: 250px;
+}
+
+input[type="file"] {
+  color: #ffffff;
+}
+
+.custom-file-input {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.file-input {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-input-label {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #8AC44B;
+  border: 1px solid #8AC44B;
+  font-family: 'DM Sans';
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.custom-rich-text-editor .ql-container {
+  border: 2px solid #E9ECEF;
+  background-color: #fff; 
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: black;
+  height: 50vh;
+}
+
+.custom-rich-text-editor .ql-toolbar {
+  background-color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: none !important;
+}
+
+.ql-indent,
+.ql-outdent,
+.ql-undo,
+.ql-redo {
+  color: black !important;
+}
