@@ -3,11 +3,7 @@ import RichTextEditor from '../shared/RichTextEditor';
 import { Box, TextField, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import Button from '@mui/material/Button';
-import SaveAltRoundedIcon from '@mui/icons-material/SaveAltRounded';
-import DoDisturbAltRoundedIcon from '@mui/icons-material/DoDisturbAltRounded';
-import PublishedWithChangesRoundedIcon from '@mui/icons-material/PublishedWithChangesRounded';
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
-import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import AddIcon from '@mui/icons-material/Add';
@@ -22,7 +18,7 @@ const AddSmartSendEmail = () => {
 
 
     return (
-        <Box m='20px'>
+        <Box m='40px'>
             <Button href="/admin/communicate/smartsend-pro" variant="contained" startIcon={<ArrowBackIosRoundedIcon />} sx={{borderRadius: 50,  padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[100], color: colors.freeduAccent[600], marginBottom: '30px', marginTop: '-30px', fontSize: '14px', fontWeight: 700, boxShadow: 'none'}}>
                 Back
             </Button>
@@ -158,7 +154,7 @@ const AddSmartSendEmail = () => {
                     
                     <Box>
                         <Button variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
-                            Add News
+                            Add
                         </Button>
                     </Box>
                 </Box>
