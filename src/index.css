@@ -115,3 +115,24 @@ input[type="file"] {
 .ql-redo {
   color: black !important;
 }
+
+
+.choice {
+  margin-right: 5%;
+  text-decoration: none;
+  color: var(--Active-Side, #1B2559);
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
+  letter-spacing: -0.36px;
+  padding-bottom: 15px;
+}
+
+.choice:active,
+.choice:focus {
+  border-bottom: 4px solid #4318FF;
+  border-radius: 4px;
+}
+
+
