@@ -7,7 +7,6 @@ import { useTheme } from "@mui/material";
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
-import EditSchoolNews from "./crud/EditSchoolNews";
 import { useNavigate } from "react-router-dom";
 
 
