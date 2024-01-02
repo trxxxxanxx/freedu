@@ -82,6 +82,8 @@ export const tokens = (mode) => ({
           800: "#FFFFFF", //JUST WHITE
           900: "#8AC44B", //JUST GREEN
           1000: "#F04438",//JUST RED
+          1100: "#005CE8", //JUST BLUE
+          1200: "#141b2d", //TOPBAR BG
         }
       }
     : {
@@ -162,6 +164,8 @@ export const tokens = (mode) => ({
           800: "#FFFFFF", //JUST WHITE
           900: "#8AC44B", //JUST GREEN
           1000: "#F04438",//JUST RED
+          1100: "#005CE8", //JUST BLUE
+          1200: "#F4F7FE", //TOPBAR BG
         }
         
       }),

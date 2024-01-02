@@ -1,17 +1,17 @@
 import React from 'react'
-import RichTextEditor from '../shared/RichTextEditor';
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 import { Box, TextField, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import Button from '@mui/material/Button';
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
-import Checkbox from '@mui/material/Checkbox';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import AddIcon from '@mui/icons-material/Add';
-import DriveFileRenameOutlineRoundedIcon from '@mui/icons-material/DriveFileRenameOutlineRounded';
+import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
 import WatchLaterRoundedIcon from '@mui/icons-material/WatchLaterRounded';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
+import CallRoundedIcon from '@mui/icons-material/CallRounded';
 
-const AddSmartSendEmail = () => {
+const AddSmartSendVoice = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -24,62 +24,10 @@ const AddSmartSendEmail = () => {
             </Button>
 
             <Typography variant = "h4" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
-                New Email
+                New Voice Message
             </Typography>
 
             <Box sx={{ backgroundColor: colors.freeduAccent[100], padding: 4, marginY: 2, borderRadius: '20px' }}>
-                <Box display="flex" marginBottom='20px'>
-                    {/* From */}
-                    <Box marginX="20px">
-                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
-                            From
-                        </Typography>
-                        <TextField
-                            id="outlined"
-                            placeholder='George Washington'
-                            sx={{
-                                '& .MuiOutlinedInput-root': {
-                                    background: colors.freeduAccent[100],
-                                    color: colors.freeduAccent[700],
-                                    fontWeight: 500,
-                                    border: '1px solid #D0D4D9',
-                                    borderRadius: '12px',
-                                    paddingY: -2,
-                                    width: '243px',
-                                    height: '35px',
-                                },
-                            }}
-                            />
-                    </Box>
-                    
-                    {/* Email */}
-                    <Box>
-                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold"  mb="20px">
-                            Email
-                        </Typography>
-                        <Box display="flex" justifyContent="space-between" alignItems="center" gap="20px">
-                            <TextField
-                            id="outlined"
-                            placeholder='george@gmail.com'
-                            sx={{
-                                '& .MuiOutlinedInput-root': {
-                                    background: colors.freeduAccent[100],
-                                    color: colors.freeduAccent[700],
-                                    fontWeight: 500,
-                                    border: '1px solid #D0D4D9',
-                                    borderRadius: '12px',
-                                    paddingY: -2,
-                                    width: '243px',
-                                    height: '35px',
-                                },
-                            }}
-                            />
-                            <FormControlLabel fontSize='12px' color="#A3AED0" control={<Checkbox />} label="Hide Email" />
-                        </Box>
-                        
-                    </Box>
-                </Box>
-
                 <Box display="flex" alignItems="end">
                     {/* Groups */}
                     <Box marginX="20px">
@@ -163,13 +111,17 @@ const AddSmartSendEmail = () => {
             <Box sx={{ backgroundColor: colors.freeduAccent[100], padding: 4, marginY: 2, borderRadius: '20px' }}>
                 {/* Subject */}
                 <Box marginX="20px">
-                    <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
-                        Subject
+                    <Typography variant = "h5" color={colors.freeduAccent[600]}  mb="20px">
+                        <span style={{fontWeight:"bold"}}>Step 1:</span> We’ll call you to record the message.
                     </Typography>
+                    <Typography variant = "h6" color={colors.freeduAccent[700]}>
+                        Enter you number
+                    </Typography>
+                    <Box display="flex" alignItems="center">
                     <TextField
                             id="outlined"
-                            placeholder='Email Subject'
                             sx={{
+                                paddingRight: 2,
                                 '& .MuiOutlinedInput-root': {
                                     background: colors.freeduAccent[100],
                                     color: colors.freeduAccent[700],
@@ -177,21 +129,48 @@ const AddSmartSendEmail = () => {
                                     border: '1px solid #D0D4D9',
                                     borderRadius: '12px',
                                     paddingY: -2,
-                                    width: '469px',
+                                    width: '300px',
                                     height: '35px',
                                 },
                             }}
                             />
+                    <Button variant="contained" startIcon={<CallRoundedIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
+                        Call Now
+                    </Button>
+                    </Box>
                 </Box>
             </Box>
 
-
-            <RichTextEditor />
+            <Box sx={{ backgroundColor: colors.freeduAccent[100], padding: 4, marginY: 2, borderRadius: '20px' }}>
+                {/* Subject */}
+                <Box marginX="20px">
+                    <Typography variant = "h5" color={colors.freeduAccent[600]}  mb="20px">
+                        <span style={{fontWeight:"bold"}}>Step 2:</span> Review and Send.
+                    </Typography>
+                    <AudioPlayer
+                        autoPlay
+                        src="http://example.com/audio.mp3"
+                        onPlay={e => console.log("onPlay")}
+                        // other props here
+                        style={{
+                                width: '500px',
+                                backgroundColor: '#E5E7E8',
+                                justifyContent: 'center',
+                                color: '#1B2559',
+                                borderRadius: '30px',
+                                padding: '20px',
+                                border: 'none',
+                        }}
+                    />
+                </Box>
+            </Box>
+            
+            
 
             <Box display="flex" justifyContent="flex-end" alignItems="center" marginbottom="100px">
                 <div className="col-lg-2">
-                    <Button variant="contained" startIcon={<DriveFileRenameOutlineRoundedIcon />} sx={{borderRadius: 50, mx:1, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
-                        Draft
+                    <Button variant="contained" startIcon={<ReplayRoundedIcon />} sx={{borderRadius: 50, mx:1, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
+                        Start Over
                     </Button>
                 </div>
                 <div className="col-lg-2">
@@ -209,4 +188,4 @@ const AddSmartSendEmail = () => {
     )
 }
 
-export default AddSmartSendEmail;
+export default AddSmartSendVoice;

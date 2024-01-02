@@ -15,7 +15,7 @@ const AddSchoolNews = () => {
 
 
     return (
-        <Box m='20px'>
+        <Box m='40px'>
             <Button href="/admin/communicate/school-news" variant="contained" startIcon={<ArrowBackIosRoundedIcon />} sx={{borderRadius: 50,  padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[100], color: colors.freeduAccent[600], marginBottom: '30px', marginTop: '-30px', fontSize: '14px', fontWeight: 700, boxShadow: 'none'}}>
                 Back
             </Button>

@@ -7,11 +7,9 @@ import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import AddIcon from '@mui/icons-material/Add';
-import DriveFileRenameOutlineRoundedIcon from '@mui/icons-material/DriveFileRenameOutlineRounded';
-import WatchLaterRoundedIcon from '@mui/icons-material/WatchLaterRounded';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
-const AddSmartSendEmail = () => {
+const AddSmartSendGroup = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -24,151 +22,18 @@ const AddSmartSendEmail = () => {
             </Button>
 
             <Typography variant = "h4" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
-                New Email
+                New Group
             </Typography>
 
             <Box sx={{ backgroundColor: colors.freeduAccent[100], padding: 4, marginY: 2, borderRadius: '20px' }}>
-                <Box display="flex" marginBottom='20px'>
-                    {/* From */}
-                    <Box marginX="20px">
-                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
-                            From
-                        </Typography>
-                        <TextField
-                            id="outlined"
-                            placeholder='George Washington'
-                            sx={{
-                                '& .MuiOutlinedInput-root': {
-                                    background: colors.freeduAccent[100],
-                                    color: colors.freeduAccent[700],
-                                    fontWeight: 500,
-                                    border: '1px solid #D0D4D9',
-                                    borderRadius: '12px',
-                                    paddingY: -2,
-                                    width: '243px',
-                                    height: '35px',
-                                },
-                            }}
-                            />
-                    </Box>
-                    
-                    {/* Email */}
-                    <Box>
-                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold"  mb="20px">
-                            Email
-                        </Typography>
-                        <Box display="flex" justifyContent="space-between" alignItems="center" gap="20px">
-                            <TextField
-                            id="outlined"
-                            placeholder='george@gmail.com'
-                            sx={{
-                                '& .MuiOutlinedInput-root': {
-                                    background: colors.freeduAccent[100],
-                                    color: colors.freeduAccent[700],
-                                    fontWeight: 500,
-                                    border: '1px solid #D0D4D9',
-                                    borderRadius: '12px',
-                                    paddingY: -2,
-                                    width: '243px',
-                                    height: '35px',
-                                },
-                            }}
-                            />
-                            <FormControlLabel fontSize='12px' color="#A3AED0" control={<Checkbox />} label="Hide Email" />
-                        </Box>
-                        
-                    </Box>
-                </Box>
-
-                <Box display="flex" alignItems="end">
-                    {/* Groups */}
-                    <Box marginX="20px">
-                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
-                            Groups
-                        </Typography>
-                        <TextField
-                            id="outlined-select"
-                            select
-                            placeholder="Select Groups"
-                            sx={{
-                                '& .MuiOutlinedInput-root': {
-                                    background: colors.freeduAccent[100],
-                                    color: colors.freeduAccent[700],
-                                    fontWeight: 500,
-                                    border: '1px solid #D0D4D9',
-                                    borderRadius: '12px',
-                                    paddingY: -2,
-                                    width: '243px',
-                                    height: '35px',
-                                },
-                            }}
-                            />
-                    </Box>
-                    
-                    {/* Excludes */}
-                    <Box>
-                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold"  mb="20px">
-                            Excludes
-                        </Typography>
-                        <TextField
-                        id="outlined-select"
-                        select
-                        placeholder="Select Excludes"
-                        sx={{
-                            '& .MuiOutlinedInput-root': {
-                                background: colors.freeduAccent[100],
-                                color: colors.freeduAccent[700],
-                                fontWeight: 500,
-                                border: '1px solid #D0D4D9',
-                                borderRadius: '12px',
-                                paddingY: -2,
-                                width: '243px',
-                                height: '35px',
-                            },
-                        }}
-                        />
-                    </Box>
-
-                    {/* Last name or Address */}
-                    <Box marginX="20px">
-                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
-                            Last name or Address
-                        </Typography>
-                        <TextField
-                            id="outlined"
-                            placeholder='Washington'
-                            sx={{
-                                '& .MuiOutlinedInput-root': {
-                                    background: colors.freeduAccent[100],
-                                    color: colors.freeduAccent[700],
-                                    fontWeight: 500,
-                                    border: '1px solid #D0D4D9',
-                                    borderRadius: '12px',
-                                    paddingY: -2,
-                                    width: '243px',
-                                    height: '35px',
-                                },
-                            }}
-                            />
-                    </Box>
-                    
-                    <Box>
-                        <Button variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
-                            Add
-                        </Button>
-                    </Box>
-                </Box>
-            </Box>
-
-            <Box sx={{ backgroundColor: colors.freeduAccent[100], padding: 4, marginY: 2, borderRadius: '20px' }}>
-                {/* Subject */}
+                {/* Group Name */}
                 <Box marginX="20px">
                     <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
-                        Subject
+                        Group Name
                     </Typography>
                     <TextField
                             id="outlined"
-                            placeholder='Email Subject'
+                            placeholder='Immunization Due June'
                             sx={{
                                 '& .MuiOutlinedInput-root': {
                                     background: colors.freeduAccent[100],
@@ -186,22 +51,182 @@ const AddSmartSendEmail = () => {
             </Box>
 
 
-            <RichTextEditor />
+            <Box sx={{ backgroundColor: colors.freeduAccent[100], padding: 4, marginY: 2, borderRadius: '20px' }}>
+                <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
+                    Includes
+                </Typography>
+
+                <Box display="flex" marginBottom='20px'>
+                    {/* Person Type */}
+                    <Box marginX="20px">
+                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
+                            Person Type
+                        </Typography>
+                        <TextField
+                            select
+                            id="outlined-select"
+                            placeholder='Parents'
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    background: colors.freeduAccent[100],
+                                    color: colors.freeduAccent[700],
+                                    fontWeight: 500,
+                                    border: '1px solid #D0D4D9',
+                                    borderRadius: '12px',
+                                    paddingY: -2,
+                                    width: '243px',
+                                    height: '35px',
+                                },
+                            }}
+                            />
+                    </Box>
+
+                    {/* Status */}
+                    <Box marginX="20px">
+                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
+                        Status
+                        </Typography>
+                        <TextField
+                            select
+                            id="outlined-select"
+                            placeholder='Select Status'
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    background: colors.freeduAccent[100],
+                                    color: colors.freeduAccent[700],
+                                    fontWeight: 500,
+                                    border: '1px solid #D0D4D9',
+                                    borderRadius: '12px',
+                                    paddingY: -2,
+                                    width: '243px',
+                                    height: '35px',
+                                },
+                            }}
+                            />
+                    </Box>
+
+                    {/* Grade */}
+                    <Box marginX="20px">
+                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
+                        Grade
+                        </Typography>
+                        <TextField
+                            select
+                            id="outlined-select"
+                            placeholder='Select Grade'
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    background: colors.freeduAccent[100],
+                                    color: colors.freeduAccent[700],
+                                    fontWeight: 500,
+                                    border: '1px solid #D0D4D9',
+                                    borderRadius: '12px',
+                                    paddingY: -2,
+                                    width: '243px',
+                                    height: '35px',
+                                },
+                            }}
+                            />
+                    </Box>
+
+                    {/* Division */}
+                    <Box marginX="20px">
+                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
+                            Division
+                        </Typography>
+                        <TextField
+                            select
+                            id="outlined-select"
+                            placeholder='Select Division'
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    background: colors.freeduAccent[100],
+                                    color: colors.freeduAccent[700],
+                                    fontWeight: 500,
+                                    border: '1px solid #D0D4D9',
+                                    borderRadius: '12px',
+                                    paddingY: -2,
+                                    width: '243px',
+                                    height: '35px',
+                                },
+                            }}
+                            />
+                    </Box>
+                </Box>
+
+                <Box display="flex" marginBottom='20px'  alignItems="flex-end">
+                    {/* Class */}
+                    <Box marginX="20px">
+                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
+                            Class
+                        </Typography>
+                        <TextField
+                            select
+                            id="outlined-select"
+                            placeholder='Select Class'
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    background: colors.freeduAccent[100],
+                                    color: colors.freeduAccent[700],
+                                    fontWeight: 500,
+                                    border: '1px solid #D0D4D9',
+                                    borderRadius: '12px',
+                                    paddingY: -2,
+                                    width: '243px',
+                                    height: '35px',
+                                },
+                            }}
+                            />
+                    </Box>
+
+                    {/* Tag */}
+                    <Box marginX="20px">
+                        <Typography variant = "h5" color={colors.freeduAccent[600]} fontWeight="bold" mb="20px">
+                            Tag
+                        </Typography>
+                        <TextField
+                            select
+                            id="outlined-select"
+                            placeholder='Select Tag'
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    background: colors.freeduAccent[100],
+                                    color: colors.freeduAccent[700],
+                                    fontWeight: 500,
+                                    border: '1px solid #D0D4D9',
+                                    borderRadius: '12px',
+                                    paddingY: -2,
+                                    width: '243px',
+                                    height: '35px',
+                                },
+                            }}
+                            />
+                    </Box>
+
+                    <Box marginX="20px">
+                        <Button variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
+                            Add
+                        </Button>
+                    </Box>
+                    <Box>
+                        <Button variant="contained" startIcon={<CloseRoundedIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[300], color: colors.freeduAccent[800]}}>
+                            Cancel
+                        </Button>
+                    </Box>
+                </Box>
+                    
+            </Box>
+
 
             <Box display="flex" justifyContent="flex-end" alignItems="center" marginbottom="100px">
                 <div className="col-lg-2">
-                    <Button variant="contained" startIcon={<DriveFileRenameOutlineRoundedIcon />} sx={{borderRadius: 50, mx:1, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
-                        Draft
+                    <Button variant="contained" sx={{borderRadius: 50, mx:1, padding: 1, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[300], color: colors.freeduAccent[800]}}>
+                        Cancel
                     </Button>
                 </div>
                 <div className="col-lg-2">
-                    <Button variant="contained" startIcon={<WatchLaterRoundedIcon />} sx={{borderRadius: 50, mx:1, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
-                        Schedule
-                    </Button>
-                </div>
-                <div className="col-lg-2">
-                    <Button variant="contained" startIcon={<SendRoundedIcon  />} sx={{borderRadius: 50, mx:1, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[900], color: colors.freeduAccent[800]}}>
-                        Send Now
+                    <Button variant="contained" sx={{borderRadius: 50, mx:1, padding: 1, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
+                        Save
                     </Button>
                 </div>
             </Box>
@@ -209,4 +234,4 @@ const AddSmartSendEmail = () => {
     )
 }
 
-export default AddSmartSendEmail;
+export default AddSmartSendGroup;

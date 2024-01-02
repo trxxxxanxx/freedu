@@ -687,3 +687,51 @@ export const mockSubject = [
     Status: "Published",
   }
 ];
+
+export const mockGrades = [
+  {
+    id: 1,
+    Course: "Mathematics", 
+    Code: "MTH-001",
+    Unit: "5",
+    Score: "80",
+    Grade: "B",
+    GradePoint: "1.75",
+  },
+  {
+    id: 2,
+    Course: "English", 
+    Code: "ENG-001",
+    Unit: "4",
+    Score: "89",
+    Grade: "A",
+    GradePoint: "1.20",
+  },
+  {
+    id: 3,
+    Course: "Science", 
+    Code: "SCI-001",
+    Unit: "5",
+    Score: "84",
+    Grade: "B",
+    GradePoint: "1.75",
+  },
+  {
+    id: 4,
+    Course: "Arts", 
+    Code: "ART-001",
+    Unit: "5",
+    Score: "89",
+    Grade: "A",
+    GradePoint: "1.20",
+  },
+  {
+    id: 5,
+    Course: "Economics", 
+    Code: "ECO-001",
+    Unit: "3",
+    Score: "85",
+    Grade: "B",
+    GradePoint: "1.50",
+  },
+];

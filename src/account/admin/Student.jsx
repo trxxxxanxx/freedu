@@ -7,6 +7,7 @@ import { useTheme } from "@mui/material";
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+import { useNavigate } from "react-router-dom";
 
 const Student = () => {
   const theme = useTheme();
@@ -14,6 +15,7 @@ const Student = () => {
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedRow, setSelectedRow] = useState(null);
+  const navigate = useNavigate();
 
   const handleMenuClick = (event, row) => {
       setAnchorEl(event.currentTarget);
@@ -23,6 +25,12 @@ const Student = () => {
   const handleMenuClose = () => {
       setAnchorEl(null);
       setSelectedRow(null);
+  };
+
+  const handleView = () => {
+    console.log("View:", selectedRow);
+    navigate(`/admin/account/student/id/`);
+    handleMenuClose();
   };
 
   const handleEdit = () => {
@@ -82,6 +90,7 @@ const Student = () => {
                   boxShadow: '0px 4px 12px 0px rgba(25, 27, 28, 0.06)',
                 },
             }}            >
+              <MenuItem onClick={handleView}>View</MenuItem>
               <MenuItem onClick={handleEdit}>Edit</MenuItem>
               <MenuItem onClick={handleDelete}>Delete</MenuItem>
             </Menu>

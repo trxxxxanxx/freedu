@@ -170,7 +170,7 @@ const SmartSendPro = () => {
                         SMS/Text List
                     </Typography>
 
-                    <Button variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
+                    <Button href="/admin/communicate/smartsend-sms/add" variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
                         Add SMS/Text
                 </Button>
                 </Box>
@@ -230,9 +230,9 @@ const SmartSendPro = () => {
                         Voice List
                     </Typography>
 
-                    <Button variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
+                    <Button href="/admin/communicate/smartsend-voice/add" variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
                         Add Voice
-                </Button>
+                    </Button>
                 </Box>
 
                 <Box 
@@ -290,7 +290,7 @@ const SmartSendPro = () => {
                         Groups List
                     </Typography>
 
-                    <Button variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
+                    <Button href="/admin/communicate/smartsend-group/add" variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
                         Add Group
                 </Button>
                 </Box>
