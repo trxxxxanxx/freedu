@@ -122,9 +122,9 @@ input[type="file"] {
   text-decoration: none;
   color: var(--Active-Side, #1B2559);
   font-family: 'DM Sans';
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 28px; /* 155.556% */
+  line-height: 28px;
   letter-spacing: -0.36px;
   padding-bottom: 15px;
 }

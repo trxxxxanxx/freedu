@@ -735,3 +735,74 @@ export const mockGrades = [
     GradePoint: "1.50",
   },
 ];
+
+export const mockFamily = [
+  {
+    id: 1,
+    Name: "Steve C. Aniston", 
+    Relation: "Father",
+    Contact: "(234)234-34234 ",
+  },
+  {
+    id: 2,
+    Name: "Susan B, Anthony", 
+    Relation: "Mother",
+    Contact: "(234)234-34234 ",
+  },
+  {
+    id: 3,
+    Name: "Frank J Bailey", 
+    Relation: "Brother",
+    Contact: "(234)234-34234 ",
+  },
+  {
+    id: 4,
+    Name: "Monica Geller", 
+    Relation: "Sister",
+    Contact: "(234)234-34234 ",
+  },
+  {
+    id: 5,
+    Name: "Janelle Spencer", 
+    Relation: "Aunt",
+    Contact: "(234)234-34234 ",
+  },
+];
+
+export const mockDocument = [
+  {
+    id: 1,
+    Name: "StudentPhoto.jpg", 
+    Type: "JPEG file",
+    Size: "12 MB",
+    DateAdded: "24 May, 2020 at 5:30 PM",
+  },
+  {
+    id: 2,
+    Name: "BirthCertificate.png", 
+    Type: "PNG file",
+    Size: "28 MB",
+    DateAdded: "8 Sep, 2020 at 5:30 PM",
+  },
+  {
+    id: 3,
+    Name: "VaccineCertificate.png", 
+    Type: "PNG file",
+    Size: "28 MB",
+    DateAdded: "1 Feb, 2020 at 12:43 PM",
+  },
+  {
+    id: 4,
+    Name: "TOR.pdf", 
+    Type: "PDF file",
+    Size: "18 MB",
+    DateAdded: "24 May, 2020 at 12:43 PM",
+  },
+  {
+    id: 5,
+    Name: "Agreement.pdf", 
+    Type: "PDF file",
+    Size: "8 MB",
+    DateAdded: "22 Oct, 2020 at 12:43 PM",
+  },
+];

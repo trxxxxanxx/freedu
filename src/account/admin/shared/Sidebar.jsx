@@ -289,7 +289,7 @@ export default function MiniDrawer() {
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <ListItemText primary="Contracts" />
               </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }} to="/admin/inancial/payments">
+              <ListItemButton sx={{ pl: 4 }} to="/admin/financial/payments">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <ListItemText primary="Payments" />
               </ListItemButton>

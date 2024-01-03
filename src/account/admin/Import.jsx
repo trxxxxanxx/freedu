@@ -7,39 +7,37 @@ import { useTheme } from "@mui/material";
 import Button from '@mui/material/Button';
 import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+import { styles } from '../../style';
 
 const Import = () => {
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
+    const classes = styles(colors);
+
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [selectedRow, setSelectedRow] = useState(null);
     const [selectedFile, setSelectedFile] = useState(null);
+
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setSelectedFile(file);
     };
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
-
-    const [anchorEl, setAnchorEl] = useState(null);
-    const [selectedRow, setSelectedRow] = useState(null);
-
     const handleMenuClick = (event, row) => {
         setAnchorEl(event.currentTarget);
         setSelectedRow(row);
     };
-
     const handleMenuClose = () => {
         setAnchorEl(null);
         setSelectedRow(null);
     };
-
     const handleEdit = () => {
         console.log("Edit:", selectedRow);
         handleMenuClose();
     };
-
     const handleDelete = () => {
         console.log("Delete:", selectedRow);
         handleMenuClose();
     };
-
     const columns = [
         { 
             field: "Name",
@@ -95,64 +93,17 @@ const Import = () => {
         }
     ];
 
+
     return (
 
         <Box m="20px">
-            
             <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Typography variant = "h4" color={colors.freeduAccent[600]} fontWeight="bold">
-                    Import
-                </Typography>
-
-                <Button variant="contained" startIcon={<DownloadRoundedIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
-                    Run Import
-               </Button>
+                <Typography variant = "h4" sx={classes.title}> Import </Typography>
+                <Button variant="contained" startIcon={<DownloadRoundedIcon />} sx={classes.addButton}> Run Import </Button>
             </Box>
-
-            <Box 
-            m="40px 0 0 0" 
-            height="60vh" 
-            sx={{ 
-                "& .MuiDataGrid-root": {
-                    border: "none",
-                    borderBottom: "none",
-                    backgroundColor: colors.freeduAccent[100],
-                    padding: '20px',
-                },
-                "& .MuiDataGrid-cell": {
-                    color: colors.freeduAccent[600],
-                },
-                "& .name-column--cell": {
-                    color: colors.freeduAccent[600],
-                },
-                "& .MuiDataGrid-columnHeaders": {
-                    backgroundColor: colors.freeduAccent[100],
-                    color: colors.freeduAccent[600],
-                },
-                "& .MuiDataGrid-vitualScroller": {
-                    backgroundColor: colors.primary[400]
-                },
-                "& .MuiDataGrid-footerContainer": {
-                    borderTop: "none",
-                    backgroundColor: colors.freeduAccent[100],
-                },
-                "& .MuiCheckbox-root": {
-                    color: `${colors.freeduAccent[600]} !important`,
-                },
-                "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                    color: colors.freeduAccent[600],
-                    fontWeight: "bolder"
-                }
-             }}
-             >
-                <DataGrid 
-                    checkboxSelection
-                    rows={mockImport}
-                    columns={columns} 
-                    components={{ Toolbar: GridToolbar }}
-                 />
+            <Box sx={classes.root}>
+              <DataGrid checkboxSelection rows={mockImport} columns={columns} components={{ Toolbar: GridToolbar }} />
             </Box>
-            
             <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }} className="custom-file-input">
                 <label htmlFor="fileInput" className="file-input-label">
                     {selectedFile ? selectedFile.name : 'Choose File'}

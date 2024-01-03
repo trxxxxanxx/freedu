@@ -70,7 +70,7 @@ function App() {
                 <Route path="/admin/account/teacher" element={<Teacher />} />
                 <Route path="/admin/financial/ledger" element={<Ledger />} />
                 <Route path="/admin/financial/contract" element={<Contract />} />
-                <Route path="/admin/inancial/payments" element={<Payments />} />
+                <Route path="/admin/financial/payments" element={<Payments />} />
                 <Route path="/admin/financial/reports" element={<FinancialReports />} />
                 <Route path="/admin/curriculum/library" element={<Library />} />
                 <Route path="/admin/curriculum/subject" element={<Subject />} />

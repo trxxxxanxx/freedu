@@ -8,10 +8,12 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import { useNavigate } from "react-router-dom";
+import { styles } from '../../style';
 
 const Student = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const classes = styles(colors);
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedRow, setSelectedRow] = useState(null);
@@ -21,28 +23,23 @@ const Student = () => {
       setAnchorEl(event.currentTarget);
       setSelectedRow(row);
   };
-
   const handleMenuClose = () => {
       setAnchorEl(null);
       setSelectedRow(null);
   };
-
   const handleView = () => {
     console.log("View:", selectedRow);
     navigate(`/admin/account/student/id/`);
     handleMenuClose();
   };
-
   const handleEdit = () => {
       console.log("Edit:", selectedRow);
       handleMenuClose();
   };
-
   const handleDelete = () => {
       console.log("Delete:", selectedRow);
       handleMenuClose();
   };
-
   const columns = [
       { 
           field: "Name",
@@ -100,65 +97,18 @@ const Student = () => {
   ];
 
 
-    return (
+  return (
 
-        <Box m="20px">
-            
-            <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Typography variant = "h4" color={colors.freeduAccent[600]} fontWeight="bold">
-                    Student
-                </Typography>
-                
-                <Button variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
-                    Add Student
-                </Button>
-            </Box>
-
-            <Box 
-            m="40px 0 0 0" 
-            height="60vh" 
-            sx={{ 
-                "& .MuiDataGrid-root": {
-                    border: "none",
-                    borderBottom: "none",
-                    backgroundColor: colors.freeduAccent[100],
-                    padding: '20px',
-                },
-                "& .MuiDataGrid-cell": {
-                    color: colors.freeduAccent[600],
-                },
-                "& .name-column--cell": {
-                    color: colors.freeduAccent[600],
-                },
-                "& .MuiDataGrid-columnHeaders": {
-                    backgroundColor: colors.freeduAccent[100],
-                    color: colors.freeduAccent[600],
-                },
-                "& .MuiDataGrid-vitualScroller": {
-                    backgroundColor: colors.primary[400]
-                },
-                "& .MuiDataGrid-footerContainer": {
-                    borderTop: "none",
-                    backgroundColor: colors.freeduAccent[100],
-                },
-                "& .MuiCheckbox-root": {
-                    color: `${colors.freeduAccent[600]} !important`,
-                },
-                "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                    color: colors.freeduAccent[600],
-                    fontWeight: "bolder"
-                }
-             }}
-             >
-                <DataGrid 
-                    checkboxSelection
-                    rows={mockStudent}
-                    columns={columns} 
-                    components={{ Toolbar: GridToolbar }}
-                 />
-            </Box>
-        </Box>
-    );
+      <Box m="20px">
+          <Box display="flex" justifyContent="space-between" alignItems="center">
+            <Typography variant = "h4" sx={classes.title}> Student </Typography>
+            <Button variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Student </Button>
+          </Box>
+          <Box sx={classes.root} >
+              <DataGrid checkboxSelection rows={mockStudent} columns={columns} components={{ Toolbar: GridToolbar }} />
+          </Box>
+      </Box>
+  );
 };
 
 export default Student;

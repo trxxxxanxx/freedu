@@ -8,11 +8,13 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import { useNavigate } from "react-router-dom";
+import { styles } from '../../style';
 
 
 const SchoolNews = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    const classes = styles(colors);
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedRow, setSelectedRow] = useState(null);
@@ -22,18 +24,15 @@ const SchoolNews = () => {
         setAnchorEl(event.currentTarget);
         setSelectedRow(row);
     };
-
     const handleMenuClose = () => {
         setAnchorEl(null);
         setSelectedRow(null);
     };
-
     const handleEdit = () => {
         console.log("Edit:", selectedRow);
         navigate(`/admin/communicate/school-news/edit/`);
         handleMenuClose();
     };
-
     const handleDelete = () => {
         console.log("Delete:", selectedRow);
         handleMenuClose();
@@ -87,59 +86,12 @@ const SchoolNews = () => {
     return (
 
         <Box m="20px">
-            
             <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Typography variant = "h4" color={colors.freeduAccent[600]} fontWeight="bold">
-                    School News
-                </Typography>
-
-                <Button href="/admin/communicate/school-news/add" variant="contained" startIcon={<AddIcon />} sx={{borderRadius: 50, padding: 1.5, textTransform: 'Capitalize', backgroundColor: colors.freeduAccent[400], color: colors.freeduAccent[800]}}>
-                    Add News
-                </Button>
+                <Typography variant = "h4" sx={classes.title}> School News </Typography>
+                <Button href="/admin/communicate/school-news/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add News </Button>
             </Box>
-
-            <Box 
-            m="40px 0 0 0" 
-            height="60vh" 
-            sx={{ 
-                "& .MuiDataGrid-root": {
-                    border: "none",
-                    borderBottom: "none",
-                    backgroundColor: colors.freeduAccent[100],
-                    padding: '20px',
-                },
-                "& .MuiDataGrid-cell": {
-                    color: colors.freeduAccent[600],
-                },
-                "& .name-column--cell": {
-                    color: colors.freeduAccent[600],
-                },
-                "& .MuiDataGrid-columnHeaders": {
-                    backgroundColor: colors.freeduAccent[100],
-                    color: colors.freeduAccent[600],
-                },
-                "& .MuiDataGrid-vitualScroller": {
-                    backgroundColor: colors.primary[400]
-                },
-                "& .MuiDataGrid-footerContainer": {
-                    borderTop: "none",
-                    backgroundColor: colors.freeduAccent[100],
-                },
-                "& .MuiCheckbox-root": {
-                    color: `${colors.freeduAccent[600]} !important`,
-                },
-                "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                    color: colors.freeduAccent[600],
-                    fontWeight: "bolder"
-                }
-             }}
-             >
-                <DataGrid 
-                    checkboxSelection
-                    rows={mockDataSchoolNews}
-                    columns={columns} 
-                    components={{ Toolbar: GridToolbar }}
-                 />
+            <Box sx={classes.root} >
+                <DataGrid checkboxSelection rows={mockDataSchoolNews} columns={columns} components={{ Toolbar: GridToolbar }} />
             </Box>
         </Box>
     );

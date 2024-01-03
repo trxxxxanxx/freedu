@@ -8,10 +8,13 @@ import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import QuestionAnswerRoundedIcon from '@mui/icons-material/QuestionAnswerRounded';
 import { mockSubmittedPayments, mockAutoPayPlan } from "../../data/mockDataFreEdu";
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+import { styles } from '../../style';
 
 const Payments = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    const classes = styles(colors);
+
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedRow, setSelectedRow] = useState(null);
 
@@ -19,17 +22,14 @@ const Payments = () => {
         setAnchorEl(event.currentTarget);
         setSelectedRow(row);
     };
-
     const handleMenuClose = () => {
         setAnchorEl(null);
         setSelectedRow(null);
     };
-
     const handleEdit = () => {
         console.log("Edit:", selectedRow);
         handleMenuClose();
     };
-
     const handleDelete = () => {
         console.log("Delete:", selectedRow);
         handleMenuClose();
@@ -143,126 +143,38 @@ const Payments = () => {
       },
     ];
 
-    const [activeButton, setActiveButton] = useState('button1'); // Default active button
+    const [activeButton, setActiveButton] = useState('button1');
     const [content, setContent] = useState('');
-    const changeContent = (buttonId) => {
-        setActiveButton(buttonId); // Update the active button when clicked
     
+    const changeContent = (buttonId) => {
+        setActiveButton(buttonId);
         switch (buttonId) {
             case 'button1':
-            setContent(
-                <Box m="20px">
-                
-                <Box display="flex" justifyContent="space-between" alignItems="center">
-                    <Typography variant = "h4" color={colors.freeduAccent[600]} fontWeight="bold">
-                        Submitted Payments
-                    </Typography>
-                </Box>
-
-                <Box 
-                m="40px 0 0 0" 
-                height="60vh" 
-                sx={{ 
-                    "& .MuiDataGrid-root": {
-                        border: "none",
-                        borderBottom: "none",
-                        backgroundColor: colors.freeduAccent[100],
-                        padding: '20px',
-                    },
-                    "& .MuiDataGrid-cell": {
-                        color: colors.freeduAccent[600],
-                    },
-                    "& .name-column--cell": {
-                        color: colors.freeduAccent[600],
-                    },
-                    "& .MuiDataGrid-columnHeaders": {
-                        backgroundColor: colors.freeduAccent[100],
-                        color: colors.freeduAccent[600],
-                    },
-                    "& .MuiDataGrid-vitualScroller": {
-                        backgroundColor: colors.primary[400]
-                    },
-                    "& .MuiDataGrid-footerContainer": {
-                        borderTop: "none",
-                        backgroundColor: colors.freeduAccent[100],
-                    },
-                    "& .MuiCheckbox-root": {
-                        color: `${colors.freeduAccent[600]} !important`,
-                    },
-                    "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                        color: colors.freeduAccent[600],
-                        fontWeight: "bolder"
-                    }
-                }}
-                >
-                    <DataGrid 
-                        checkboxSelection
-                        rows={mockSubmittedPayments}
-                        columns={paymentColumns} 
-                        components={{ Toolbar: GridToolbar }}
-                    />
-                </Box>
-                </Box>
-            );
+                setContent(
+                    <Box m="20px">
+                        <Box display="flex" justifyContent="space-between" alignItems="center">
+                            <Typography variant = "h4" sx={classes.title}> Submitted Payments </Typography>
+                        </Box>
+                        <Box sx={classes.root} >
+                            <DataGrid checkboxSelection rows={mockSubmittedPayments} columns={paymentColumns} components={{ Toolbar: GridToolbar }} />
+                        </Box>
+                    </Box>
+                );
             break;
             case 'button2':
-            setContent(
-                <Box m="20px">
-                
-                <Box display="flex" justifyContent="space-between" alignItems="center">
-                    <Typography variant = "h4" color={colors.freeduAccent[600]} fontWeight="bold">
-                        AutoPay Plans
-                    </Typography>
-                </Box>
-
-                <Box 
-                m="40px 0 0 0" 
-                height="60vh" 
-                sx={{ 
-                    "& .MuiDataGrid-root": {
-                        border: "none",
-                        borderBottom: "none",
-                        backgroundColor: colors.freeduAccent[100],
-                        padding: '20px',
-                    },
-                    "& .MuiDataGrid-cell": {
-                        color: colors.freeduAccent[600],
-                    },
-                    "& .name-column--cell": {
-                        color: colors.freeduAccent[600],
-                    },
-                    "& .MuiDataGrid-columnHeaders": {
-                        backgroundColor: colors.freeduAccent[100],
-                        color: colors.freeduAccent[600],
-                    },
-                    "& .MuiDataGrid-vitualScroller": {
-                        backgroundColor: colors.primary[400]
-                    },
-                    "& .MuiDataGrid-footerContainer": {
-                        borderTop: "none",
-                        backgroundColor: colors.freeduAccent[100],
-                    },
-                    "& .MuiCheckbox-root": {
-                        color: `${colors.freeduAccent[600]} !important`,
-                    },
-                    "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                        color: colors.freeduAccent[600],
-                        fontWeight: "bolder"
-                    }
-                }}
-                >
-                    <DataGrid 
-                        checkboxSelection
-                        rows={mockAutoPayPlan}
-                        columns={autopayColumns} 
-                        components={{ Toolbar: GridToolbar }}
-                    />
-                </Box>
-            </Box>
-            );
+                setContent(
+                    <Box m="20px">
+                        <Box display="flex" justifyContent="space-between" alignItems="center">
+                            <Typography variant = "h4" sx={classes.title}>  AutoPay Plans </Typography>
+                        </Box>
+                        <Box sx={classes.root} >
+                            <DataGrid checkboxSelection rows={mockAutoPayPlan} columns={autopayColumns} components={{ Toolbar: GridToolbar }} />
+                        </Box>
+                    </Box>
+                );
             break;
             case 'default':
-            setContent();
+                setContent();
             break;
         }
     };
@@ -270,102 +182,24 @@ const Payments = () => {
     useEffect(() => {
         setContent(
             <Box m="20px">
-            
-            <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Typography variant = "h4" color={colors.freeduAccent[600]} fontWeight="bold">
-                  Submitted Payments
-                </Typography>
-            </Box>
-
-            <Box 
-            m="40px 0 0 0" 
-            height="60vh" 
-            sx={{ 
-                "& .MuiDataGrid-root": {
-                    border: "none",
-                    borderBottom: "none",
-                    backgroundColor: colors.freeduAccent[100],
-                    padding: '20px',
-                },
-                "& .MuiDataGrid-cell": {
-                    color: colors.freeduAccent[600],
-                },
-                "& .name-column--cell": {
-                    color: colors.freeduAccent[600],
-                },
-                "& .MuiDataGrid-columnHeaders": {
-                    backgroundColor: colors.freeduAccent[100],
-                    color: colors.freeduAccent[600],
-                },
-                "& .MuiDataGrid-vitualScroller": {
-                    backgroundColor: colors.primary[400]
-                },
-                "& .MuiDataGrid-footerContainer": {
-                    borderTop: "none",
-                    backgroundColor: colors.freeduAccent[100],
-                },
-                "& .MuiCheckbox-root": {
-                    color: `${colors.freeduAccent[600]} !important`,
-                },
-                "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-                    color: colors.freeduAccent[600],
-                    fontWeight: "bolder"
-                }
-            }}
-            >
-                <DataGrid 
-                    checkboxSelection
-                    rows={mockSubmittedPayments}
-                    columns={paymentColumns} 
-                    components={{ Toolbar: GridToolbar }}
-                />
-            </Box>
+                <Box display="flex" justifyContent="space-between" alignItems="center">
+                    <Typography variant = "h4" sx={classes.title}> Submitted Payments </Typography>
+                </Box>
+                <Box sx={classes.root} >
+                    <DataGrid checkboxSelection rows={mockSubmittedPayments} columns={paymentColumns} components={{ Toolbar: GridToolbar }} />
+                </Box>
             </Box>
         );
-      }, []); // Run this effect only once when the component mounts
+      }, []);
 
 
     return (
         <Box m="20px">
             <Box display="flex">
-                <Button 
-                    className="button" 
-                    onClick={() => changeContent('button1')} 
-                    variant="contained" startIcon={<EmailRoundedIcon />} 
-                    sx={{
-                        borderRadius: 4, 
-                        pt: 3, 
-                        pb:3, 
-                        pl:3, pr:
-                        16, 
-                        mr:5, 
-                        boxShadow: '0px 4px 12px 0px rgba(25, 27, 28, 0.06)',
-                        textTransform: 'Capitalize', 
-                        backgroundColor: activeButton === 'button1' ? colors.freeduAccent[500] : colors.freeduAccent[100], 
-                        color: activeButton === 'button1' ? colors.freeduAccent[800] : colors.freeduAccent[300]}}>
-                        Submitted Payments
-                </Button>
-                <Button 
-                    className="button" 
-                    onClick={() => changeContent('button2')} 
-                    variant="contained" 
-                    startIcon={<QuestionAnswerRoundedIcon />} 
-                    sx={{
-                        borderRadius: 4, 
-                        pt: 3, 
-                        pb:3, 
-                        pl:3, 
-                        pr:16, 
-                        mr:5, 
-                        boxShadow: '0px 4px 12px 0px rgba(25, 27, 28, 0.06)',
-                        textTransform: 'Capitalize', 
-                        backgroundColor: activeButton === 'button2' ? colors.freeduAccent[500] : colors.freeduAccent[100], 
-                        color: activeButton === 'button2' ? colors.freeduAccent[800] : colors.freeduAccent[300]}}>
-                        AutoPay Plans
-                </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton), }} onClick={() => changeContent('button1')} variant="contained" startIcon={<EmailRoundedIcon />}> Submitted Payments </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton), }} onClick={() => changeContent('button2')} variant="contained" startIcon={<QuestionAnswerRoundedIcon />}> AutoPay Plans </Button>
             </Box>
             {content}
-            
         </Box>
     );
 };
