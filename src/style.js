@@ -37,6 +37,7 @@ export const styles = (colors) => ({
     borderRadius: 4,
     p: 3,
     ml: 3,
+    ml: {xs: "20px", sm: "30px", md: "40px", lg: "60px"},
     boxShadow: '0px 4px 12px 0px rgba(25, 27, 28, 0.06)',
     textTransform: 'Capitalize',
     backgroundColor: colors.freeduAccent[100],
@@ -159,5 +160,17 @@ export const styles = (colors) => ({
     textTransform: 'Capitalize', 
     backgroundColor: colors.freeduAccent[400], 
     color: colors.freeduAccent[800],
+  },
+  sidebarButton: {
+    textTransform: 'Capitalize',
+    color: colors.freeduAccent[600],
+  },
+  sidebarActiveButton: {
+    borderRight: '4px solid #4318FF',
+    color: colors.freeduAccent[300],
+  },
+  customText: {
+    fontSize: '18px',
+    fontWeight: '700',
   },
 });

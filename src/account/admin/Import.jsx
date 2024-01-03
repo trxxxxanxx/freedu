@@ -4,7 +4,7 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockImport } from "../../data/mockDataFreEdu";
 import { useTheme } from "@mui/material";
-import Button from '@mui/material/Button';
+import { Button, useMediaQuery } from '@mui/material';
 import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import { styles } from '../../style';
@@ -13,6 +13,7 @@ const Import = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const classes = styles(colors);
+    const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedRow, setSelectedRow] = useState(null);
@@ -99,7 +100,11 @@ const Import = () => {
         <Box m="20px">
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant = "h4" sx={classes.title}> Import </Typography>
-                <Button variant="contained" startIcon={<DownloadRoundedIcon />} sx={classes.addButton}> Run Import </Button>
+                {isSmallScreen ? (
+                  <IconButton sx={classes.addButton} > <DownloadRoundedIcon /> </IconButton>
+                ) : (
+                  <Button variant="contained" startIcon={<DownloadRoundedIcon />} sx={classes.addButton}> Run Import </Button>
+                )}
             </Box>
             <Box sx={classes.root}>
               <DataGrid checkboxSelection rows={mockImport} columns={columns} components={{ Toolbar: GridToolbar }} />

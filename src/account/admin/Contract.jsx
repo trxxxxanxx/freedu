@@ -4,7 +4,7 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockContract } from "../../data/mockDataFreEdu";
 import { useTheme } from "@mui/material";
-import Button from '@mui/material/Button';
+import { Button, useMediaQuery } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import { styles } from '../../style';
@@ -13,6 +13,7 @@ const Contract = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const classes = styles(colors);
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedRow, setSelectedRow] = useState(null);
@@ -99,7 +100,11 @@ const Contract = () => {
         <Box m="20px">
             <Box display="flex" justifyContent="space-between" alignItems="center">
               <Typography variant = "h4" sx={classes.title}> Tuition Contracts </Typography>
-              <Button variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Contract </Button>
+              {isSmallScreen ? (
+                <IconButton sx={classes.addButton} > <AddIcon /> </IconButton>
+              ) : (
+                <Button variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Contract </Button>
+                )}
             </Box>
             <Box sx={classes.root}>
               <DataGrid checkboxSelection rows={mockContract} columns={columns} components={{ Toolbar: GridToolbar }} />
