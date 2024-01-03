@@ -1,198 +1,206 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Grid, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import { mockTransactions } from "../../data/mockData";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
-import Header from "../../components/Header";
-import LineChart from "../../components/LineChart";
-import GeographyChart from "../../components/GeographyChart";
-import BarChart from "../../components/BarChart";
-import StatBox from "../../components/StatBox";
-import ProgressCircle from "../../components/ProgressCircle";
-// import BasicDateCalendar from "../../components/Calendar";
-
-
+import ScheduleIcon from "@mui/icons-material/Schedule";
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const onChange = (date) => {
-    console.log('Selected date:', date);
-  };
-  
 
   return (
-    <Box m="20px" mx="40px">
+    <Box m={{ xs: "20px", sm: "30px", md: "40px", lg: "60px" }} mx="auto">
       {/* HEADER */}
-      {/* <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-
-        <Box>
-          <Button
-            sx={{
-              backgroundColor: colors.blueAccent[700],
-              color: colors.grey[100],
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Download Reports
-          </Button>
-        </Box>
-      </Box> */}
 
       {/* GRID & CHARTS */}
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="200px"
-        // gridTemplateRows="60px 1fr"
-        gap="24px"
-      >
+      <Grid container spacing={2}>
         {/* ROW 1 */}
-        <Box
-          gridColumn="span 3"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius={6} 
-        >
-          <StatBox
-            title="12,361"
-            subtitle="Emails Sent"
-            progress="0.75"
-            increase="+14%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius={6} 
-        >
-          <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
-            progress="0.50"
-            increase="+21%"
-            icon={
-              <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius={6} 
-        >
-    
-          <StatBox
-            title="32,441"
-            subtitle="New Clients"
-            progress="0.30"
-            increase="+5%"
-            icon={
-              <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        
-        <Box
-          gridColumn="span 3"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius={6} 
-        >
-         {/* <BasicDateCalendar 
-           sx={{
-            fontFamily: 'DM Sans', // Change 'Your Custom Font' to the desired font
-            fontWeight: 'bold', // Make the font bold
-            width: '200px', // Adjust the width as needed
-          }}
-         /> */}
+        <Grid item xs={12} sm={12} md={12} lg={8}>
+          <Box
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            borderRadius={6}
+            height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
+          >
+            {/* Content */}
+            <Grid container spacing={2}>
+              <Grid item xs={4} sm={4} md={4} lg={4}>
+                <Box
+                  display="flex"
+                  alignItems="flex-end"
+                  backgroundColor={colors.primary[900]}
+                  borderRadius={6}
+                  height={{
+                    xs: "300px",
+                    sm: "320px",
+                    md: "340px",
+                    lg: "360px",
+                  }}
+                >
+                  <Box
+                    m={{
+                      xs: 1,
+                      sm: 2,
+                      md: 3,
+                      lg: 4,
+                    }} /* Adjust margin for different screen sizes */
+                  >
+                    <Typography
+                      variant="h4"
+                      color={theme.palette.grey[100]}
+                      fontWeight="bold"
+                      sx={{
+                        mb: { xs: 2, md: 3 },
+                      }} /* Adjust margin-bottom for different screen sizes */
+                    >
+                      School Appreciation
+                    </Typography>
 
-        </Box>
+                    <Typography
+                      variant="h5"
+                      color={theme.palette.grey[100]}
+                      fontWeight="bold"
+                      sx={{
+                        mb: { xs: 2, md: 3 },
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                      }}
+                    >
+                      <ScheduleIcon
+                        sx={{ fontSize: { xs: 20, sm: 25, md: 30 } }}
+                      />
+                      14 Nov, 2024
+                    </Typography>
+                  </Box>
+                  
+                </Box>
+              </Grid>
+              <Grid item xs={4} sm={4} md={4} lg={4}>
+                <Box
+                  backgroundColor="GREEN"
+                  borderRadius={6}
+                  height={{
+                    xs: "300px",
+                    sm: "320px",
+                    md: "340px",
+                    lg: "360px",
+                  }}
+                ></Box>
+              </Grid>
+              <Grid item xs={4} sm={4} md={4} lg={4}>
+                <Box
+                  backgroundColor="GREEN"
+                  borderRadius={6}
+                  height={{
+                    xs: "300px",
+                    sm: "320px",
+                    md: "340px",
+                    lg: "360px",
+                  }}
+                ></Box>
+              </Grid>
+            </Grid>
+          </Box>
+        </Grid>
+
+        <Grid item xs={12} sm={12} md={6} lg={4}>
+          <Box
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            borderRadius={6}
+            height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
+          >
+            {/* Content */}
+            CALENDAR
+          </Box>
+        </Grid>
 
         {/* ROW 3 */}
-        <Box
-          gridColumn="span 4"
-          gridRow="span 3"
-          backgroundColor={colors.primary[400]}
-          p="30px"
-          borderRadius={6} 
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={8}
+          order={{ xs: 2, sm: 2, md: 2, lg: 1 }}
         >
-          <Typography variant="h5" fontWeight="600">
-            Campaign
-          </Typography>
-        </Box>
-
-        <Box
-           sx={{
-            background: 'linear-gradient(135deg, #868CFF 0%, #4318FF 100%)',
-            gridColumn: 'span 4',
-            gridRow: 'span 3',
-            borderRadius: 6,
-          }}
-        >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            backgroundColor={colors.primary[400]}
+            // p={{ xs: "20px", sm: "25px", md: "30px", lg: "40px" }}
+            borderRadius={6}
+            height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
           >
-            Sales Quantity
-          </Typography>
-          {/* <Box height="250px" mt="-20px">
-            <BarChart isDashboard={true} />
-          </Box> */}
-        </Box>
-
-        <Box
-          gridColumn="span 4"
-          gridRow="span 3"
-          backgroundColor={colors.primary[400]}
-          padding="30px"
-          borderRadius={6} 
-        >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ marginBottom: "15px" }}
-          >
-            Geography Based Traffic
-          </Typography>
-          <Box height="200px">
-            {/* <GeographyChart isDashboard={true} /> */}
+            {/* Content */}
+            <Grid container spacing={2}>
+              <Grid item xs={6} sm={6} md={6} lg={6}>
+                <Box
+                  backgroundColor="GREEN"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  borderRadius={6}
+                  height={{
+                    xs: "300px",
+                    sm: "320px",
+                    md: "340px",
+                    lg: "360px",
+                  }}
+                >
+                  TASK
+                </Box>
+              </Grid>
+              <Grid item xs={6} sm={6} md={6} lg={6}>
+                <Box
+                  backgroundColor="GREEN"
+                  borderRadius={6}
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  height={{
+                    xs: "300px",
+                    sm: "320px",
+                    md: "340px",
+                    lg: "360px",
+                  }}
+                >
+                  ANNOUNCEMENT
+                </Box>
+              </Grid>
+            </Grid>
           </Box>
-        </Box>
-      </Box>
-    </Box>
-  )
-}
+        </Grid>
 
-export default Dashboard
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={4}
+          order={{ md: 1, sm: 1, xs: 1, lg: 2 }}
+        >
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            sx={{
+              background: "linear-gradient(135deg, #868CFF 0%, #4318FF 100%)",
+              borderRadius: 6,
+            }}
+            height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
+          >
+            JOIN NOW
+            {/* Co NOntent */}
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+};
+
+export default Dashboard;
