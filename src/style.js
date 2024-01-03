@@ -69,14 +69,14 @@ export const styles = (colors) => ({
   },
   modalTextField: {
     '& .MuiOutlinedInput-root': {
-      background: colors.freeduAccent[100],
-      color: colors.freeduAccent[700],
-      fontWeight: 500,
-      border: '1px solid #D0D4D9',
-      borderRadius: '12px',
-      paddingY: -2,
-      width: { xs: "250px", sm: "210px", md: "480px", lg: "400px" },
-      height: '35px',
+    background: colors.freeduAccent[100],
+    color: colors.freeduAccent[700],
+    fontWeight: 500,
+    border: '1px solid #D0D4D9',
+    borderRadius: '12px',
+    paddingY: -2,
+    width: { xs: "250px", sm: "210px", md: "480px", lg: "400px" },
+    height: '35px',
       mt: '20px',
     },
   },
@@ -102,13 +102,11 @@ export const styles = (colors) => ({
   },
   titleTextField: {
     '& .MuiOutlinedInput-root': {
-        background: colors.freeduAccent[800],
-        color: colors.freeduAccent[300],
+        color: colors.freeduAccent[700],
         fontWeight: 700,
         border: '2px solid #6859FF',
         borderRadius: '50px',
-        height: '46px',
-        width: { xs: "300px", sm: "320px", md: "340px", lg: "360px" },
+        paddingY: -2,
       },
   },
   defaultButton: {
@@ -132,9 +130,8 @@ export const styles = (colors) => ({
       border: '1px solid #D0D4D9',
       borderRadius: '12px',
       paddingY: -2,
-      width: { xs: "250px", sm: "210px", md: "230px", lg: "250px" },
+      width: '243px',
       height: '35px',
-      mt: '20px',
     }
   },
   formBox: {
@@ -184,44 +181,17 @@ export const styles = (colors) => ({
     backgroundColor: colors.freeduAccent[400], 
     color: colors.freeduAccent[800],
   },
-  sidebarButton: {
-    textTransform: 'Capitalize',
-    color: colors.freeduAccent[600],
-  },
-  sidebarActiveButton: {
-    borderRight: '4px solid #4318FF',
-    color: colors.freeduAccent[300],
-  },
-  customText: {
-    fontSize: '18px',
-    fontWeight: '700',
-  },
-  include: {
-    p:1, 
-    backgroundColor: '#F0FFF8', 
-    color: '#18AB56', 
-    textTransform: 'capitalize', 
-    fontWeight: 600,
-    mt: '20px',
-  },
-  studentbarBox: {
-    backgroundColor: colors.freeduAccent[100], 
-    paddingTop: 4, 
-    paddingBottom: 2, 
-    paddingX: 4, 
-    marginY: 2, 
-    borderRadius: '20px'
-  },
-  cardBox: {
-    backgroundColor: colors.freeduAccent[100], 
-    borderRadius: '20px', 
-    width: '50%', 
-    padding: '20px', 
-    marginRight: '50px',
-  },
-  cardTitle: {
-    padding:'0px 0px 14px 0px',
-    borderBottom:'1px solid #E5E7E8',
-    marginBottom:'5px'
+
+  dashBox : { 
+    display: "flex",
+    alignItems: "flex-end",
+    borderRadius: 6,
+    height: {
+    xs: "300px",
+    sm: "320px",
+    md: "340px",
+    lg: "360px",
+    },
   },
 });
+

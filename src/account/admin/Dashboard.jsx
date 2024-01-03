@@ -1,10 +1,25 @@
 import { Box, Grid, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../theme";
 import ScheduleIcon from "@mui/icons-material/Schedule";
+import backgroundImage1 from "../../data/img/news1.jpg";
+import backgroundImage2 from "../../data/img/news2.jpg";
+import backgroundImage3 from "../../data/img/news3.jpg";
+import { tokens } from "../../theme";
+import { styles } from "../../style";
+
+
+
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const classes = styles(colors);
+  const backgrounds = [backgroundImage1, backgroundImage2, backgroundImage3];
+  const backgroundStyle = {
+    background: `linear-gradient(135deg, #868CFF 0%, #4318FF 50%), url(${backgroundImage1}), url(${backgroundImage2}), url(${backgroundImage3})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    boxShadow: "inset 0 -100px 120px rgba(0, 0, 0, 0.5)",
+  };
 
   return (
     <Box m={{ xs: "20px", sm: "30px", md: "40px", lg: "60px" }} mx="auto">
@@ -20,21 +35,15 @@ const Dashboard = () => {
             alignItems="center"
             justifyContent="center"
             borderRadius={6}
-            height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
+            height="auto"
           >
             {/* Content */}
             <Grid container spacing={2}>
-              <Grid item xs={4} sm={4} md={4} lg={4}>
+              <Grid item xs={12} sm={4} md={4} lg={4}>
                 <Box
-                  display="flex"
-                  alignItems="flex-end"
-                  backgroundColor={colors.primary[900]}
-                  borderRadius={6}
-                  height={{
-                    xs: "300px",
-                    sm: "320px",
-                    md: "340px",
-                    lg: "360px",
+                  sx={{ ...classes.dashBox, ...backgroundStyle }}
+                  style={{
+                    backgroundImage: `url(${backgrounds[0]})`,
                   }}
                 >
                   <Box
@@ -50,7 +59,7 @@ const Dashboard = () => {
                       color={theme.palette.grey[100]}
                       fontWeight="bold"
                       sx={{
-                        mb: { xs: 2, md: 3 },
+                        mb: { xs: 1, md: 1 },
                       }} /* Adjust margin-bottom for different screen sizes */
                     >
                       School Appreciation
@@ -73,24 +82,59 @@ const Dashboard = () => {
                       14 Nov, 2024
                     </Typography>
                   </Box>
-                  
                 </Box>
               </Grid>
-              <Grid item xs={4} sm={4} md={4} lg={4}>
+              <Grid item xs={12} sm={4} md={4} lg={4}>
                 <Box
-                  backgroundColor="GREEN"
-                  borderRadius={6}
-                  height={{
-                    xs: "300px",
-                    sm: "320px",
-                    md: "340px",
-                    lg: "360px",
+                  sx={{ ...classes.dashBox, ...backgroundStyle }}
+                  style={{
+                    backgroundImage: `url(${backgrounds[1]})`,
                   }}
-                ></Box>
+                >
+                  <Box
+                    m={{
+                      xs: 1,
+                      sm: 2,
+                      md: 3,
+                      lg: 4,
+                    }} /* Adjust margin for different screen sizes */
+                  >
+                    <Typography
+                      variant="h4"
+                      color={theme.palette.grey[100]}
+                      fontWeight="bold"
+                      sx={{
+                        mb: { xs: 1, md: 1 },
+                      }} /* Adjust margin-bottom for different screen sizes */
+                    >
+                      School Appreciation
+                    </Typography>
+
+                    <Typography
+                      variant="h5"
+                      color={theme.palette.grey[100]}
+                      fontWeight="bold"
+                      sx={{
+                        mb: { xs: 2, md: 3 },
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                      }}
+                    >
+                      <ScheduleIcon
+                        sx={{ fontSize: { xs: 20, sm: 25, md: 30 } }}
+                      />
+                      14 Nov, 2024
+                    </Typography>
+                  </Box>
+                </Box>
               </Grid>
-              <Grid item xs={4} sm={4} md={4} lg={4}>
+
+              <Grid item xs={12} sm={4} md={4} lg={4}>
                 <Box
-                  backgroundColor="GREEN"
+                  display="flex"
+                  alignItems="flex-end"
+                  backgroundColor={colors.primary[900]}
                   borderRadius={6}
                   height={{
                     xs: "300px",
@@ -98,13 +142,54 @@ const Dashboard = () => {
                     md: "340px",
                     lg: "360px",
                   }}
-                ></Box>
+                  style={{
+                    ...backgroundStyle,
+                    backgroundImage: `url(${backgrounds[2]})`, // Use the first image initially
+                  }}
+                >
+                  <Box
+                    m={{
+                      xs: 1,
+                      sm: 2,
+                      md: 3,
+                      lg: 4,
+                    }} /* Adjust margin for different screen sizes */
+                  >
+                    <Typography
+                      variant="h4"
+                      color={theme.palette.grey[100]}
+                      fontWeight="bold"
+                      sx={{
+                        mb: { xs: 1, md: 1 },
+                      }} /* Adjust margin-bottom for different screen sizes */
+                    >
+                      School Appreciation
+                    </Typography>
+
+                    <Typography
+                      variant="h5"
+                      color={theme.palette.grey[100]}
+                      fontWeight="bold"
+                      sx={{
+                        mb: { xs: 2, md: 3 },
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                      }}
+                    >
+                      <ScheduleIcon
+                        sx={{ fontSize: { xs: 20, sm: 25, md: 30 } }}
+                      />
+                      14 Nov, 2024
+                    </Typography>
+                  </Box>
+                </Box>
               </Grid>
             </Grid>
           </Box>
         </Grid>
 
-        <Grid item xs={12} sm={12} md={6} lg={4}>
+        <Grid item xs={12} sm={6} md={6} lg={4}>
           <Box
             backgroundColor={colors.primary[400]}
             display="flex"
@@ -117,8 +202,9 @@ const Dashboard = () => {
             CALENDAR
           </Box>
         </Grid>
+        {/* ROW 1 END */}
 
-        {/* ROW 3 */}
+        {/* ROW 2 */}
         <Grid
           item
           xs={12}
@@ -134,11 +220,11 @@ const Dashboard = () => {
             backgroundColor={colors.primary[400]}
             // p={{ xs: "20px", sm: "25px", md: "30px", lg: "40px" }}
             borderRadius={6}
-            height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
+            height="auto"
           >
             {/* Content */}
             <Grid container spacing={2}>
-              <Grid item xs={6} sm={6} md={6} lg={6}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Box
                   backgroundColor="GREEN"
                   display="flex"
@@ -155,7 +241,7 @@ const Dashboard = () => {
                   TASK
                 </Box>
               </Grid>
-              <Grid item xs={6} sm={6} md={6} lg={6}>
+              <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Box
                   backgroundColor="GREEN"
                   borderRadius={6}
@@ -179,7 +265,7 @@ const Dashboard = () => {
         <Grid
           item
           xs={12}
-          sm={12}
+          sm={6}
           md={6}
           lg={4}
           order={{ md: 1, sm: 1, xs: 1, lg: 2 }}
@@ -195,9 +281,10 @@ const Dashboard = () => {
             height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
           >
             JOIN NOW
-            {/* Co NOntent */}
+            {/* Content */}
           </Box>
         </Grid>
+        {/* ROW 2 END*/}
       </Grid>
     </Box>
   );
