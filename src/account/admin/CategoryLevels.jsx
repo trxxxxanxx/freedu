@@ -4,7 +4,7 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockCategoryLevels } from "../../data/mockDataFreEdu";
 import { useTheme } from "@mui/material";
-import Button from '@mui/material/Button';
+import { Button, useMediaQuery } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import Modal from '@mui/material/Modal';
@@ -16,6 +16,7 @@ const CategoryLevels = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const classes = styles(colors);
+    const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedRow, setSelectedRow] = useState(null);
@@ -85,7 +86,11 @@ const CategoryLevels = () => {
         <Box m="20px">
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant = "h4" sx={classes.title}> Category Level </Typography>
-                <Button onClick={handleOpen} variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Category Level </Button>
+                {isSmallScreen ? (
+                  <IconButton onClick={handleOpen} sx={classes.addButton} > <AddIcon /> </IconButton>
+                ) : (
+                  <Button onClick={handleOpen} variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Category Level </Button>
+                )}
                 <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
                     <Box sx={classes.modalBox}>
                         <Box sx={{ px:2, py: 1, borderBottom: '1px solid #E5E7E8'}} display='flex' justifyContent='space-between' alignItems='center'>

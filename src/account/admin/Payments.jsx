@@ -3,9 +3,9 @@ import { Box, Typography, IconButton, Menu, MenuItem } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { useTheme } from "@mui/material";
-import Button from '@mui/material/Button';
-import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
-import QuestionAnswerRoundedIcon from '@mui/icons-material/QuestionAnswerRounded';
+import { Button, useMediaQuery } from '@mui/material';
+import LocalOfferRoundedIcon from '@mui/icons-material/LocalOfferRounded';
+import BeenhereRoundedIcon from '@mui/icons-material/BeenhereRounded';
 import { mockSubmittedPayments, mockAutoPayPlan } from "../../data/mockDataFreEdu";
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import { styles } from '../../style';
@@ -14,6 +14,7 @@ const Payments = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const classes = styles(colors);
+    const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedRow, setSelectedRow] = useState(null);
@@ -196,8 +197,17 @@ const Payments = () => {
     return (
         <Box m="20px">
             <Box display="flex">
-                <Button sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton), }} onClick={() => changeContent('button1')} variant="contained" startIcon={<EmailRoundedIcon />}> Submitted Payments </Button>
-                <Button sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton), }} onClick={() => changeContent('button2')} variant="contained" startIcon={<QuestionAnswerRoundedIcon />}> AutoPay Plans </Button>
+                {isSmallScreen ? (
+                    <>
+                    <IconButton sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton) }} onClick={() => changeContent('button1')}> <LocalOfferRoundedIcon /> </IconButton>
+                    <IconButton sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton) }} onClick={() => changeContent('button2')}> <BeenhereRoundedIcon /> </IconButton>
+                    </>
+                ) : (
+                    <>
+                    <Button sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton), }} onClick={() => changeContent('button1')} variant="contained" startIcon={<LocalOfferRoundedIcon />}> Submitted Payments </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton), }} onClick={() => changeContent('button2')} variant="contained" startIcon={<BeenhereRoundedIcon />}> AutoPay Plans </Button>
+                    </>
+                )}
             </Box>
             {content}
         </Box>

@@ -4,7 +4,7 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataSchoolNews } from "../../data/mockDataFreEdu";
 import { useTheme } from "@mui/material";
-import Button from '@mui/material/Button';
+import { Button, useMediaQuery } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,7 @@ const SchoolNews = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const classes = styles(colors);
+    const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedRow, setSelectedRow] = useState(null);
@@ -88,7 +89,11 @@ const SchoolNews = () => {
         <Box m="20px">
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant = "h4" sx={classes.title}> School News </Typography>
-                <Button href="/admin/communicate/school-news/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add News </Button>
+                {isSmallScreen ? (
+                  <IconButton href="/admin/communicate/school-news/add" sx={classes.addButton} > <AddIcon /> </IconButton>
+                ) : (
+                  <Button href="/admin/communicate/school-news/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton} > Add News </Button>
+                )}
             </Box>
             <Box sx={classes.root} >
                 <DataGrid checkboxSelection rows={mockDataSchoolNews} columns={columns} components={{ Toolbar: GridToolbar }} />
