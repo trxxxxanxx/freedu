@@ -136,3 +136,62 @@ input[type="file"] {
 }
 
 
+/* TODO LIST */
+.Todo {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100vh;
+  overflow: auto;
+  
+}
+
+.Todo__Container {
+  display: flex;
+  justify-content: center;
+  align-items: flex;
+  overflow: auto;
+  width: auto;
+  flex-grow: 1;
+  padding: 10px 30px;
+}
+
+.Todo__Main {
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  margin-top: 24px;
+  max-width: 500px;
+  flex-grow: 1;
+  gap: 16px;
+}
+
+.Todo__Add_Form {
+  display: flex;
+  /* gap: 16px; */
+  /* padding: 0 16px; */
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Todo__TodoList {
+  align-self: stretch;
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.Todo__TodoItemText--Completed {
+  color: #757575;
+  text-decoration: line-through;
+}
+
+.Todo__Statistics {
+  text-align: center;
+}
+
+.search_bar div{
+  border-radius: 25px;
+  width: 45vw;
+  padding-right: 0;
+
+}
