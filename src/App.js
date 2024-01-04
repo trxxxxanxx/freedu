@@ -26,12 +26,14 @@ import FinancialReports from "./account/admin/FinancialReports";
 import Library from "./account/admin/Library";
 import Subject from "./account/admin/Subject";
 import AdministratorReport from "./account/admin/AdministratorReport";
-import TeacherReport from "./account/admin/TeacherReport";
 import AddSmartSendEmail from "./account/admin/crud/AddSmartSendEmail";
 import AddSmartSendSMS from "./account/admin/crud/AddSmartSendSMS";
 import AddSmartSendVoice from "./account/admin/crud/AddSmartSendVoice";
 import AddSmartSendGroup from "./account/admin/crud/AddSmartSendGroup";
 import ViewStudent from "./account/admin/crud/ViewStudent";
+import ViewGrade from "./account/admin/crud/ViewGrade";
+import ViewSection from "./account/admin/crud/ViewSection";
+import AddProspects from "./account/admin/crud/AddProspects";
 
 
 function App() {
@@ -63,7 +65,10 @@ function App() {
                 <Route path="/admin/enrollment/import" element={<Import />} />
                 <Route path="/admin/enrollment/reports" element={<EnrollmentReports />} />
                 <Route path="/admin/enrollment/promote" element={<Promote />} />
+                <Route path="/admin/enrollment/promote/grade/id" element={<ViewGrade />} />
+                <Route path="/admin/enrollment/promote/grade/id/section" element={<ViewSection />} />
                 <Route path="/admin/enrollment/prospects" element={<Prospects />} />
+                <Route path="/admin/enrollment/prospects/add" element={<AddProspects />} />
                 <Route path="/admin/account/student" element={<Student />} />
                 <Route path="/admin/account/student/id" element={<ViewStudent />} />
                 <Route path="/admin/account/parent" element={<Parent />} />
@@ -75,7 +80,6 @@ function App() {
                 <Route path="/admin/curriculum/library" element={<Library />} />
                 <Route path="/admin/curriculum/subject" element={<Subject />} />
                 <Route path="/admin/reports/administrator" element={<AdministratorReport />} />
-                <Route path="/admin/reports/teacher" element={<TeacherReport />} />
               </Routes>
             </main>
           </div>

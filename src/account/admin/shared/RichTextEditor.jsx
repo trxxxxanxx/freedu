@@ -89,7 +89,7 @@ const RichTextEditor = () => {
     };
 
     return (
-        <Box>
+        <Box mt='20px'>
             <ReactQuill
                 ref={quillRef}
                 value={text}

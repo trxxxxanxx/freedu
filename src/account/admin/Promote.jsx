@@ -8,6 +8,7 @@ import { Button, useMediaQuery } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import { styles } from '../../style';
+import { useNavigate } from "react-router-dom";
 
 
 const Promote = () => {
@@ -18,6 +19,7 @@ const Promote = () => {
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedRow, setSelectedRow] = useState(null);
+    const navigate = useNavigate();
 
     const handleMenuClick = (event, row) => {
         setAnchorEl(event.currentTarget);
@@ -26,6 +28,11 @@ const Promote = () => {
     const handleMenuClose = () => {
         setAnchorEl(null);
         setSelectedRow(null);
+    };
+    const handleView = () => {
+      console.log("View:", selectedRow);
+      navigate(`/admin/enrollment/promote/grade/id`);
+      handleMenuClose();
     };
     const handleEdit = () => {
         console.log("Edit:", selectedRow);
@@ -59,14 +66,16 @@ const Promote = () => {
                 <MoreHorizRoundedIcon />
               </IconButton>
               <Menu
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={handleMenuClose}
-                PaperProps={{
-                  style: {
-                    boxShadow: '0px 4px 12px 0px rgba(25, 27, 28, 0.06)',
-                  },
-              }}            >
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleMenuClose}
+                  PaperProps={{
+                    style: {
+                      boxShadow: '0px 4px 12px 0px rgba(25, 27, 28, 0.06)',
+                    },
+                }}
+              >
+                <MenuItem onClick={handleView}>View</MenuItem>
                 <MenuItem onClick={handleEdit}>Edit</MenuItem>
                 <MenuItem onClick={handleDelete}>Delete</MenuItem>
               </Menu>
@@ -80,7 +89,7 @@ const Promote = () => {
 
         <Box m="20px">
             <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Typography variant = "h4" sx={classes.title}> Grade Level List </Typography>
+                <Typography variant = "h4" sx={classes.title}> Promote Grade Level </Typography>
                 {isSmallScreen ? (
                   <IconButton sx={classes.addButton} > <AddIcon /> </IconButton>
                 ) : (

@@ -94,18 +94,18 @@ input[type="file"] {
 }
 
 .custom-rich-text-editor .ql-container {
-  border: 2px solid #E9ECEF;
+  border: 1.5px solid #E9ECEF;
   background-color: #fff; 
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
   color: black;
   height: 50vh;
 }
 
 .custom-rich-text-editor .ql-toolbar {
   background-color: #fff;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   border-bottom: none !important;
 }
 
@@ -133,6 +133,8 @@ input[type="file"] {
 .choice:focus {
   border-bottom: 4px solid #4318FF;
   border-radius: 4px;
+  color: #4318FF;
+  font-weight: 800;
 }
 
 

@@ -344,6 +344,82 @@ export const mockPromote = [
   }
 ];
 
+export const mockGrade = [
+  {
+    id: 1,
+    Section: "Section 1", 
+    Adviser: "Kelly Johnson",
+    Status: "Available",
+  },
+  {
+    id: 2,
+    Section: "Section 2", 
+    Adviser: "Kelly Johnson",
+    Status: "Available",
+  },
+  {
+    id: 3,
+    Section: "Section 3", 
+    Adviser: "Kelly Johnson",
+    Status: "Available",
+  },
+  {
+    id: 4,
+    Section: "Section 4", 
+    Adviser: "Kelly Johnson",
+    Status: "Available",
+  },
+  {
+    id: 5,
+    Section: "Section 5", 
+    Adviser: "Kelly Johnson",
+    Status: "Available",
+  },
+];
+
+export const mockSection = [
+  {
+    id: 1,
+    Student: "Andres Johnson", 
+    ContactPerson: "Kelly Johnson",
+    ContactNumber: "(800) 742-4561",
+    Email: "kelly@gmail.com",
+    Grade: "95.5",
+  },
+  {
+    id: 2,
+    Student: "Andy Bigs", 
+    ContactPerson: "Josh Bigs",
+    ContactNumber: "(800) 754-1234",
+    Email: "josh@gmail.com",
+    Grade: "88.8",
+  },
+  {
+    id: 3,
+    Student: "Andy Smith", 
+    ContactPerson: "Steve Smith",
+    ContactNumber: "(800) 785-9625",
+    Email: "steve@gmail.com",
+    Grade: "80.5",
+  },
+  {
+    id: 4,
+    Student: "Charles Brown", 
+    ContactPerson: "Carol Brown",
+    ContactNumber: "(800) 794-8500",
+    Email: "carol@gmail.com",
+    Grade: "74.2",
+  },
+  {
+    id: 5,
+    Student: "Katie Lane", 
+    ContactPerson: "Nancy Lane",
+    ContactNumber: "(800) 742-6210",
+    Email: "nancy@gmail.com",
+    Grade: "72.2",
+  },
+];
+
 export const mockProspects = [
   {
     id: 1,
@@ -806,3 +882,214 @@ export const mockDocument = [
     DateAdded: "22 Oct, 2020 at 12:43 PM",
   },
 ];
+
+export const mockDisciplinary = [
+  {
+    id: 1,
+    ViolatedPolicies: "Academic Integrity Policy", 
+    IncidentDescription: "The student was found Plagiarizing..",
+    Consequence: "Academic warning",
+    DateandTime: "24 May, 2020 at 5:30 PM",
+  },
+  {
+    id: 2,
+    ViolatedPolicies: "Academic Integrity Policy", 
+    IncidentDescription: "The student was found Plagiarizing..",
+    Consequence: "Academic warning",
+    DateandTime: "8 Sep, 2020 at 5:30 PM",
+  },
+  {
+    id: 3,
+    ViolatedPolicies: "Academic Integrity Policy", 
+    IncidentDescription: "The student was found Plagiarizing..",
+    Consequence: "Academic warning",
+    DateandTime: "1 Feb, 2020 at 12:43 PM",
+  },
+  {
+    id: 4,
+    ViolatedPolicies: "Academic Integrity Policy", 
+    IncidentDescription: "The student was found Plagiarizing..",
+    Consequence: "Academic warning",
+    DateandTime: "24 May, 2020 at 12:43 PM",
+  },
+  {
+    id: 5,
+    ViolatedPolicies: "Academic Integrity Policy", 
+    IncidentDescription: "The student was found Plagiarizing..",
+    Consequence: "Academic warning",
+    DateandTime: "22 Oct, 2020 at 12:43 PM",
+  },
+];
+
+export const mockClinic = [
+  {
+    id: 1,
+    RecordType: "Clinic Visit", 
+    Date: "April 6, 2020",
+    FamilyNotif: "April 7, 2020",
+    FollowUp: "April 7, 2020",
+    Result: "",
+  },
+  {
+    id: 2,
+    RecordType: "Clinic Visit", 
+    Date: "March 16, 2020",
+    FamilyNotif: "April 7, 2020",
+    FollowUp: "April 29, 2020",
+    Result: "Normal",
+  },
+];
+
+export const mockExams = [
+  {
+    id: 1,
+    ExamType: "Physical Exam", 
+    Date: "April 6, 2020",
+    FamilyNotif: "April 7, 2020",
+    FollowUp: "April 7, 2020",
+    Result: "",
+  },
+  {
+    id: 2,
+    ExamType: "Hearing Screening", 
+    Date: "April 6, 2020",
+    FamilyNotif: "April 7, 2020",
+    FollowUp: "April 29, 2020",
+    Result: "Normal",
+  },
+  {
+    id: 3,
+    ExamType: "Vision Screening", 
+    Date: "April 6, 2020",
+    FamilyNotif: "April 22, 2020",
+    FollowUp: "April 29, 2020",
+    Result: "",
+  },
+  {
+    id: 4,
+    ExamType: "Scoliosis Screening", 
+    Date: "April 6, 2020",
+    FamilyNotif: "April 21, 2020",
+    FollowUp: "April 29, 2020",
+    Result: "Normal",
+  },
+];
+
+export const mockVaccine = [
+  {
+    id: 1,
+    Immunization: "DTap", 
+    NextDue: "April 19, 2018",
+    Dose1: "April 3, 2018",
+    Dose2: "April 4, 2018",
+    Dose3: "April 5, 2018",
+  },
+  {
+    id: 2,
+    Immunization: "Hepatitis A", 
+    NextDue: "",
+    Dose1: "March 5, 2018",
+    Dose2: "",
+    Dose3: "",
+  },
+  {
+    id: 3,
+    Immunization: "Hepatitis B", 
+    NextDue: "",
+    Dose1: "August 13, 2013",
+    Dose2: "August 13, 2015",
+    Dose3: "August 13, 2016",
+  },
+];
+
+export const mockMedication = [
+  {
+    id: 1,
+    Medication: "Tylenol is permitted", 
+    ReasonTaken: "Pain",
+    StartDate: "April 30, 2019",
+    StopDate: "",
+  },
+  {
+    id: 2,
+    Immunization: "Medication", 
+    ReasonTaken: "Allergies",
+    StartDate: "October 08, 2018",
+    StopDate: "October 08, 2018",
+  },
+  {
+    id: 3,
+    Medication: "Tylenol is permitted", 
+    ReasonTaken: "(EnrollMe, imported 04/02/2020)",
+    StartDate: "",
+    StopDate: "",
+  },
+  {
+    id: 4,
+    Immunization: "Medication (see notes)", 
+    ReasonTaken: "(EnrollMe, imported 04/02/2020)",
+    StartDate: "August 13, 2015",
+    StopDate: "August 13, 2015",
+  },
+];
+
+
+export const mockEnrolledStudent = [
+  {
+    id: 1,
+    Name: "Steve C. Aniston", 
+    Grade: "Grade 1",
+    Section: "Section 1",
+    DateAdded : "24 May, 2020",
+  },
+  {
+    id: 2,
+    Name: "Susan B, Anthony", 
+    Grade: "Grade 2",
+    Section: "Section 2",
+    DateAdded : "24 May, 2020",
+  },
+  {
+    id: 3,
+    Name: "Frank J Bailey", 
+    Grade: "Grade 2",
+    Section: "Section 2",
+    DateAdded : "24 May, 2020",
+  },
+  {
+    id: 4,
+    Name: "Ferris Bueller", 
+    Grade: "Grade 3",
+    Section: "Section 3",
+    DateAdded : "24 May, 2020",
+  },
+  {
+    id: 5,
+    Name: "Monica Geller", 
+    Grade: "Grade 3",
+    Section: "Section 3",
+    DateAdded : "24 May, 2020",
+  },
+  {
+    id: 6,
+    Name: "Samantha Williams", 
+    Grade: "Grade 4",
+    Section: "Section 2",
+    DateAdded : "24 May, 2020",
+  },
+  {
+    id: 7,
+    Name: "Billy James", 
+    Grade: "Grade 6",
+    Section: "Section 3",
+    DateAdded : "24 May, 2020",
+  },
+  {
+    id: 8,
+    Name: "Karen Smith", 
+    Grade: "Grade 5",
+    Section: "Section 1",
+    DateAdded : "24 May, 2020",
+  },
+];
+
