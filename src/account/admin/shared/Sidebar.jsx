@@ -265,7 +265,6 @@ export default function MiniDrawer() {
           <Collapse in={menuStates.reports} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItemButton sx={{ pl: 4 }} to="/admin/reports/administrator"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <ListItemText primary="Administrator" /> </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }} to="/admin/reports/teacher"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <ListItemText primary="Teacher" /> </ListItemButton>
             </List>
           </Collapse>
 

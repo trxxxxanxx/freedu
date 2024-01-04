@@ -96,9 +96,9 @@ const Prospects = () => {
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant = "h4" sx={classes.title}> Prospective Student </Typography>
                 {isSmallScreen ? (
-                  <IconButton sx={classes.addButton} > <AddIcon /> </IconButton>
+                  <IconButton href="/admin/enrollment/prospects/add" sx={classes.addButton} > <AddIcon /> </IconButton>
                 ) : (
-                  <Button variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Prospect </Button>
+                  <Button href="/admin/enrollment/prospects/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Prospect </Button>
                   )}
             </Box>
             <Box sx={classes.root} >
