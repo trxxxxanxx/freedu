@@ -1,10 +1,10 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography, Grid } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import InputAdornment from '@mui/material/InputAdornment';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import KeyIcon from '@mui/icons-material/Key';
+import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import { ColorModeContext,useMode } from "../../theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Background from "../../account/auth/shared/Background";
@@ -33,151 +33,97 @@ const Login = () => {
         console.log(values);
     }
     return (
-      <ColorModeContext.Provider value={colorMode}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <div className="app">
-            <Background />
-            <main className="content">
-              <Box m="20px" p="20%">
+      
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <div className="app">
 
-                <Box mb="30px">
-                    <Typography 
-                      sx={{
-                        color: '#333',
-                        fontFamily: 'Poppins',
-                        fontSize: '26px',
-                        fontWeight: 700
-                      }}>
-                        Sign In
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: '#333',
-                        fontFamily: 'Poppins',
-                        fontSize: '18px',
-                        fontWeight: 400
-                      }}>
-                        Welcome Back
-                    </Typography>
-                </Box>
+              <Grid container>
 
-                <Formik
-                    onSubmit={handleFormSubmit}
-                    initialValues={initialValues}
-                    validationSchema={userSchema}
-                >
-                  {({ values, errors, touched, handleBlur, handleChange, handleSubmit }) =>(
-                    <form onSubmit={handleSubmit}>
-                        <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
-                            <TextField
-                              id="outlined"
-                              type="text"
-                              label="Email" 
-                              onBlur={handleBlur}
-                              onChange={handleChange}
-                              value={values.email}
-                              name="email" 
-                              error={!!touched.email && !!errors.email}
-                              helperText={touched.email && errors.email}
-                              sx={{gridColumn: "span 3" } }
-                              InputProps={{
-                                startAdornment: (
-                                  <InputAdornment position="start">
-                                    <MailOutlineIcon />
-                                  </InputAdornment>
-                                ),
-                              }}
-                            />
-                        </Box>
+                <Grid item xs={12} sm={12} md={12} lg={6}>
+                  <Background />
+                </Grid>
+                
+                <Grid item xs={12} sm={12} md={12} lg={6}>
+                    <Box p={isNonMobile ? 20 : 10}>
 
-                        <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
-                            <TextField
-                                id="outlined"
-                                type="text"
-                                label="Password"  
-                                onBlur={handleBlur}
-                                onChange={handleChange}
-                                value={values.password}
-                                name="password" 
-                                error={!!touched.password && !!errors.password}
-                                helperText={touched.password && errors.password}
-                                sx={{
-                                  gridColumn: "span 3",
-                                  // borderRadius: '30px',
-                                  // backgroundColor: '#fff',
-                                  border: '1px',
-                                  borderColor: '#EEE',
-                                  fontFamily: 'Poppins',
-                                  color: '#EEE',
-                                }}
-                                InputProps={{
-                                  startAdornment: (
-                                    <InputAdornment position="start">
-                                      <KeyIcon />
-                                    </InputAdornment>
-                                  ),
-                                }}
-                              />
-                        </Box>
+                      <Box mb='40px'>
+                          <Typography sx={{ color: '#333', fontFamily: 'Poppins', fontSize: '26px', fontWeight: 700 }}> Sign In </Typography>
+                          <Typography sx={{ color: '#333', fontFamily: 'Poppins', fontSize: '18px', fontWeight: 400 }}> Welcome Back </Typography>
+                      </Box>
 
-                        <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
-                          <Button 
-                            href="/admin/dashboard"
-                            type="submit"
-                            variant="contained"
-                            sx={{
-                              gridColumn: "span 3",
-                              color: '#fff',
-                              fontFamily: 'Poppins',
-                              fontSize: '18px',
-                              fontWeight: 400,
-                              backgroundColor: '#8A70FF',
-                              borderRadius: '30px',
-                              paddingY: '12px',
-                              textTransform: 'capitalize'
-                            }}>
-                              Login
-                          </Button>
-                        </Box>
-                    </form>
-                  )}
-                </Formik>
+                      <Formik onSubmit={handleFormSubmit} initialValues={initialValues} validationSchema={userSchema} >
+                        {({ values, errors, touched, handleBlur, handleChange, handleSubmit }) =>(
+                          <form onSubmit={handleSubmit}>
+                              <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
+                                  <TextField
+                                    id="email"
+                                    placeholder="Email"
+                                    type="text"
+                                    onBlur={handleBlur}
+                                    onChange={handleChange}
+                                    value={values.email}
+                                    name="email" 
+                                    error={!!touched.email && !!errors.email}
+                                    helperText={touched.email && errors.email}
+                                    sx={{ gridColumn: "span 3", '& .MuiOutlinedInput-root': { background: '#FFFFFF', color: '#6D6E70', borderColor: '#6D6E70', borderRadius: '50px', padding: 2, width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, height: '55px', }, }}
+                                    InputProps={{
+                                      startAdornment: (
+                                        <InputAdornment position="start"> <MailOutlineIcon /> </InputAdornment>
+                                      ),
+                                    }}
+                                  />
+                              </Box>
 
-                <Box marginX="15%" mb="10px">
-                  No account?&nbsp;
-                  <a href="/register"
-                    style={{
-                      color: '#333',
-                      fontFamily: 'Poppins',
-                      fontSize: '14px',
-                      fontWeight: 400,
-                      textDecoration: 'none',
-                      gridColumn: "span 3",
-                    }}>
-                      Sign up here
-                  </a>
-                </Box>
+                              <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
+                                  <TextField
+                                      id="password"
+                                      placeholder="Password"
+                                      type="text"
+                                      onBlur={handleBlur}
+                                      onChange={handleChange}
+                                      value={values.password}
+                                      name="password" 
+                                      error={!!touched.password && !!errors.password}
+                                      helperText={touched.password && errors.password}
+                                      sx={{ gridColumn: "span 3", '& .MuiOutlinedInput-root': { background: '#FFFFFF', color: '#6D6E70', borderColor: '#6D6E70', borderRadius: '50px', paddingY: 2, width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, height: '55px', }, }}
+                                      InputProps={{
+                                        startAdornment: (
+                                          <InputAdornment position="start"> <LockRoundedIcon /> </InputAdornment>
+                                        ),
+                                      }}
+                                    />
+                              </Box>
 
-                <Box marginX="20%">
-                  <a href="/forgot-password"
-                    style={{
-                      color: '#333',
-                      fontFamily: 'Poppins',
-                      fontSize: '14px',
-                      fontWeight: 400,
-                      textDecoration: 'none',
-                      gridColumn: "span 3",
-                    }}>
-                      Forgot Password
-                  </a>
-                </Box>
+                              <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
+                                <Button 
+                                  href="/admin/dashboard"
+                                  type="submit"
+                                  variant="contained"
+                                  sx={{ gridColumn: "span 3", color: '#fff', fontFamily: 'Poppins', fontSize: '18px', fontWeight: 400, backgroundColor: '#8A70FF', borderRadius: '30px', paddingY: '12px', textTransform: 'capitalize', width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, }}> Login </Button>
+                              </Box>
+                          </form>
+                        )}
+                      </Formik>
+                      
+                      <Box ml={isNonMobile ? 12 : 4} mb='10px' style={{ position: 'relative', zIndex: 2 }}>
+                        No account?&nbsp; <a href="/register" style={{ color: '#6D6E70', fontFamily: 'Poppins', fontSize: '14px', fontWeight: 400, textDecoration: 'none',}}> Sign up here </a>
+                      </Box>
 
-              </Box>
-            </main>
-          </div>
-        </ThemeProvider>
-      </ColorModeContext.Provider>
+                      <Box ml={isNonMobile ? 16 : 8} style={{ position: 'relative', zIndex: 2 }}>
+                        <a href="/forgot-password" style={{ color: '#6D6E70', fontFamily: 'Poppins', fontSize: '14px', fontWeight: 400, textDecoration: 'none',  }}> Forgot Password </a>
+                      </Box>
+
+                    </Box>
+
+                </Grid>
+                
+              </Grid>
+
+            </div>
+          </ThemeProvider>
+        </ColorModeContext.Provider>
     );
 };
 

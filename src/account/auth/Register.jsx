@@ -1,10 +1,10 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography, Grid } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import InputAdornment from '@mui/material/InputAdornment';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import KeyIcon from '@mui/icons-material/Key';
+import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import { ColorModeContext,useMode } from "../../theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -39,176 +39,126 @@ const Register = () => {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+
           <div className="app">
-            <Background />
-            <main className="content">
-              <Box m="20px" px="20%" py="10%">
+            <Grid container>
 
-                <Box mb="30px">
-                    <Typography 
-                      sx={{
-                        color: '#333',
-                        fontFamily: 'Poppins',
-                        fontSize: '26px',
-                        fontWeight: 700
-                      }}>
-                        Create Account
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: '#333',
-                        fontFamily: 'Poppins',
-                        fontSize: '18px',
-                        fontWeight: 400
-                      }}>
-                        Sign Up to Get Started
-                    </Typography>
-                </Box>
+              <Grid item xs={12} sm={12} md={12} lg={6}>
+                <Background />
+              </Grid>
 
-                <Formik
-                    onSubmit={handleFormSubmit}
-                    initialValues={initialValues}
-                    validationSchema={userSchema}
-                >
-                  {({ values, errors, touched, handleBlur, handleChange, handleSubmit }) =>(
-                    <form onSubmit={handleSubmit}>
-                        <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
-                            <TextField
-                              id="outlined"
-                              type="text"
-                              label="Firstname" 
-                              onBlur={handleBlur}
-                              onChange={handleChange}
-                              value={values.firstname}
-                              name="firstname" 
-                              error={!!touched.firstname && !!errors.firstname}
-                              helperText={touched.firstname && errors.firstname}
-                              sx={{gridColumn: "span 3" } }
-                              InputProps={{
-                                startAdornment: (
-                                  <InputAdornment position="start">
-                                    <PersonRoundedIcon />
-                                  </InputAdornment>
-                                ),
-                              }}
-                            />
-                        </Box>
+              <Grid item xs={12} sm={12} md={12} lg={6}>
+                <Box px={isNonMobile ? 20 : 10} py={isNonMobile ? 10 : 10}>
 
-                        <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
-                            <TextField
-                              id="outlined"
-                              type="text"
-                              label="Lastname" 
-                              onBlur={handleBlur}
-                              onChange={handleChange}
-                              value={values.lastname}
-                              name="lastname" 
-                              error={!!touched.lastname && !!errors.lastname}
-                              helperText={touched.lastname && errors.lastname}
-                              sx={{gridColumn: "span 3" } }
-                              InputProps={{
-                                startAdornment: (
-                                  <InputAdornment position="start">
-                                    <PersonRoundedIcon />
-                                  </InputAdornment>
-                                ),
-                              }}
-                            />
-                        </Box>
+                  <Box mb='40px'>
+                      <Typography sx={{ color: '#333', fontFamily: 'Poppins', fontSize: '26px', fontWeight: 700 }}> Create Account </Typography>
+                      <Typography sx={{ color: '#333', fontFamily: 'Poppins', fontSize: '18px', fontWeight: 400 }}> Sign Up to Get Started </Typography>
+                  </Box>
 
-                        <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
-                            <TextField
-                              id="outlined"
-                              type="text"
-                              label="Email" 
-                              onBlur={handleBlur}
-                              onChange={handleChange}
-                              value={values.email}
-                              name="email" 
-                              error={!!touched.email && !!errors.email}
-                              helperText={touched.email && errors.email}
-                              sx={{gridColumn: "span 3" } }
-                              InputProps={{
-                                startAdornment: (
-                                  <InputAdornment position="start">
-                                    <MailOutlineIcon />
-                                  </InputAdornment>
-                                ),
-                              }}
-                            />
-                        </Box>
-
-                        <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
-                            <TextField
-                                id="outlined"
+                  <Formik onSubmit={handleFormSubmit} initialValues={initialValues} validationSchema={userSchema} >
+                    {({ values, errors, touched, handleBlur, handleChange, handleSubmit }) =>(
+                      <form onSubmit={handleSubmit}>
+                          <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
+                              <TextField
+                                id="firstname"
+                                placeholder="Firstname"
                                 type="text"
-                                label="Password"  
                                 onBlur={handleBlur}
                                 onChange={handleChange}
-                                value={values.password}
-                                name="password" 
-                                error={!!touched.password && !!errors.password}
-                                helperText={touched.password && errors.password}
-                                sx={{
-                                  gridColumn: "span 3",
-                                  // borderRadius: '30px',
-                                  // backgroundColor: '#fff',
-                                  border: '1px',
-                                  borderColor: '#EEE',
-                                  fontFamily: 'Poppins',
-                                  color: '#EEE',
-                                }}
+                                value={values.firstname}
+                                name="firstname" 
+                                error={!!touched.firstname && !!errors.firstname}
+                                helperText={touched.firstname && errors.firstname}
+                                sx={{ gridColumn: "span 3", '& .MuiOutlinedInput-root': { background: '#FFFFFF', color: '#6D6E70', borderColor: '#6D6E70', borderRadius: '50px', padding: 2, width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, height: '55px', }, }}
                                 InputProps={{
                                   startAdornment: (
-                                    <InputAdornment position="start">
-                                      <KeyIcon />
-                                    </InputAdornment>
+                                    <InputAdornment position="start"> <PersonRoundedIcon /> </InputAdornment>
                                   ),
                                 }}
                               />
-                        </Box>
+                          </Box>
 
-                        <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
-                          <Button 
-                            href="/admin/dashboard"
-                            type="submit"
-                            variant="contained"
-                            sx={{
-                              gridColumn: "span 3",
-                              color: '#fff',
-                              fontFamily: 'Poppins',
-                              fontSize: '18px',
-                              fontWeight: 400,
-                              backgroundColor: '#8A70FF',
-                              borderRadius: '30px',
-                              paddingY: '12px',
-                              textTransform: 'capitalize'
-                            }}>
-                              Register
-                          </Button>
-                        </Box>
-                    </form>
-                  )}
-                </Formik>
+                          <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
+                              <TextField
+                                id="lastname"
+                                placeholder="Lastname"
+                                type="text"
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                                value={values.lastname}
+                                name="lastname" 
+                                error={!!touched.lastname && !!errors.lastname}
+                                helperText={touched.lastname && errors.lastname}
+                                sx={{ gridColumn: "span 3", '& .MuiOutlinedInput-root': { background: '#FFFFFF', color: '#6D6E70', borderColor: '#6D6E70', borderRadius: '50px', padding: 2, width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, height: '55px', }, }}
+                                InputProps={{
+                                  startAdornment: (
+                                    <InputAdornment position="start"> <PersonRoundedIcon /> </InputAdornment>
+                                  ),
+                                }}
+                              />
+                          </Box>
 
-                <Box marginX="8%">
-                  Already have an account?&nbsp;
-                  <a href="/"
-                    style={{
-                      color: '#333',
-                      fontFamily: 'Poppins',
-                      fontSize: '14px',
-                      fontWeight: 400,
-                      textDecoration: 'none',
-                      gridColumn: "span 3",
-                    }}>
-                      Sign in here
-                  </a>
+                          <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
+                              <TextField
+                                id="email"
+                                placeholder="Email"
+                                type="text"
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                                value={values.email}
+                                name="email" 
+                                error={!!touched.email && !!errors.email}
+                                helperText={touched.email && errors.email}
+                                sx={{ gridColumn: "span 3", '& .MuiOutlinedInput-root': { background: '#FFFFFF', color: '#6D6E70', borderColor: '#6D6E70', borderRadius: '50px', padding: 2, width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, height: '55px', }, }}
+                                InputProps={{
+                                  startAdornment: (
+                                    <InputAdornment position="start"> <MailOutlineIcon /> </InputAdornment>
+                                  ),
+                                }}
+                              />
+                          </Box>
+
+                          <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
+                              <TextField
+                                  id="password"
+                                  placeholder="Password"
+                                  type="text"
+                                  onBlur={handleBlur}
+                                  onChange={handleChange}
+                                  value={values.password}
+                                  name="password" 
+                                  error={!!touched.password && !!errors.password}
+                                  helperText={touched.password && errors.password}
+                                  sx={{ gridColumn: "span 3", '& .MuiOutlinedInput-root': { background: '#FFFFFF', color: '#6D6E70', borderColor: '#6D6E70', borderRadius: '50px', paddingY: 2, width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, height: '55px', }, }}
+                                  InputProps={{
+                                    startAdornment: (
+                                      <InputAdornment position="start"> <LockRoundedIcon /> </InputAdornment>
+                                    ),
+                                  }}
+                                />
+                          </Box>
+
+                          <Box display="grid" gap="30px" gridTemplateColumns="repeat(4, minmax(0, 1fr))" mb="15px" sx={{ "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, }} >
+                            <Button 
+                              href="/"
+                              type="submit"
+                              variant="contained"
+                              sx={{ gridColumn: "span 3", color: '#fff', fontFamily: 'Poppins', fontSize: '18px', fontWeight: 400, backgroundColor: '#8A70FF', borderRadius: '30px', paddingY: '12px', textTransform: 'capitalize', width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, }}> Register </Button>
+                          </Box>
+                      </form>
+                    )}
+                  </Formik>
+
+                  <Box ml={isNonMobile ? 6 : 4} mb='10px' style={{ position: 'relative', zIndex: 2 }}>
+                    Already have an account?&nbsp; <a href="/register" style={{ color: '#6D6E70', fontFamily: 'Poppins', fontSize: '14px', fontWeight: 400, textDecoration: 'none',}}> Sign in here </a>
+                  </Box>
+
                 </Box>
+              </Grid>
 
-              </Box>
-            </main>
+            </Grid>
           </div>
+
         </ThemeProvider>
       </ColorModeContext.Provider>
     );

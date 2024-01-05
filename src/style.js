@@ -1,4 +1,37 @@
 export const styles = (colors) => ({
+  learnMoreLg: {
+    position: 'absolute', 
+    top: '56%', 
+    left: '21%', 
+    borderRadius: 50, 
+    py: 1,
+    px: 4,
+    textTransform: 'Capitalize', 
+    backgroundColor: '#8479EE', 
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: 400,
+    fontFamily: 'Poppins',
+  },
+  learnMoreSm: {
+    position: 'absolute', 
+    top: '50%', 
+    left: '40%', 
+    borderRadius: 50, 
+    py: 1,
+    px: 4,
+    textTransform: 'Capitalize', 
+    backgroundColor: '#8479EE', 
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: 400,
+    fontFamily: 'Poppins',
+  },
+  logoImg: {
+    position: 'absolute', 
+    top: '40%', 
+    left: '10%'
+  },
   root: {
     mt: "40px",
     height: "60vh",
