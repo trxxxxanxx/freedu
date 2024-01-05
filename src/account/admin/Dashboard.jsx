@@ -5,6 +5,7 @@ import backgroundImage2 from "../../data/img/news2.jpg";
 import backgroundImage3 from "../../data/img/news3.jpg";
 import { tokens } from "../../theme";
 import { styles } from "../../style";
+import TodoList from "./shared/TodoList";
 
 
 
@@ -28,9 +29,10 @@ const Dashboard = () => {
       {/* GRID & CHARTS */}
       <Grid container spacing={2}>
         {/* ROW 1 */}
+        {/* NEWS */}
         <Grid item xs={12} sm={12} md={12} lg={8}>
           <Box
-            backgroundColor={colors.primary[400]}
+            // backgroundColor={colors.primary[400]}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -188,6 +190,7 @@ const Dashboard = () => {
             </Grid>
           </Box>
         </Grid>
+        {/* END NEWS */}
 
         <Grid item xs={12} sm={6} md={6} lg={4}>
           <Box
@@ -217,7 +220,7 @@ const Dashboard = () => {
             display="flex"
             alignItems="center"
             justifyContent="center"
-            backgroundColor={colors.primary[400]}
+            // backgroundColor={colors.primary[400]}
             // p={{ xs: "20px", sm: "25px", md: "30px", lg: "40px" }}
             borderRadius={6}
             height="auto"
@@ -226,10 +229,7 @@ const Dashboard = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Box
-                  backgroundColor="GREEN"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
+                  backgroundColor={colors.freeduAccent[100]}
                   borderRadius={6}
                   height={{
                     xs: "300px",
@@ -237,8 +237,16 @@ const Dashboard = () => {
                     md: "340px",
                     lg: "360px",
                   }}
+                  width="100%"
+                  boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
                 >
-                  TASK
+                  <TodoList
+                    style={{
+                      marginTop: "auto", // or marginBottom: "auto"
+                      /* Add any other styles as needed */
+                    }}
+                  />
+                  {/* TASK */}
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6} md={6} lg={6}>
