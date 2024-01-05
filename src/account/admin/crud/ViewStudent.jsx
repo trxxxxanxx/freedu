@@ -446,8 +446,16 @@ const ViewStudent = () => {
                                 <a href="#" className={`choice ${activeMedicalButton === 'medical5' ? 'active' : ''}`} onClick={() => changeMedicalContent('medical5')} > History </a>
                             </Box>
                         </Box>
-                        <Box sx={classes.root} >
-                            <DataGrid checkboxSelection rows={mockGrades} columns={gradeColumns} components={{ Toolbar: GridToolbar }} />
+                        <Box style={classes.cardAddBox}>
+                            <Box display='flex' justifyContent='space-between' alignContent='center'>
+                                <Typography sx={classes.tableTitle}>Clinic Visits</Typography>
+                                <Box p='20px'>
+                                    <Button variant="contained" sx={classes.cardAddButton}> <AddRoundedIcon />Add Record </Button>
+                                </Box>
+                            </Box>
+                            <Box sx={classes.profileRoot} p='20px'>
+                                <DataGrid checkboxSelection rows={mockClinic} columns={clinicColumns} components={{ Toolbar: GridToolbar }} />
+                            </Box>
                         </Box>
                     </Box>
                 );
