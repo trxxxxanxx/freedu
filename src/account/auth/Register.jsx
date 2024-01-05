@@ -150,7 +150,7 @@ const Register = () => {
                   </Formik>
 
                   <Box ml={isNonMobile ? 6 : 4} mb='10px' style={{ position: 'relative', zIndex: 2 }}>
-                    Already have an account?&nbsp; <a href="/register" style={{ color: '#6D6E70', fontFamily: 'Poppins', fontSize: '14px', fontWeight: 400, textDecoration: 'none',}}> Sign in here </a>
+                    Already have an account?&nbsp; <a href="/" style={{ color: '#6D6E70', fontFamily: 'Poppins', fontSize: '14px', fontWeight: 400, textDecoration: 'none',}}> Sign in here </a>
                   </Box>
 
                 </Box>
