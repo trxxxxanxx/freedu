@@ -349,5 +349,90 @@ export const styles = (colors) => ({
     textTransform: 'Capitalize', 
     color: colors.freeduAccent[1100],
   },
+  news: {
+    mt: '20px',
+    p: '40px',
+    border: '1.5px solid #E9ECEF',
+    backgroundColor: colors.freeduAccent[100], 
+    borderRadius: '16px',
+  },
+  newsTitle: {
+    color: colors.freeduAccent[700],
+    fontFamily: 'Noto Sans',
+    fontSize: '36px',
+    fontWeight: 700,
+    mt: '20px'
+  },
+  newsParagraph: {
+    pt: '6px',
+    alignItems: 'flex-start',
+    gap: '15px',
+    alignSelf: 'stretch',
+    fontSize: '16px',
+    mb: '20px',
+  },
+  acads: {
+    m: '20px',
+    p: '40px',
+    backgroundColor: colors.freeduAccent[100], 
+    width: { xs: "100%", sm: "100%", md: "60%", lg: "60%" },
+  },
+  acadsTitle: {
+    color: colors.freeduAccent[700],
+    fontFamily: 'Inter',
+    fontSize: '24px',
+    fontWeight: 700,
+    mb: '12px'
+  },
+  acadsText: {
+    color: colors.freeduAccent[700],
+    fontFamily: 'Inter',
+    fontSize: '12px',
+    fontWeight: 400,
+  },
+  acadsTextBold: {
+    color: colors.freeduAccent[700],
+    fontFamily: 'Inter',
+    fontSize: '12px',
+    fontWeight: 700,
+    textAlign: 'right',
+  },
+  acadsTextInactive: {
+    color: colors.freeduAccent[300],
+    fontFamily: 'Inter',
+    fontSize: '12px',
+    fontWeight: 400,
+    textAlign: 'right',
+  },
+  acadsRoot: {
+    "& .MuiDataGrid-root": {
+      borderRight: "none",
+      borderLeft: "none",
+      borderTop: '2px solid #000',
+      borderBottom: '2px solid #000',
+      borderRadius: '0px'
+    },
+    "& .MuiDataGrid-cell": {
+      border: 'none',
+      color: colors.freeduAccent[1300],
+      fontFamily: 'Inter',
+      fontSize: '12px',
+      fontWeight: 600,
+    },
+    "& .MuiDataGrid-columnHeaders": {
+      border: 'none',
+      backgroundColor: colors.freeduAccent[100],
+      color: colors.freeduAccent[1300],
+      fontFamily: 'Inter',
+      fontSize: '14px',
+      fontWeight: '900',
+    },
+    "& .MuiDataGrid-vitualScroller": {
+      display: 'none',
+    },
+    "& .MuiDataGrid-footerContainer": {
+      display: 'none',
+    },
+  },
 });
 

@@ -29,6 +29,11 @@ const SchoolNews = () => {
         setAnchorEl(null);
         setSelectedRow(null);
     };
+    const handleView = () => {
+      console.log("View:", selectedRow);
+      navigate(`/admin/communicate/school-news/id`);
+      handleMenuClose();
+    };
     const handleEdit = () => {
         console.log("Edit:", selectedRow);
         navigate(`/admin/communicate/school-news/edit/`);
@@ -74,7 +79,9 @@ const SchoolNews = () => {
                   style: {
                     boxShadow: '0px 4px 12px 0px rgba(25, 27, 28, 0.06)',
                   },
-              }}            >
+              }}
+              >
+                <MenuItem onClick={handleView}>View</MenuItem>
                 <MenuItem onClick={handleEdit}>Edit</MenuItem>
                 <MenuItem onClick={handleDelete}>Delete</MenuItem>
               </Menu>

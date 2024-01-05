@@ -1093,3 +1093,75 @@ export const mockEnrolledStudent = [
   },
 ];
 
+export const mockStudentReports = [
+  {
+    id: 1,
+    Date: "2023-01-20", 
+    Time: "09:30 AM",
+    Action: "Login",
+    Details : "",
+  },
+  {
+    id: 2,
+    Date: "2023-01-20", 
+    Time: "10:15 AM",
+    Action: "View Grades",
+    Details : "",
+  },
+  {
+    id: 3,
+    Date: "2023-01-21", 
+    Time: "02:45 PM",
+    Action: "Submit Assignment 1",
+    Details : "Course: Math 101",
+  },
+  {
+    id: 4,
+    Date: "2023-01-22", 
+    Time: "11:00 AM",
+    Action: "Take Midterms Exam",
+    Details : "Course: English 101",
+  },
+  {
+    id: 5,
+    Date: "2023-01-23", 
+    Time: "01:30 PM",
+    Action: "Enroll in Course",
+    Details : "Course: History 101",
+  }
+];
+
+export const mockAcademics = [
+  {
+    id: 1,
+    Semester: "Cumulative GPA", 
+    First: "1.22",
+    Second: "1.34",
+    Third: "1.42",
+    Fourth: "1.26",
+  }
+];
+
+export const mockCourseWork = [
+  {
+    id: 1,
+    Course: "Math 101", 
+    Credits: "4",
+    Grade: "A",
+    Status: "Passed",
+  },
+  {
+    id: 2,
+    Course: "Computer Sci 201", 
+    Credits: "3",
+    Grade: "B+",
+    Status: "Passed",
+  },
+  {
+    id: 1,
+    Course: "English 202", 
+    Credits: "3",
+    Grade: "A-",
+    Status: "Passed",
+  }
+];
