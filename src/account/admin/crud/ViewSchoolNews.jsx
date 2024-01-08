@@ -1,15 +1,14 @@
 import React from 'react'
-import { Box, TextField, Grid, useTheme, IconButton, Typography } from "@mui/material";
-import MenuItem from '@mui/material/MenuItem';
+import { Box, TextField, Grid, useTheme, IconButton, Typography, MenuItem, Button, useMediaQuery } from "@mui/material";
 import { tokens } from "../../../theme";
-import { Button, useMediaQuery } from '@mui/material';
-import LocalPrintshopRoundedIcon from '@mui/icons-material/LocalPrintshopRounded';
-import ShareRoundedIcon from '@mui/icons-material/ShareRounded';
-import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
-import BorderColorRoundedIcon from '@mui/icons-material/BorderColorRounded';
 import { styles } from '../../../style';
 import logo from '../../../data/img/logo.png';
 import news4 from '../../../data/img/news4.png';
+// Icons
+import { HiChevronLeft } from "react-icons/hi2";
+import { IoShareSocialSharp } from "react-icons/io5";
+import { RiPrinterFill } from "react-icons/ri";
+import { BiSolidEdit } from "react-icons/bi";
 
 const news = [
   {
@@ -39,7 +38,7 @@ const ViewSchoolNews = () => {
 
     return (
         <Box m='40px'>
-            <Button href="/admin/communicate/school-news" variant="contained" startIcon={<ArrowBackIosRoundedIcon />} sx={classes.backButton}> Back </Button>
+            <Button href="/admin/communicate/school-news" variant="contained" startIcon={<HiChevronLeft />} sx={classes.backButton}> Back </Button>
             {isSmallScreen ? (
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12} md={12} lg={8} order={{ xs: 2, sm: 2, md: 1, lg: 1 }}>
@@ -52,9 +51,9 @@ const ViewSchoolNews = () => {
                             </TextField>
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={8} order={{ xs: 1, sm: 1, md: 2, lg: 2 }} display='flex' justifyContent='end' gap={2}>
-                            <IconButton variant="contained" sx={classes.smallDefaultButton} style={{ backgroundColor: colors.freeduAccent[400] }}> <LocalPrintshopRoundedIcon /> </IconButton>
-                            <IconButton variant="contained" sx={classes.smallDefaultButton} style={{ backgroundColor: colors.freeduAccent[400] }}> <ShareRoundedIcon /> </IconButton>
-                            <IconButton href="/admin/communicate/school-news/edit" variant="contained" sx={classes.smallDefaultButton} style={{ backgroundColor: colors.freeduAccent[400] }}> <BorderColorRoundedIcon /> </IconButton>
+                            <IconButton variant="contained" sx={classes.smallDefaultButton} style={{ backgroundColor: colors.freeduAccent[400] }}> <RiPrinterFill /> </IconButton>
+                            <IconButton variant="contained" sx={classes.smallDefaultButton} style={{ backgroundColor: colors.freeduAccent[400] }}> <IoShareSocialSharp /> </IconButton>
+                            <IconButton href="/admin/communicate/school-news/edit" variant="contained" sx={classes.smallDefaultButton} style={{ backgroundColor: colors.freeduAccent[400] }}> <BiSolidEdit /> </IconButton>
                         </Grid>
                     </Grid>
                 ) : (
@@ -70,9 +69,9 @@ const ViewSchoolNews = () => {
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={8}>
                             <Box display="flex" justifyContent="end" alignItems="center">
-                              <Button variant="contained" startIcon={<LocalPrintshopRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Print </Button>
-                              <Button variant="contained" startIcon={<ShareRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Share </Button>
-                              <Button href="/admin/communicate/school-news/edit" variant="contained" startIcon={<BorderColorRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Edit </Button>
+                              <Button variant="contained" startIcon={<RiPrinterFill />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Print </Button>
+                              <Button variant="contained" startIcon={<IoShareSocialSharp />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Share </Button>
+                              <Button href="/admin/communicate/school-news/edit" variant="contained" startIcon={<BiSolidEdit />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Edit </Button>
                             </Box> 
                         </Grid>
                     </Box>

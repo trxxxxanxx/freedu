@@ -1,14 +1,13 @@
-import { Box, Button, TextField, Typography, Grid } from "@mui/material";
+import { Box, Button, TextField, Typography, Grid, useMediaQuery, InputAdornment, CssBaseline, ThemeProvider } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import InputAdornment from '@mui/material/InputAdornment';
+import { ColorModeContext,useMode } from "../../theme";
+import Background from "../../account/auth/shared/Background";
+// Icons
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import { ColorModeContext,useMode } from "../../theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import Background from "../../account/auth/shared/Background";
+
 
 const initialValues =  {
     email: "",

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill';
 import { tokens } from "../../../theme";
-import { Box, IconButton, Toolbar, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 // import UndoRoundedIcon from '@mui/icons-material/UndoRounded';
 // import RedoRoundedIcon from '@mui/icons-material/RedoRounded';
 // import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';

@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { Box, Typography, IconButton, Menu, MenuItem, Button, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Typography, IconButton, Menu, MenuItem, Button, useMediaQuery, useTheme} from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../../theme";
 import { styles } from '../../../style';
 import { useNavigate } from "react-router-dom";
-import { mockGrade } from "../../../data/mockDataFreEdu";
+import { mockExamType } from "../../../data/mockDataFreEdu";
 // Icons
-import { IoIosAdd } from "react-icons/io";
 import { HiChevronLeft } from "react-icons/hi2";
 import { LuMoreHorizontal } from "react-icons/lu";
+import { IoIosAdd } from "react-icons/io";
 
-const ViewGrade = () => {
+const ViewExams = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const classes = styles(colors);
@@ -28,13 +28,14 @@ const ViewGrade = () => {
         setAnchorEl(null);
         setSelectedRow(null);
     };
-    const handleView = () => {
-      console.log("View:", selectedRow);
-      navigate(`/admin/enrollment/promote/grade/id/section`);
+    const handleAdd = () => {
+      console.log("Add:", selectedRow);
+      navigate(`/admin/account/student/exams/physicalexam/add`);
       handleMenuClose();
     };
     const handleEdit = () => {
         console.log("Edit:", selectedRow);
+        // navigate(`/admin/communicate/school-news/edit/`);
         handleMenuClose();
     };
     const handleDelete = () => {
@@ -43,18 +44,18 @@ const ViewGrade = () => {
     };
     const columns = [
         { 
-            field: "Section",
-            headername: "Section", 
+            field: "Name",
+            headername: "Name", 
             flex: 1, 
         },
         { 
-            field: "Adviser",
-            headername: "Adviser", 
+            field: "Description",
+            headername: "Description", 
             flex: 1, 
         },
         { 
-            field: "Status",
-            headername: "Status", 
+            field: "DateAdded",
+            headername: "Date Added", 
             flex: 1, 
         },
         {
@@ -77,8 +78,9 @@ const ViewGrade = () => {
                   style: {
                     boxShadow: '0px 4px 12px 0px rgba(25, 27, 28, 0.06)',
                   },
-              }}            >
-                <MenuItem onClick={handleView}>View</MenuItem>
+              }}
+              >
+                <MenuItem onClick={handleAdd}>Add</MenuItem>
                 <MenuItem onClick={handleEdit}>Edit</MenuItem>
                 <MenuItem onClick={handleDelete}>Delete</MenuItem>
               </Menu>
@@ -91,20 +93,21 @@ const ViewGrade = () => {
     return (
 
         <Box m="40px">
-            <Button href="/admin/enrollment/promote" variant="contained" startIcon={<HiChevronLeft />} sx={classes.backButton}> Back </Button>
+            <Button href="/admin/account/student/id" variant="contained" startIcon={<HiChevronLeft />} sx={classes.backButton}> Back </Button>
+
             <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Typography variant = "h4" sx={classes.title}> Grade 1 </Typography>
+                <Typography variant = "h4" sx={classes.title}> Exam Type List </Typography>
                 {isSmallScreen ? (
-                  <IconButton sx={classes.addButton} > <IoIosAdd /> </IconButton>
+                  <IconButton href="" sx={classes.addButton} > <IoIosAdd /> </IconButton>
                 ) : (
-                  <Button variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add </Button>
+                  <Button href="" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton} > Add Exam Type </Button>
                 )}
             </Box>
             <Box sx={classes.root} >
-                <DataGrid checkboxSelection rows={mockGrade} columns={columns} components={{ Toolbar: GridToolbar }} />
+                <DataGrid checkboxSelection rows={mockExamType} columns={columns} components={{ Toolbar: GridToolbar }} />
             </Box>
         </Box>
     );
 };
 
-export default ViewGrade;
+export default ViewExams;

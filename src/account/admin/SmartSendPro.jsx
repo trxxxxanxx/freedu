@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography, IconButton, Button, useMediaQuery, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { useTheme } from "@mui/material";
-import { Button, useMediaQuery } from '@mui/material';
-import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
-import QuestionAnswerRoundedIcon from '@mui/icons-material/QuestionAnswerRounded';
-import VideoChatRoundedIcon from '@mui/icons-material/VideoChatRounded';
-import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
-import AddIcon from '@mui/icons-material/Add';
-import { mockSmartSendEmail, mockSmartSendSMS, mockSmartSendVoice, mockSmartSendGroup } from "../../data/mockDataFreEdu";
 import { styles } from '../../style';
+import { mockSmartSendEmail, mockSmartSendSMS, mockSmartSendVoice, mockSmartSendGroup } from "../../data/mockDataFreEdu";
+// Icons
+import { MdEmail } from "react-icons/md";
+import { RiSendPlaneFill } from "react-icons/ri";
+import { HiMiniMegaphone } from "react-icons/hi2";
+import { IoIosAdd } from "react-icons/io";
+import { FaUserCircle } from "react-icons/fa";
 
 const SmartSendPro = () => {
     const theme = useTheme();
@@ -108,9 +107,9 @@ const SmartSendPro = () => {
                         <Box display="flex" justifyContent="space-between" alignItems="center">
                             <Typography variant = "h4" sx={classes.title}> Email List </Typography>
                             {isSmallScreen ? (
-                                <IconButton href="/admin/communicate/smartsend-email/add" sx={classes.addButton} > <AddIcon /> </IconButton>
+                                <IconButton href="/admin/communicate/smartsend-email/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
                             ) : (
-                                <Button href="/admin/communicate/smartsend-email/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Email </Button>
+                                <Button href="/admin/communicate/smartsend-email/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add Email </Button>
                             )}
                         </Box>
                         <Box sx={classes.root} >
@@ -125,9 +124,9 @@ const SmartSendPro = () => {
                         <Box display="flex" justifyContent="space-between" alignItems="center">
                             <Typography variant = "h4" sx={classes.title}> SMS/Text List </Typography>
                             {isSmallScreen ? (
-                                <IconButton href="/admin/communicate/smartsend-sms/add" sx={classes.addButton} > <AddIcon /> </IconButton>
+                                <IconButton href="/admin/communicate/smartsend-sms/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
                             ) : (
-                                <Button href="/admin/communicate/smartsend-sms/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add SMS/Text </Button>
+                                <Button href="/admin/communicate/smartsend-sms/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add SMS/Text </Button>
                             )}
                         </Box>
                         <Box sx={classes.root} >
@@ -142,9 +141,9 @@ const SmartSendPro = () => {
                         <Box display="flex" justifyContent="space-between" alignItems="center">
                             <Typography variant = "h4" sx={classes.title}> Voice List </Typography>
                             {isSmallScreen ? (
-                                <IconButton href="/admin/communicate/smartsend-voice/add" sx={classes.addButton} > <AddIcon /> </IconButton>
+                                <IconButton href="/admin/communicate/smartsend-voice/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
                             ) : (
-                                <Button href="/admin/communicate/smartsend-voice/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Voice </Button>
+                                <Button href="/admin/communicate/smartsend-voice/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add Voice </Button>
                             )}
                         </Box>
                         <Box sx={classes.root} >
@@ -159,9 +158,9 @@ const SmartSendPro = () => {
                         <Box display="flex" justifyContent="space-between" alignItems="center">
                             <Typography variant = "h4" sx={classes.title}> Groups List </Typography>
                             {isSmallScreen ? (
-                                <IconButton href="/admin/communicate/smartsend-group/add" sx={classes.addButton} > <AddIcon /> </IconButton>
+                                <IconButton href="/admin/communicate/smartsend-group/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
                             ) : (
-                                <Button href="/admin/communicate/smartsend-group/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Group </Button>
+                                <Button href="/admin/communicate/smartsend-group/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add Group </Button>
                             )}
                         </Box>
                         <Box sx={classes.root} >
@@ -182,9 +181,9 @@ const SmartSendPro = () => {
                 <Box display="flex" justifyContent="space-between" alignItems="center">
                     <Typography variant = "h4" sx={classes.title}> Email List </Typography>
                     {isSmallScreen ? (
-                        <IconButton href="/admin/communicate/smartsend-email/add" sx={classes.addButton} > <AddIcon /> </IconButton>
+                        <IconButton href="/admin/communicate/smartsend-email/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
                     ) : (
-                        <Button href="/admin/communicate/smartsend-email/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Email </Button>
+                        <Button href="/admin/communicate/smartsend-email/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add Email </Button>
                     )}
                 </Box>
                 <Box sx={classes.root} >
@@ -200,17 +199,17 @@ const SmartSendPro = () => {
             <Box display="flex">
             {isSmallScreen ? (
                 <>
-                <IconButton sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton) }} onClick={() => changeContent('button1')}> <EmailRoundedIcon /> </IconButton>
-                <IconButton sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton) }} onClick={() => changeContent('button2')}> <QuestionAnswerRoundedIcon /> </IconButton>
-                <IconButton sx={{ ...classes.button, ...(activeButton === 'button3' && classes.activeButton) }} onClick={() => changeContent('button3')}> <VideoChatRoundedIcon /> </IconButton>
-                <IconButton sx={{ ...classes.button, ...(activeButton === 'button4' && classes.activeButton) }} onClick={() => changeContent('button4')}> <GroupAddRoundedIcon /> </IconButton>
+                <IconButton sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton) }} onClick={() => changeContent('button1')}> <MdEmail /> </IconButton>
+                <IconButton sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton) }} onClick={() => changeContent('button2')}> <RiSendPlaneFill /> </IconButton>
+                <IconButton sx={{ ...classes.button, ...(activeButton === 'button3' && classes.activeButton) }} onClick={() => changeContent('button3')}> <HiMiniMegaphone /> </IconButton>
+                <IconButton sx={{ ...classes.button, ...(activeButton === 'button4' && classes.activeButton) }} onClick={() => changeContent('button4')}> <FaUserCircle /> </IconButton>
                 </>
             ) : (
                 <>
-                <Button sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton) }} onClick={() => changeContent('button1')} variant="contained" startIcon={<EmailRoundedIcon />}> Email </Button>
-                <Button sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton) }} onClick={() => changeContent('button2')} variant="contained" startIcon={<QuestionAnswerRoundedIcon />}> SMS/Text </Button>
-                <Button sx={{ ...classes.button, ...(activeButton === 'button3' && classes.activeButton) }} onClick={() => changeContent('button3')} variant="contained" startIcon={<VideoChatRoundedIcon />}> Voice </Button>
-                <Button sx={{ ...classes.button, ...(activeButton === 'button4' && classes.activeButton) }} onClick={() => changeContent('button4')} variant="contained" startIcon={<GroupAddRoundedIcon />}> Groups </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton) }} onClick={() => changeContent('button1')} variant="contained" startIcon={<MdEmail />}> Email </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton) }} onClick={() => changeContent('button2')} variant="contained" startIcon={<RiSendPlaneFill />}> SMS/Text </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button3' && classes.activeButton) }} onClick={() => changeContent('button3')} variant="contained" startIcon={<HiMiniMegaphone />}> Voice </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button4' && classes.activeButton) }} onClick={() => changeContent('button4')} variant="contained" startIcon={<FaUserCircle />}> Groups </Button>
                 </>
             )}
             </Box>

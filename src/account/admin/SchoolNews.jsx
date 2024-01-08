@@ -1,15 +1,13 @@
 import { useState } from "react";
-import { Box, Typography, IconButton, Menu, MenuItem } from "@mui/material";
+import { Box, Typography, IconButton, Menu, MenuItem, Button, useMediaQuery, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataSchoolNews } from "../../data/mockDataFreEdu";
-import { useTheme } from "@mui/material";
-import { Button, useMediaQuery } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
-import { useNavigate } from "react-router-dom";
 import { styles } from '../../style';
-
+import { useNavigate } from "react-router-dom";
+import { mockDataSchoolNews } from "../../data/mockDataFreEdu";
+// Icons
+import { IoIosAdd } from "react-icons/io";
+import { LuMoreHorizontal } from "react-icons/lu";
 
 const SchoolNews = () => {
     const theme = useTheme();
@@ -69,7 +67,7 @@ const SchoolNews = () => {
                 aria-label="more"
                 onClick={(e) => handleMenuClick(e, params.row)}
               >
-                <MoreHorizRoundedIcon />
+                <LuMoreHorizontal />
               </IconButton>
               <Menu
                 anchorEl={anchorEl}
@@ -97,9 +95,9 @@ const SchoolNews = () => {
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant = "h4" sx={classes.title}> School News </Typography>
                 {isSmallScreen ? (
-                  <IconButton href="/admin/communicate/school-news/add" sx={classes.addButton} > <AddIcon /> </IconButton>
+                  <IconButton href="/admin/communicate/school-news/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
                 ) : (
-                  <Button href="/admin/communicate/school-news/add" variant="contained" startIcon={<AddIcon />} sx={classes.addButton} > Add News </Button>
+                  <Button href="/admin/communicate/school-news/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton} > Add News </Button>
                 )}
             </Box>
             <Box sx={classes.root} >

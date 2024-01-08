@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { Box, Typography, IconButton, Menu, MenuItem } from "@mui/material";
+import { Box, Typography, IconButton, Menu, MenuItem,  Button, useMediaQuery, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockImport } from "../../data/mockDataFreEdu";
-import { useTheme } from "@mui/material";
-import { Button, useMediaQuery } from '@mui/material';
-import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
-import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import { styles } from '../../style';
+import { mockImport } from "../../data/mockDataFreEdu";
+// Icons
+import { HiOutlineDownload } from "react-icons/hi";
+import { LuMoreHorizontal } from "react-icons/lu";
 
 const Import = () => {
     const theme = useTheme();
@@ -75,7 +74,7 @@ const Import = () => {
                 aria-label="more"
                 onClick={(e) => handleMenuClick(e, params.row)}
               >
-                <MoreHorizRoundedIcon />
+                <LuMoreHorizontal />
               </IconButton>
               <Menu
                 anchorEl={anchorEl}
@@ -101,9 +100,9 @@ const Import = () => {
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant = "h4" sx={classes.title}> Import </Typography>
                 {isSmallScreen ? (
-                  <IconButton sx={classes.addButton} > <DownloadRoundedIcon /> </IconButton>
+                  <IconButton sx={classes.addButton} > <HiOutlineDownload /> </IconButton>
                 ) : (
-                  <Button variant="contained" startIcon={<DownloadRoundedIcon />} sx={classes.addButton}> Run Import </Button>
+                  <Button variant="contained" startIcon={<HiOutlineDownload />} sx={classes.addButton}> Run Import </Button>
                 )}
             </Box>
             <Box sx={classes.root}>

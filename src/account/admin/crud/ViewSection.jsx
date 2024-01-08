@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import { Box, Typography, IconButton, Menu, MenuItem, TextField } from "@mui/material";
+import { Box, Typography, IconButton, Menu, MenuItem, Button, useMediaQuery, Modal, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../../theme";
-import { mockSection } from "../../../data/mockDataFreEdu";
-import { useTheme } from "@mui/material";
-import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
-import { useNavigate } from "react-router-dom";
 import { styles } from '../../../style';
-import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
-import { Button, useMediaQuery } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import BookmarkRoundedIcon from '@mui/icons-material/BookmarkRounded';
-import Modal from '@mui/material/Modal';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { useNavigate } from "react-router-dom";
+import { mockSection } from "../../../data/mockDataFreEdu";
+// Icons
+import { IoIosAdd } from "react-icons/io";
+import { LuMoreHorizontal } from "react-icons/lu";
+import { MdOutlineBookmark } from "react-icons/md";
+import { HiChevronLeft } from "react-icons/hi2";
+import { IoClose } from "react-icons/io5";
 
 const ViewSection = () => {
     const theme = useTheme();
@@ -84,7 +82,7 @@ const ViewSection = () => {
                 aria-label="more"
                 onClick={(e) => handleMenuClick(e, params.row)}
               >
-                <MoreHorizRoundedIcon />
+                <LuMoreHorizontal />
               </IconButton>
               <Menu
                 anchorEl={anchorEl}
@@ -125,7 +123,7 @@ const ViewSection = () => {
               aria-label="more"
               onClick={(e) => handleMenuClick(e, params.row)}
             >
-              <MoreHorizRoundedIcon />
+              <LuMoreHorizontal />
             </IconButton>
             <Menu
                 anchorEl={anchorEl}
@@ -150,19 +148,19 @@ const ViewSection = () => {
     return (
 
         <Box m="40px">
-            <Button href="/admin/enrollment/promote/grade/id" variant="contained" startIcon={<ArrowBackIosRoundedIcon />} sx={classes.backButton}> Back </Button>
+            <Button href="/admin/enrollment/promote/grade/id" variant="contained" startIcon={<HiChevronLeft />} sx={classes.backButton}> Back </Button>
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant = "h4" sx={classes.title}> Promote Students </Typography>
                 <Box display='flex' gap='10px'>
                   {isSmallScreen ? (
                     <>
-                    <IconButton onClick={handleOpen} sx={classes.addButton} > <BookmarkRoundedIcon /> </IconButton>
-                    <IconButton sx={classes.addButton} > <AddIcon /> </IconButton>
+                    <IconButton onClick={handleOpen} sx={classes.addButton} > <MdOutlineBookmark /> </IconButton>
+                    <IconButton sx={classes.addButton} > <IoIosAdd /> </IconButton>
                     </>
                   ) : (
                     <>
-                    <Button onClick={handleOpen} variant="contained" startIcon={<BookmarkRoundedIcon />} sx={classes.addButton}> Promote </Button>
-                    <Button variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add </Button>
+                    <Button onClick={handleOpen} variant="contained" startIcon={<MdOutlineBookmark />} sx={classes.addButton}> Promote </Button>
+                    <Button variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add </Button>
                     </>
                   )}
                 </Box>
@@ -170,7 +168,7 @@ const ViewSection = () => {
                     <Box sx={classes.promoteModalBox}>
                         <Box sx={{ px:2, py: 1, borderBottom: '1px solid #E5E7E8'}} display='flex' justifyContent='space-between' alignItems='center'>
                             <Typography id="modal-modal-title" variant="h5" fontWeight='bold'> Promote Student </Typography>
-                            <IconButton onClick={handleClose} > <CloseRoundedIcon /> </IconButton>
+                            <IconButton onClick={handleClose} > <IoClose /> </IconButton>
                         </Box>
                         <Box sx={{ p:2}}>
                             <Box sx={classes.profileRoot} >

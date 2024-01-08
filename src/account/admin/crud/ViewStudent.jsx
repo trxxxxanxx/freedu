@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Grid, IconButton, OutlinedInput, InputAdornment, FormControl, TextField  } from "@mui/material";
+import { Box, Typography, Grid, IconButton, OutlinedInput, InputAdornment, FormControl, TextField, Button, useTheme  } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../../theme";
-import { useTheme } from "@mui/material";
-import Button from '@mui/material/Button';
+import { styles } from '../../../style';
 import { mockGrades, mockFamily, mockDocument, mockDisciplinary, mockClinic, mockExams, mockVaccine, mockMedication, 
         mockStudentReports,mockAcademics, mockCourseWork } from "../../../data/mockDataFreEdu";
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import ClassRoundedIcon from '@mui/icons-material/ClassRounded';
-import ScienceRoundedIcon from '@mui/icons-material/ScienceRounded';
-import FileUploadRoundedIcon from '@mui/icons-material/FileUploadRounded';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import { styles } from '../../../style';
 import StudentBar from "../shared/StudentBar";
 import MedicalBar from "../shared/MedicalBar";
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import upload from '../../../data/img/upload.png';
 import alogo from '../../../data/img/alogo.png';
+// Icons
+import { HiOutlineEye } from "react-icons/hi";
+import { MdOutlineVisibilityOff, MdOutlineFileUpload } from "react-icons/md";
+import { GoHomeFill } from "react-icons/go";
+import { RiBookFill } from "react-icons/ri";
+import { FaThermometerHalf } from "react-icons/fa";
+import { IoIosAdd } from "react-icons/io";
 
 const ViewStudent = () => {
     const theme = useTheme();
@@ -450,7 +448,7 @@ const ViewStudent = () => {
                             <Box display='flex' justifyContent='space-between' alignContent='center'>
                                 <Typography sx={classes.tableTitle}>Clinic Visits</Typography>
                                 <Box p='20px'>
-                                    <Button variant="contained" sx={classes.cardAddButton}> <AddRoundedIcon />Add Record </Button>
+                                    <Button href='/admin/account/student/clinic/add' variant="contained" sx={classes.cardAddButton}> <IoIosAdd />Add Record </Button>
                                 </Box>
                             </Box>
                             <Box sx={classes.profileRoot} p='20px'>
@@ -518,44 +516,44 @@ const ViewStudent = () => {
                                     <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} my='20px' gap='20px'>
                                         <Box>
                                             <Typography> First Name </Typography>
-                                            <TextField id="outlined" value='Maria' sx={classes.formTextfield} />
+                                            <TextField id="outlined" value='Maria' sx={classes.shortFormTextfield} />
                                         </Box>
                                         <Box>
                                             <Typography> Middle Name </Typography>
-                                            <TextField id="outlined" value='Gomez' sx={classes.formTextfield} />
+                                            <TextField id="outlined" value='Gomez' sx={classes.shortFormTextfield} />
                                         </Box>
                                     </Box>
 
                                     <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} mb='20px' gap='20px'>
                                         <Box>
                                             <Typography> Last Name </Typography>
-                                            <TextField id="outlined" value='Cruz' sx={classes.formTextfield} />
+                                            <TextField id="outlined" value='Cruz' sx={classes.shortFormTextfield} />
                                         </Box>
                                         <Box>
                                             <Typography> Suffix </Typography>
-                                            <TextField id="outlined" value='-' sx={classes.formTextfield} />
+                                            <TextField id="outlined" value='-' sx={classes.shortFormTextfield} />
                                         </Box>
                                     </Box>
 
                                     <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} mb='20px' gap='20px'>
                                         <Box>
                                             <Typography> Gender </Typography>
-                                            <TextField id="outlined"  value='Female' sx={classes.formTextfield} />
+                                            <TextField id="outlined"  value='Female' sx={classes.shortFormTextfield} />
                                         </Box>
                                         <Box>
                                             <Typography> Date of Birth </Typography>
-                                            <TextField id="outlined"  value='December 7 ,2006' sx={classes.formTextfield} />
+                                            <TextField id="outlined"  value='December 7 ,2006' sx={classes.shortFormTextfield} />
                                         </Box>
                                     </Box>
 
                                     <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} mb='20px' gap='20px'>
                                         <Box>
                                             <Typography> Height </Typography>
-                                            <TextField id="outlined"  value='5’2 ft' sx={classes.formTextfield} />
+                                            <TextField id="outlined"  value='5’2 ft' sx={classes.shortFormTextfield} />
                                         </Box>
                                         <Box>
                                             <Typography> Weight </Typography>
-                                            <TextField id="outlined"  value='56kg' sx={classes.formTextfield} />
+                                            <TextField id="outlined"  value='56kg' sx={classes.shortFormTextfield} />
                                         </Box>
                                     </Box>
 
@@ -584,11 +582,11 @@ const ViewStudent = () => {
                                     <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} mb='20px' gap='20px'>
                                         <Box>
                                             <Typography> Country </Typography>
-                                            <TextField id="outlined"  value='Canada' sx={classes.formTextfield} />
+                                            <TextField id="outlined"  value='Canada' sx={classes.shortFormTextfield} />
                                         </Box>
                                         <Box>
                                             <Typography> Postal Code </Typography>
-                                            <TextField id="outlined"  value='A5S2C6' sx={classes.formTextfield} />
+                                            <TextField id="outlined"  value='A5S2C6' sx={classes.shortFormTextfield} />
                                         </Box>
                                     </Box>
 
@@ -608,7 +606,7 @@ const ViewStudent = () => {
                                 <Box style={classes.cardBox}>
                                     <Box display='flex' justifyContent='space-between' alignItems='center' style={classes.cardTitle}>
                                         <Typography variant="h4" fontWeight='500'> Family </Typography>
-                                        <Button variant="contained" sx={classes.saveChangesButton}> <AddRoundedIcon /> Add Family </Button>
+                                        <Button variant="contained" sx={classes.saveChangesButton}> <IoIosAdd /> Add Family </Button>
                                     </Box>
                                     <Box sx={classes.profileRoot}>
                                         <DataGrid checkboxSelection rows={mockFamily} columns={familyColumns} components={{ Toolbar: GridToolbar }} />
@@ -651,7 +649,7 @@ const ViewStudent = () => {
                                                 endAdornment={
                                                     <InputAdornment position="end">
                                                         <IconButton aria-label="toggle password visibility" onClick={() => setShowPassword((prevShowPassword) => !prevShowPassword)} edge="end" >
-                                                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                            {showPassword ? <MdOutlineVisibilityOff /> : <HiOutlineEye />}
                                                         </IconButton>
                                                     </InputAdornment>
                                                 }
@@ -667,7 +665,7 @@ const ViewStudent = () => {
                                                 endAdornment={
                                                     <InputAdornment position="end">
                                                         <IconButton aria-label="toggle password visibility" onClick={() => setShowPassword((prevShowPassword) => !prevShowPassword)} edge="end" >
-                                                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                            {showPassword ? <MdOutlineVisibilityOff /> : <HiOutlineEye />}
                                                         </IconButton>
                                                     </InputAdornment>
                                                 }
@@ -683,7 +681,7 @@ const ViewStudent = () => {
                                                 endAdornment={
                                                     <InputAdornment position="end">
                                                         <IconButton aria-label="toggle password visibility" onClick={() => setShowPassword((prevShowPassword) => !prevShowPassword)} edge="end" >
-                                                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                            {showPassword ? <MdOutlineVisibilityOff /> : <HiOutlineEye />}
                                                         </IconButton>
                                                     </InputAdornment>
                                                 }
@@ -703,7 +701,7 @@ const ViewStudent = () => {
                                         <img src={upload} width={180} height={180}></img>
                                     </Box>
                                     <Box display='flex' justifyContent='center' m='20px'>
-                                        <Button sx={classes.uploadProfile}><FileUploadRoundedIcon />&nbsp;&nbsp;Upload Profile Photo</Button>
+                                        <Button sx={classes.uploadProfile}><MdOutlineFileUpload />&nbsp;&nbsp;Upload Profile Photo</Button>
                                     </Box>
                                     <Box display='flex' justifyContent='center' m='20px'>
                                         <Typography>
@@ -734,7 +732,7 @@ const ViewStudent = () => {
                             <Box display='flex' justifyContent='space-between' alignContent='center'>
                                 <Typography sx={classes.tableTitle}>Student Files</Typography>
                                 <Box p='20px'>
-                                    <Button variant="contained" sx={classes.cardAddButton}> <AddRoundedIcon />Add File </Button>
+                                    <Button variant="contained" sx={classes.cardAddButton}> <IoIosAdd />Add File </Button>
                                 </Box>
                             </Box>
                             <Box sx={classes.profileRoot} p='20px'>
@@ -762,7 +760,7 @@ const ViewStudent = () => {
                             <Box display='flex' justifyContent='space-between' alignContent='center'>
                                 <Typography sx={classes.tableTitle}>History</Typography>
                                 <Box p='20px'>
-                                    <Button variant="contained" sx={classes.cardAddButton}> <AddRoundedIcon />Add Record </Button>
+                                    <Button variant="contained" sx={classes.cardAddButton}> <IoIosAdd />Add Record </Button>
                                 </Box>
                             </Box>
                             <Box sx={classes.profileRoot} p='20px'>
@@ -821,7 +819,7 @@ const ViewStudent = () => {
                             <Box display='flex' justifyContent='space-between' alignContent='center'>
                                 <Typography sx={classes.tableTitle}>Clinic Visits</Typography>
                                 <Box p='20px'>
-                                    <Button variant="contained" sx={classes.cardAddButton}> <AddRoundedIcon />Add Record </Button>
+                                    <Button href='/admin/account/student/clinic/add' variant="contained" sx={classes.cardAddButton}> <IoIosAdd />Add Record </Button>
                                 </Box>
                             </Box>
                             <Box sx={classes.profileRoot} p='20px'>
@@ -848,7 +846,7 @@ const ViewStudent = () => {
                             <Box display='flex' justifyContent='space-between' alignContent='center'>
                                 <Typography sx={classes.tableTitle}>Exams</Typography>
                                 <Box p='20px'>
-                                    <Button variant="contained" sx={classes.cardAddButton}> <AddRoundedIcon />Add Record </Button>
+                                    <Button href='/admin/account/student/exams' variant="contained" sx={classes.cardAddButton}> <IoIosAdd />Add Record </Button>
                                 </Box>
                             </Box>
                             <Box sx={classes.profileRoot} p='20px'>
@@ -876,7 +874,7 @@ const ViewStudent = () => {
                             <Box display='flex' justifyContent='space-between' alignContent='center'>
                                 <Typography sx={classes.tableTitle}>Vaccinations</Typography>
                                 <Box p='20px'>
-                                    <Button variant="contained" sx={classes.cardAddButton}> <AddRoundedIcon />Add Record </Button>
+                                    <Button variant="contained" sx={classes.cardAddButton}> <IoIosAdd />Add Record </Button>
                                 </Box>
                             </Box>
                             <Box sx={classes.profileRoot} p='20px'>
@@ -903,7 +901,7 @@ const ViewStudent = () => {
                             <Box display='flex' justifyContent='space-between' alignContent='center'>
                                 <Typography sx={classes.tableTitle}>Medications</Typography>
                                 <Box p='20px'>
-                                    <Button variant="contained" sx={classes.cardAddButton}> <AddRoundedIcon />Add Record </Button>
+                                    <Button variant="contained" sx={classes.cardAddButton}> <IoIosAdd />Add Record </Button>
                                 </Box>
                             </Box>
                             <Box sx={classes.profileRoot} p='20px'>
@@ -970,9 +968,9 @@ const ViewStudent = () => {
     return (
         <Box m="20px">
             <Box display="flex">
-                <Button sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton), }} onClick={() => changeContent('button1')} variant="contained" startIcon={<HomeRoundedIcon />}> Main </Button>
-                <Button sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton), }} onClick={() => changeContent('button2')} variant="contained" startIcon={<ClassRoundedIcon />}> Academics </Button>
-                <Button sx={{ ...classes.button, ...(activeButton === 'button3' && classes.activeButton), }} onClick={() => changeContent('button3')} variant="contained" startIcon={<ScienceRoundedIcon />}> Medical </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton), }} onClick={() => changeContent('button1')} variant="contained" startIcon={<GoHomeFill />}> Main </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton), }} onClick={() => changeContent('button2')} variant="contained" startIcon={<RiBookFill />}> Academics </Button>
+                <Button sx={{ ...classes.button, ...(activeButton === 'button3' && classes.activeButton), }} onClick={() => changeContent('button3')} variant="contained" startIcon={<FaThermometerHalf />}> Medical </Button>
             </Box>
             {content}
         </Box>

@@ -1,10 +1,8 @@
 import React from 'react'
-import { Box } from "@mui/material";
 import bg from '../../../data/img/bg.png';
 import logo2 from '../../../data/img/logo2.png';
-import { Button, useMediaQuery } from '@mui/material';
+import { Button, useMediaQuery, useTheme, Box } from '@mui/material';
 import { tokens } from "../../../theme";
-import { useTheme } from "@mui/material";
 import { styles } from '../../../style';
 
 const Background = () => {

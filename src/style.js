@@ -114,6 +114,10 @@ export const styles = (colors) => ({
     color: colors.freeduAccent[600],
     fontWeight: "bold",
   },
+  subtitle: {
+    color: '#A3AED0', 
+    textAlign: 'end',
+  },
   addButton: {
     borderRadius: 50, 
     padding: 1.5, 
@@ -147,7 +151,7 @@ export const styles = (colors) => ({
       background: colors.freeduAccent[100],
       color: colors.freeduAccent[700],
       fontWeight: 500,
-      // border: '1px solid #D0D4D9',
+
       borderColor: '#D0D4D9',
       borderRadius: '12px',
       paddingY: -2,
@@ -205,11 +209,49 @@ export const styles = (colors) => ({
       background: colors.freeduAccent[100],
       color: colors.freeduAccent[700],
       fontWeight: 500,
-      // border: '1px solid #D0D4D9',
       borderColor: '#D0D4D9' ,
       borderRadius: '12px',
       paddingY: -2,
-      width: { xs: "250px", sm: "210px", md: "250px", lg: "350px" },
+      width: { xs: "250px", sm: "210px", md: "250px", lg: "300px" },
+      height: '35px',
+      mt: '6px',
+    }
+  },
+  xsFormTextfield: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+      paddingY: -2,
+      width: { xs: "100px", sm: "100px", md: "50px", lg: "50px" },
+      height: '35px',
+      mt: '6px',
+    }
+  },
+  shortestFormTextfield: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+      paddingY: -2,
+      width: { xs: "250px", sm: "200px", md: "150px", lg: "200px" },
+      height: '35px',
+      mt: '6px',
+    }
+  },
+  shortFormTextfield: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+      paddingY: -2,
+      width: { xs: "250px", sm: "210px", md: "250px", lg: "250px" },
       height: '35px',
       mt: '6px',
     }
@@ -219,7 +261,6 @@ export const styles = (colors) => ({
       background: colors.freeduAccent[100],
       color: colors.freeduAccent[700],
       fontWeight: 500,
-      // border: '1px solid #D0D4D9',
       borderColor: '#D0D4D9' ,
       borderRadius: '12px',
       paddingY: -2,
@@ -233,11 +274,22 @@ export const styles = (colors) => ({
       background: colors.freeduAccent[100],
       color: colors.freeduAccent[700],
       fontWeight: 500,
-      // border: '1px solid #D0D4D9',
       borderColor: '#D0D4D9',
       borderRadius: '12px',
       paddingY: -2,
       mt: '6px',
+    }
+  },
+  shortFormTextArea: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9',
+      borderRadius: '12px',
+      paddingY: -2,
+      mt: '6px',
+      width: { xs: "250px", sm: "210px", md: "450px", lg: "520px" },
     }
   },
   formBox: {
@@ -433,6 +485,19 @@ export const styles = (colors) => ({
     "& .MuiDataGrid-footerContainer": {
       display: 'none',
     },
+  },
+  sidebarBox: {
+    borderRadius: '24px', 
+    background: 'var(--Gradients-Gradient-Style-1, linear-gradient(135deg, #868CFF 0%, #4318FF 100%))', 
+    p: '30px', 
+    m:'10px', 
+    position: 'absolute', 
+    bottom: '10px', 
+  },
+  upgradePro: {
+    color: colors.freeduAccent[800], 
+    whiteSpace: 'pre-line', 
+    display: 'inline'
   },
 });
 

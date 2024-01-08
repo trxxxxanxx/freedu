@@ -1158,10 +1158,38 @@ export const mockCourseWork = [
     Status: "Passed",
   },
   {
-    id: 1,
+    id: 3,
     Course: "English 202", 
     Credits: "3",
     Grade: "A-",
     Status: "Passed",
+  }
+];
+
+
+export const mockExamType = [
+  {
+    id: 1,
+    Name: "Physical Exam", 
+    Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+    DateAdded: "24 May, 2020 at 5:30 PM",
+  },
+  {
+    id: 2,
+    Name: "Hearing Screening", 
+    Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+    DateAdded: "8 Sep, 2020 at 5:30 PM",
+  },
+  {
+    id: 3,
+    Name: "Vision Screening", 
+    Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+    DateAdded: "1 Feb, 2020 at 12:43 PM",
+  },
+  {
+    id: 4,
+    Name: "Scoliosis Screening", 
+    Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+    DateAdded: "24 May, 2020 at 12:43 PM",
   }
 ];
