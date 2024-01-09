@@ -374,5 +374,20 @@ export const styles = (colors) => ({
     textTransform: "Capitalize",
     color: colors.freeduAccent[1100],
   },
+  sidebarBox: {
+    borderRadius: '24px',
+    background: 'var(--Gradients-Gradient-Style-1, linear-gradient(135deg, #868CFF 0%, #4318FF 100%))',
+    p: 4,
+    m: 2,
+    position: 'absolute', 
+    bottom: 0,
+  },
+  upgradePro: {
+    color: colors.freeduAccent[800],
+    fontFamily: 'DM Sans',
+    fontSize: '12px',
+    fontWeight: 600,
+    whiteSpace: 'pre-line'
+  },
 });
 
