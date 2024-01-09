@@ -38,6 +38,8 @@ import ViewSchoolNews from "./account/admin/crud/ViewSchoolNews";
 import AddClinic from "./account/admin/crud/AddClinic";
 import ViewExams from "./account/admin/crud/ViewExams";
 import AddPhysicalExam from "./account/admin/crud/AddPhysicalExam";
+import AddHearingExam from "./account/admin/crud/AddHearingExam";
+
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -77,7 +79,8 @@ function App() {
                 <Route path="/admin/account/student/id" element={<ViewStudent />} />
                 <Route path="/admin/account/student/clinic/add" element={<AddClinic />} />
                 <Route path="/admin/account/student/exams" element={<ViewExams />} />
-                <Route path="/admin/account/student/exams/physicalexam/add" element={<AddPhysicalExam />} />
+                <Route path="/admin/account/student/exams/physical/add" element={<AddPhysicalExam />} />
+                <Route path="/admin/account/student/exams/hearing/add" element={<AddHearingExam />} />
                 <Route path="/admin/account/parent" element={<Parent />} />
                 <Route path="/admin/account/teacher" element={<Teacher />} />
                 <Route path="/admin/financial/ledger" element={<Ledger />} />

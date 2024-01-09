@@ -4,9 +4,8 @@ import * as yup from "yup";
 import { ColorModeContext,useMode } from "../../theme";
 import Background from "../../account/auth/shared/Background";
 // Icons
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import LockRoundedIcon from '@mui/icons-material/LockRounded';
-
+import { FaLock } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 const initialValues =  {
     email: "",
@@ -69,7 +68,7 @@ const Login = () => {
                                     sx={{ gridColumn: "span 3", '& .MuiOutlinedInput-root': { background: '#FFFFFF', color: '#6D6E70', borderColor: '#6D6E70', borderRadius: '50px', padding: 2, width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, height: '55px', }, }}
                                     InputProps={{
                                       startAdornment: (
-                                        <InputAdornment position="start"> <MailOutlineIcon /> </InputAdornment>
+                                        <InputAdornment position="start"> <MdOutlineEmail size={20} color="#B6B6B6"/> </InputAdornment>
                                       ),
                                     }}
                                   />
@@ -89,7 +88,7 @@ const Login = () => {
                                       sx={{ gridColumn: "span 3", '& .MuiOutlinedInput-root': { background: '#FFFFFF', color: '#6D6E70', borderColor: '#6D6E70', borderRadius: '50px', paddingY: 2, width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" }, height: '55px', }, }}
                                       InputProps={{
                                         startAdornment: (
-                                          <InputAdornment position="start"> <LockRoundedIcon /> </InputAdornment>
+                                          <InputAdornment position="start"> <FaLock size={18} color="#B6B6B6"/> </InputAdornment>
                                         ),
                                       }}
                                     />

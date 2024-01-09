@@ -30,12 +30,12 @@ const ViewExams = () => {
     };
     const handleAdd = () => {
       console.log("Add:", selectedRow);
-      navigate(`/admin/account/student/exams/physicalexam/add`);
+      const { type } = selectedRow;
+      navigate(`/admin/account/student/exams/${type}/add`);
       handleMenuClose();
     };
     const handleEdit = () => {
         console.log("Edit:", selectedRow);
-        // navigate(`/admin/communicate/school-news/edit/`);
         handleMenuClose();
     };
     const handleDelete = () => {

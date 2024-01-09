@@ -40,6 +40,7 @@ export const styles = (colors) => ({
       borderBottom: "none",
       backgroundColor: colors.freeduAccent[100],
       padding: '20px',
+      borderRadius: '20px',
     },
     "& .MuiDataGrid-cell": {
       color: colors.freeduAccent[600],
@@ -71,6 +72,7 @@ export const styles = (colors) => ({
       border: "none",
       borderBottom: "none",
       backgroundColor: colors.freeduAccent[100],
+      borderRadius: '20px',
     },
     "& .MuiDataGrid-cell": {
       color: colors.freeduAccent[600],
@@ -217,6 +219,19 @@ export const styles = (colors) => ({
       mt: '6px',
     }
   },
+  xxsFormTextfield: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+      paddingY: -2,
+      width: { xs: "100px", sm: "100px", md: "50px", lg: "70px" },
+      height: '35px',
+      mt: '6px',
+    }
+  },
   xsFormTextfield: {
     '& .MuiOutlinedInput-root': {
       background: colors.freeduAccent[100],
@@ -225,7 +240,7 @@ export const styles = (colors) => ({
       borderColor: '#D0D4D9' ,
       borderRadius: '12px',
       paddingY: -2,
-      width: { xs: "100px", sm: "100px", md: "50px", lg: "50px" },
+      width: { xs: "230px", sm: "100px", md: "100px", lg: "100px" },
       height: '35px',
       mt: '6px',
     }

@@ -1173,23 +1173,27 @@ export const mockExamType = [
     Name: "Physical Exam", 
     Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
     DateAdded: "24 May, 2020 at 5:30 PM",
+    type: "physical",
   },
   {
     id: 2,
     Name: "Hearing Screening", 
     Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
     DateAdded: "8 Sep, 2020 at 5:30 PM",
+    type: "hearing",
   },
   {
     id: 3,
     Name: "Vision Screening", 
     Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
     DateAdded: "1 Feb, 2020 at 12:43 PM",
+    type: "vision",
   },
   {
     id: 4,
     Name: "Scoliosis Screening", 
     Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
     DateAdded: "24 May, 2020 at 12:43 PM",
+    type: "scoliosis",
   }
 ];
