@@ -1,4 +1,37 @@
 export const styles = (colors) => ({
+  learnMoreLg: {
+    position: 'absolute', 
+    top: '56%', 
+    left: '21%', 
+    borderRadius: 50, 
+    py: 1,
+    px: 4,
+    textTransform: 'Capitalize', 
+    backgroundColor: '#8479EE', 
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: 400,
+    fontFamily: 'Poppins',
+  },
+  learnMoreSm: {
+    position: 'absolute', 
+    top: '50%', 
+    left: '40%', 
+    borderRadius: 50, 
+    py: 1,
+    px: 4,
+    textTransform: 'Capitalize', 
+    backgroundColor: '#8479EE', 
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: 400,
+    fontFamily: 'Poppins',
+  },
+  logoImg: {
+    position: 'absolute', 
+    top: '40%', 
+    left: '10%'
+  },
   root: {
     mt: "40px",
     height: "60vh",
@@ -6,7 +39,12 @@ export const styles = (colors) => ({
       border: "none",
       borderBottom: "none",
       backgroundColor: colors.freeduAccent[100],
+<<<<<<< HEAD
       padding: "20px",
+=======
+      padding: '20px',
+      borderRadius: '20px',
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
     },
     "& .MuiDataGrid-cell": {
       color: colors.freeduAccent[600],
@@ -38,6 +76,7 @@ export const styles = (colors) => ({
       border: "none",
       borderBottom: "none",
       backgroundColor: colors.freeduAccent[100],
+      borderRadius: '20px',
     },
     "& .MuiDataGrid-cell": {
       color: colors.freeduAccent[600],
@@ -81,6 +120,10 @@ export const styles = (colors) => ({
     color: colors.freeduAccent[600],
     fontWeight: "bold",
   },
+  subtitle: {
+    color: '#A3AED0', 
+    textAlign: 'end',
+  },
   addButton: {
     borderRadius: 50,
     padding: 1.5,
@@ -122,9 +165,15 @@ export const styles = (colors) => ({
       background: colors.freeduAccent[100],
       color: colors.freeduAccent[700],
       fontWeight: 500,
+<<<<<<< HEAD
       // border: '1px solid #D0D4D9',
       borderColor: "#D0D4D9",
       borderRadius: "12px",
+=======
+
+      borderColor: '#D0D4D9',
+      borderRadius: '12px',
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
       paddingY: -2,
       width: { xs: "250px", sm: "210px", md: "340px", lg: "360px" },
       height: "35px",
@@ -180,6 +229,7 @@ export const styles = (colors) => ({
       background: colors.freeduAccent[100],
       color: colors.freeduAccent[700],
       fontWeight: 500,
+<<<<<<< HEAD
       // border: '1px solid #D0D4D9',
       borderColor: "#D0D4D9",
       borderRadius: "12px",
@@ -188,15 +238,81 @@ export const styles = (colors) => ({
       height: "35px",
       mt: "6px",
     },
+=======
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+      paddingY: -2,
+      width: { xs: "250px", sm: "210px", md: "250px", lg: "300px" },
+      height: '35px',
+      mt: '6px',
+    }
+  },
+  xxsFormTextfield: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+      paddingY: -2,
+      width: { xs: "100px", sm: "100px", md: "50px", lg: "70px" },
+      height: '35px',
+      mt: '6px',
+    }
+  },
+  xsFormTextfield: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+      paddingY: -2,
+      width: { xs: "230px", sm: "100px", md: "100px", lg: "100px" },
+      height: '35px',
+      mt: '6px',
+    }
+  },
+  shortestFormTextfield: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+      paddingY: -2,
+      width: { xs: "250px", sm: "200px", md: "150px", lg: "200px" },
+      height: '35px',
+      mt: '6px',
+    }
+  },
+  shortFormTextfield: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+      paddingY: -2,
+      width: { xs: "250px", sm: "210px", md: "250px", lg: "250px" },
+      height: '35px',
+      mt: '6px',
+    }
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
   },
   longFormTextfield: {
     "& .MuiOutlinedInput-root": {
       background: colors.freeduAccent[100],
       color: colors.freeduAccent[700],
       fontWeight: 500,
+<<<<<<< HEAD
       // border: '1px solid #D0D4D9',
       borderColor: "#D0D4D9",
       borderRadius: "12px",
+=======
+      borderColor: '#D0D4D9' ,
+      borderRadius: '12px',
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
       paddingY: -2,
       width: { xs: "250px", sm: "210px", md: "450px", lg: "520px" },
       height: "35px",
@@ -208,12 +324,29 @@ export const styles = (colors) => ({
       background: colors.freeduAccent[100],
       color: colors.freeduAccent[700],
       fontWeight: 500,
+<<<<<<< HEAD
       // border: '1px solid #D0D4D9',
       borderColor: "#D0D4D9",
       borderRadius: "12px",
+=======
+      borderColor: '#D0D4D9',
+      borderRadius: '12px',
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
       paddingY: -2,
       mt: "6px",
     },
+  },
+  shortFormTextArea: {
+    '& .MuiOutlinedInput-root': {
+      background: colors.freeduAccent[100],
+      color: colors.freeduAccent[700],
+      fontWeight: 500,
+      borderColor: '#D0D4D9',
+      borderRadius: '12px',
+      paddingY: -2,
+      mt: '6px',
+      width: { xs: "250px", sm: "210px", md: "450px", lg: "520px" },
+    }
   },
   formBox: {
     backgroundColor: colors.freeduAccent[100],
@@ -324,6 +457,107 @@ export const styles = (colors) => ({
     textTransform: "Capitalize",
     color: colors.freeduAccent[1100],
   },
+<<<<<<< HEAD
 
+=======
+  news: {
+    mt: '20px',
+    p: '40px',
+    border: '1.5px solid #E9ECEF',
+    backgroundColor: colors.freeduAccent[100], 
+    borderRadius: '16px',
+  },
+  newsTitle: {
+    color: colors.freeduAccent[700],
+    fontFamily: 'Noto Sans',
+    fontSize: '36px',
+    fontWeight: 700,
+    mt: '20px'
+  },
+  newsParagraph: {
+    pt: '6px',
+    alignItems: 'flex-start',
+    gap: '15px',
+    alignSelf: 'stretch',
+    fontSize: '16px',
+    mb: '20px',
+  },
+  acads: {
+    m: '20px',
+    p: '40px',
+    backgroundColor: colors.freeduAccent[100], 
+    width: { xs: "100%", sm: "100%", md: "60%", lg: "60%" },
+  },
+  acadsTitle: {
+    color: colors.freeduAccent[700],
+    fontFamily: 'Inter',
+    fontSize: '24px',
+    fontWeight: 700,
+    mb: '12px'
+  },
+  acadsText: {
+    color: colors.freeduAccent[700],
+    fontFamily: 'Inter',
+    fontSize: '12px',
+    fontWeight: 400,
+  },
+  acadsTextBold: {
+    color: colors.freeduAccent[700],
+    fontFamily: 'Inter',
+    fontSize: '12px',
+    fontWeight: 700,
+    textAlign: 'right',
+  },
+  acadsTextInactive: {
+    color: colors.freeduAccent[300],
+    fontFamily: 'Inter',
+    fontSize: '12px',
+    fontWeight: 400,
+    textAlign: 'right',
+  },
+  acadsRoot: {
+    "& .MuiDataGrid-root": {
+      borderRight: "none",
+      borderLeft: "none",
+      borderTop: '2px solid #000',
+      borderBottom: '2px solid #000',
+      borderRadius: '0px'
+    },
+    "& .MuiDataGrid-cell": {
+      border: 'none',
+      color: colors.freeduAccent[1300],
+      fontFamily: 'Inter',
+      fontSize: '12px',
+      fontWeight: 600,
+    },
+    "& .MuiDataGrid-columnHeaders": {
+      border: 'none',
+      backgroundColor: colors.freeduAccent[100],
+      color: colors.freeduAccent[1300],
+      fontFamily: 'Inter',
+      fontSize: '14px',
+      fontWeight: '900',
+    },
+    "& .MuiDataGrid-vitualScroller": {
+      display: 'none',
+    },
+    "& .MuiDataGrid-footerContainer": {
+      display: 'none',
+    },
+  },
+  sidebarBox: {
+    borderRadius: '24px', 
+    background: 'var(--Gradients-Gradient-Style-1, linear-gradient(135deg, #868CFF 0%, #4318FF 100%))', 
+    p: '30px', 
+    m:'10px', 
+    position: 'absolute', 
+    bottom: '10px', 
+  },
+  upgradePro: {
+    color: colors.freeduAccent[800], 
+    whiteSpace: 'pre-line', 
+    display: 'inline'
+  },
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
 });
 

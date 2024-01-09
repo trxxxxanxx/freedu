@@ -85,8 +85,13 @@ export const tokens = (mode) => ({
           1000: "#F04438", //JUST RED
           1100: "#005CE8", //JUST BLUE
           1200: "#141b2d", //TOPBAR BG
+<<<<<<< HEAD
           1300: "#8A70FF", //VIOLET
         },
+=======
+          1300: "#FFFFFF", //WHITE
+        }
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
       }
     : {
         grey: {
@@ -169,8 +174,14 @@ export const tokens = (mode) => ({
           1000: "#F04438", //JUST RED
           1100: "#005CE8", //JUST BLUE
           1200: "#F4F7FE", //TOPBAR BG
+<<<<<<< HEAD
           1300: "#8A70FF", //VIOLET
         },
+=======
+          1300: "#000000", //BLACK
+        }
+        
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
       }),
 });
 

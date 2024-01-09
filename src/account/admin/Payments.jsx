@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { Box, Typography, IconButton, Menu, MenuItem } from "@mui/material";
+import { Box, Typography, IconButton, Menu, MenuItem, Button, useMediaQuery, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { useTheme } from "@mui/material";
-import { Button, useMediaQuery } from '@mui/material';
-import LocalOfferRoundedIcon from '@mui/icons-material/LocalOfferRounded';
-import BeenhereRoundedIcon from '@mui/icons-material/BeenhereRounded';
-import { mockSubmittedPayments, mockAutoPayPlan } from "../../data/mockDataFreEdu";
-import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import { styles } from '../../style';
+import { mockSubmittedPayments, mockAutoPayPlan } from "../../data/mockDataFreEdu";
+// Icons
+import { FaTag } from "react-icons/fa6";
+import BeenhereRoundedIcon from '@mui/icons-material/BeenhereRounded';
+import { LuMoreHorizontal } from "react-icons/lu";
+
+
 
 const Payments = () => {
     const theme = useTheme();
@@ -71,7 +72,7 @@ const Payments = () => {
                 aria-label="more"
                 onClick={(e) => handleMenuClick(e, params.row)}
               >
-                <MoreHorizRoundedIcon />
+                <LuMoreHorizontal />
               </IconButton>
               <Menu
                 anchorEl={anchorEl}
@@ -125,7 +126,7 @@ const Payments = () => {
               aria-label="more"
               onClick={(e) => handleMenuClick(e, params.row)}
             >
-              <MoreHorizRoundedIcon />
+              <LuMoreHorizontal />
             </IconButton>
             <Menu
               anchorEl={anchorEl}
@@ -199,12 +200,12 @@ const Payments = () => {
             <Box display="flex">
                 {isSmallScreen ? (
                     <>
-                    <IconButton sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton) }} onClick={() => changeContent('button1')}> <LocalOfferRoundedIcon /> </IconButton>
+                    <IconButton sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton) }} onClick={() => changeContent('button1')}> <FaTag /> </IconButton>
                     <IconButton sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton) }} onClick={() => changeContent('button2')}> <BeenhereRoundedIcon /> </IconButton>
                     </>
                 ) : (
                     <>
-                    <Button sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton), }} onClick={() => changeContent('button1')} variant="contained" startIcon={<LocalOfferRoundedIcon />}> Submitted Payments </Button>
+                    <Button sx={{ ...classes.button, ...(activeButton === 'button1' && classes.activeButton), }} onClick={() => changeContent('button1')} variant="contained" startIcon={<FaTag />}> Submitted Payments </Button>
                 <Button sx={{ ...classes.button, ...(activeButton === 'button2' && classes.activeButton), }} onClick={() => changeContent('button2')} variant="contained" startIcon={<BeenhereRoundedIcon />}> AutoPay Plans </Button>
                     </>
                 )}

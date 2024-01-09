@@ -1,32 +1,20 @@
 import React, { useState } from 'react';
-import { styled } from '@mui/material/styles';
-import { Box, IconButton, useTheme } from "@mui/material";
+import { Box, IconButton, useTheme, Typography, Toolbar, CssBaseline, List, ListItemButton, ListItemIcon, ListItemText, Collapse } from "@mui/material";
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import CssBaseline from '@mui/material/CssBaseline';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+import { styled } from '@mui/material/styles';
+import { styles } from '../../../style';
 import logo from '../../../data/img/logo.png';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import AssessmentRoundedIcon from '@mui/icons-material/AssessmentRounded';
-import ClassRoundedIcon from '@mui/icons-material/ClassRounded';
-import AccountBalanceWalletRoundedIcon from '@mui/icons-material/AccountBalanceWalletRounded';
-import QuestionAnswerRoundedIcon from '@mui/icons-material/QuestionAnswerRounded';
-import WidgetsRoundedIcon from '@mui/icons-material/WidgetsRounded';
-import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
-import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
 import { tokens } from "../../../theme";
 import Topbar from './Topbar';
-import { styles } from '../../../style';
+// Icons
+import { BiSolidDashboard, BiSolidMessageSquareDetail } from "react-icons/bi";
+import { IoMdSettings } from "react-icons/io";
+import { FaSchoolFlag, FaWallet } from "react-icons/fa6";
+import { FaUser, FaBookOpen} from "react-icons/fa";
+import { IoMenu } from "react-icons/io5";
+import { BsFileEarmarkTextFill } from "react-icons/bs";
+
 
 const drawerWidth = 240;
 
@@ -38,7 +26,7 @@ const openedMixin = (theme) => ({
   }),
   overflowX: 'hidden',
   border: 'none',
-  // padding: theme.spacing(0, 2), //sidebar padding
+  padding: theme.spacing(0, 1), //sidebar padding
 });
 
 const closedMixin = (theme) => ({
@@ -58,7 +46,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
-  // padding: theme.spacing(0, 0), //logo padding
+  padding: theme.spacing(0, 0), //logo padding
   ...theme.mixins.toolbar,
 }));
 
@@ -151,7 +139,7 @@ export default function MiniDrawer() {
               ...(open && { display: 'none' }),
             }}
           >
-            <MenuIcon />
+            <IoMenu />
           </IconButton>
           <Box flexGrow={1}>
             <Topbar />
@@ -166,20 +154,20 @@ export default function MiniDrawer() {
             <img src={logo} logo="icon" style={{ width: '100%', height: 'auto', }} />
           </Box>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <MenuIcon /> : <MenuIcon />}
+            {theme.direction === 'rtl' ? <IoMenu /> : <IoMenu />}
           </IconButton>
         </DrawerHeader>
 
         <List>
           
           <ListItemButton onClick={() => handleMenuClick('dashboard')} to="/admin/dashboard">
-            <ListItemIcon> <DashboardIcon /> </ListItemIcon>
+            <ListItemIcon> <BiSolidDashboard size={20}/> </ListItemIcon>
             <ListItemText primary="Dashboard"/>
           </ListItemButton>
 
           
           <ListItemButton onClick={() => handleMenuClick('communicate')}>
-            <ListItemIcon> <QuestionAnswerRoundedIcon /> </ListItemIcon>
+            <ListItemIcon> <BiSolidMessageSquareDetail  size={20}/> </ListItemIcon>
             <ListItemText primary="Communicate" />
           </ListItemButton>
 
@@ -191,7 +179,7 @@ export default function MiniDrawer() {
           </Collapse>
 
           <ListItemButton onClick={() => handleMenuClick('configurations')}>
-            <ListItemIcon> <WidgetsRoundedIcon /> </ListItemIcon>
+            <ListItemIcon> <IoMdSettings  size={20} /> </ListItemIcon>
             <ListItemText primary="Configurations" />
           </ListItemButton>
 
@@ -205,7 +193,7 @@ export default function MiniDrawer() {
           </Collapse>
 
           <ListItemButton onClick={() => handleMenuClick('enrollment')}>
-            <ListItemIcon> <AccountBalanceRoundedIcon /> </ListItemIcon>
+            <ListItemIcon> <FaSchoolFlag  size={20}/> </ListItemIcon>
             <ListItemText primary="Enrollment" />
           </ListItemButton>
 
@@ -219,7 +207,7 @@ export default function MiniDrawer() {
           </Collapse>
 
           <ListItemButton onClick={() => handleMenuClick('account')}>
-            <ListItemIcon> <PeopleRoundedIcon /> </ListItemIcon>
+            <ListItemIcon> <FaUser  size={20}/> </ListItemIcon>
             <ListItemText primary="Account" />
           </ListItemButton>
 
@@ -232,7 +220,7 @@ export default function MiniDrawer() {
           </Collapse>
 
           <ListItemButton onClick={() => handleMenuClick('financial')}>
-            <ListItemIcon> <AccountBalanceWalletRoundedIcon /> </ListItemIcon>
+            <ListItemIcon> <FaWallet  size={20}/> </ListItemIcon>
             <ListItemText primary="Financial" />
           </ListItemButton>
 
@@ -246,7 +234,7 @@ export default function MiniDrawer() {
           </Collapse>
 
           <ListItemButton onClick={() => handleMenuClick('curriculum')}>
-            <ListItemIcon> <ClassRoundedIcon /> </ListItemIcon>
+            <ListItemIcon> <FaBookOpen  size={20}/> </ListItemIcon>
             <ListItemText primary="Curriculum" />
           </ListItemButton>
 
@@ -258,7 +246,7 @@ export default function MiniDrawer() {
           </Collapse>
 
           <ListItemButton onClick={() => handleMenuClick('reports')}>
-            <ListItemIcon> <AssessmentRoundedIcon /> </ListItemIcon>
+            <ListItemIcon> <BsFileEarmarkTextFill  size={20}/> </ListItemIcon>
             <ListItemText primary="Reports" />
           </ListItemButton>
 
@@ -269,6 +257,12 @@ export default function MiniDrawer() {
           </Collapse>
 
         </List>
+          
+        {open && (
+          <Box sx={classes.sidebarBox}>
+            <Typography sx={classes.upgradePro}>Upgrade to PRO to get access to all features!</Typography>
+          </Box>
+        )}
 
       </Drawer>
 

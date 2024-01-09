@@ -1,24 +1,14 @@
 import { useState } from "react";
 import { useTheme } from "@mui/material";
-import {
-  Button,
-  Checkbox,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  TextField,
-  Typography,
-} from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { Button, Checkbox, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, TextField } from "@mui/material";
 import { tokens } from "../../../theme";
 import { styles } from "../../../style";
 import "../../../index.css";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"; 
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
+// Icons
+import { IoIosAdd } from "react-icons/io";
+import { RiDeleteBin5Fill } from "react-icons/ri";
 
 // ... (previous imports)
 
@@ -89,7 +79,7 @@ function TodoList() {
             sx={{ ...classes.addButton, paddingX: "20px" }}
             disabled={todos.length >= 5}
           >
-            <AddIcon />
+            <IoIosAdd />
             Add
           </Button>
         </form>
@@ -106,7 +96,7 @@ function TodoList() {
                   aria-label="comments"
                   onClick={() => deleteTodo(todo.id)}
                 >
-                  <DeleteIcon />
+                  <RiDeleteBin5Fill />
                 </IconButton>
               }
               disablePadding={true}

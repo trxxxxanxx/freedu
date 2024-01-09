@@ -1,11 +1,10 @@
 import React from 'react'
-import { Box, Typography, TextField, Grid } from "@mui/material";
-import { styles } from '../../../style';
+import { Box, Typography, Grid, Button, useMediaQuery, useTheme } from "@mui/material";
 import profile2 from '../../../data/img/profile2.png';
 import { tokens } from "../../../theme";
-import { useTheme } from "@mui/material";
-import { Button, useMediaQuery } from '@mui/material';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import { styles } from '../../../style';
+// Icons
+import { IoIosAdd } from "react-icons/io";
 
 const StudentBar = () => {
     const theme = useTheme();
@@ -39,7 +38,7 @@ const StudentBar = () => {
                         </Grid>
                     ))}
                     <Grid item xs={6} sm={6} md={4} lg={4}>
-                        <Button variant="contained" sx={classes.addTags} startIcon={<AddRoundedIcon />} > Add Tag </Button>
+                        <Button variant="contained" sx={classes.addTags} startIcon={<IoIosAdd />} > Add Tag </Button>
                     </Grid>
                 </Grid>
             </Box>

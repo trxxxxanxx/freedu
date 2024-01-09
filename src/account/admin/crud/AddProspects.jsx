@@ -1,14 +1,10 @@
 import React from 'react'
-import RichTextEditor from '../shared/RichTextEditor';
-import { Box, TextField, Typography, useTheme, IconButton } from "@mui/material";
+import { Box, TextField, Typography, useTheme, Button, useMediaQuery  } from "@mui/material";
 import { tokens } from "../../../theme";
-import { Button, useMediaQuery } from '@mui/material';
-import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
-import AddIcon from '@mui/icons-material/Add';
-import DriveFileRenameOutlineRoundedIcon from '@mui/icons-material/DriveFileRenameOutlineRounded';
-import WatchLaterRoundedIcon from '@mui/icons-material/WatchLaterRounded';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { styles } from '../../../style';
+//Icons
+import { HiChevronLeft } from "react-icons/hi2";
+
 
 const AddProspects = () => {
     const theme = useTheme();
@@ -19,7 +15,7 @@ const AddProspects = () => {
 
     return (
         <Box m='40px'>
-            <Button href="/admin/communicate/smartsend-pro" variant="contained" startIcon={<ArrowBackIosRoundedIcon />} sx={classes.backButton}> Back </Button>
+            <Button href="/admin/communicate/smartsend-pro" variant="contained" startIcon={<HiChevronLeft />} sx={classes.backButton}> Back </Button>
             <Typography variant = "h4" sx={classes.title}> Prospective Student Form </Typography>
 
             <Box sx={classes.formBox}>

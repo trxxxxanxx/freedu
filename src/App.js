@@ -34,6 +34,11 @@ import ViewStudent from "./account/admin/crud/ViewStudent";
 import ViewGrade from "./account/admin/crud/ViewGrade";
 import ViewSection from "./account/admin/crud/ViewSection";
 import AddProspects from "./account/admin/crud/AddProspects";
+import ViewSchoolNews from "./account/admin/crud/ViewSchoolNews";
+import AddClinic from "./account/admin/crud/AddClinic";
+import ViewExams from "./account/admin/crud/ViewExams";
+import AddPhysicalExam from "./account/admin/crud/AddPhysicalExam";
+import AddHearingExam from "./account/admin/crud/AddHearingExam";
 
 
 function App() {
@@ -51,6 +56,7 @@ function App() {
                 {/* Admin */}
                 <Route path="/admin/dashboard" element={<Dashboard />} />
                 <Route path="/admin/communicate/school-news" element={<SchoolNews />} />
+                <Route path="/admin/communicate/school-news/id" element={<ViewSchoolNews />} />
                 <Route path="/admin/communicate/school-news/add" element={<AddSchoolNews />} />
                 <Route path="/admin/communicate/school-news/edit" element={<EditSchoolNews />} />
                 <Route path="/admin/communicate/smartsend-pro" element={<SmartSendPro />} />
@@ -71,6 +77,10 @@ function App() {
                 <Route path="/admin/enrollment/prospects/add" element={<AddProspects />} />
                 <Route path="/admin/account/student" element={<Student />} />
                 <Route path="/admin/account/student/id" element={<ViewStudent />} />
+                <Route path="/admin/account/student/clinic/add" element={<AddClinic />} />
+                <Route path="/admin/account/student/exams" element={<ViewExams />} />
+                <Route path="/admin/account/student/exams/physical/add" element={<AddPhysicalExam />} />
+                <Route path="/admin/account/student/exams/hearing/add" element={<AddHearingExam />} />
                 <Route path="/admin/account/parent" element={<Parent />} />
                 <Route path="/admin/account/teacher" element={<Teacher />} />
                 <Route path="/admin/financial/ledger" element={<Ledger />} />

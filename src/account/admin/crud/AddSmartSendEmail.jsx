@@ -1,14 +1,15 @@
 import React from 'react'
 import RichTextEditor from '../shared/RichTextEditor';
-import { Box, TextField, Typography, useTheme, IconButton } from "@mui/material";
+import { Box, TextField, Typography, useTheme, IconButton, Button, useMediaQuery } from "@mui/material";
 import { tokens } from "../../../theme";
-import { Button, useMediaQuery } from '@mui/material';
-import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
-import AddIcon from '@mui/icons-material/Add';
-import DriveFileRenameOutlineRoundedIcon from '@mui/icons-material/DriveFileRenameOutlineRounded';
-import WatchLaterRoundedIcon from '@mui/icons-material/WatchLaterRounded';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { styles } from '../../../style';
+//Icons
+import { HiChevronLeft } from "react-icons/hi2";
+import { IoIosAdd } from "react-icons/io";
+import { BiSolidEdit } from "react-icons/bi";
+import { HiClock } from "react-icons/hi2";
+import { RiSendPlaneFill } from "react-icons/ri";
+
 
 const AddSmartSendEmail = () => {
     const theme = useTheme();
@@ -19,7 +20,7 @@ const AddSmartSendEmail = () => {
 
     return (
         <Box m='40px'>
-            <Button href="/admin/communicate/smartsend-pro" variant="contained" startIcon={<ArrowBackIosRoundedIcon />} sx={classes.backButton}> Back </Button>
+            <Button href="/admin/communicate/smartsend-pro" variant="contained" startIcon={<HiChevronLeft />} sx={classes.backButton}> Back </Button>
             <Typography variant = "h4" sx={classes.title}> New Email </Typography>
 
             <Box sx={classes.formBox}>
@@ -53,13 +54,13 @@ const AddSmartSendEmail = () => {
                                     <TextField id="outlined" placeholder='Last name or Address' sx={classes.formTextfield} />
                                 </Box>
                                 <Box>
-                                    <Button variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add </Button>
+                                    <Button variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add </Button>
                                 </Box>
                             </Box>
                         ) : (
                             <Box display="flex" justifyContent="space-between" alignItems="end" gap="20px">
                                 <TextField id="outlined" placeholder='Last name or Address' sx={classes.formTextfield} />
-                                <Button variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add </Button>
+                                <Button variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add </Button>
                             </Box>
                         )}
                     </Box>
@@ -77,15 +78,15 @@ const AddSmartSendEmail = () => {
             <Box display="flex" justifyContent="flex-end" alignItems="center">
                 {isSmallScreen ? (
                     <>
-                    <IconButton variant="contained" sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> <DriveFileRenameOutlineRoundedIcon /> </IconButton>
-                    <IconButton variant="contained" sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> <WatchLaterRoundedIcon /> </IconButton>
-                    <IconButton variant="contained" sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[900]}}> <SendRoundedIcon /> </IconButton>
+                    <IconButton variant="contained" sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> <BiSolidEdit /> </IconButton>
+                    <IconButton variant="contained" sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> <HiClock /> </IconButton>
+                    <IconButton variant="contained" sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[900]}}> <RiSendPlaneFill /> </IconButton>
                     </>
                 ) : (
                     <>
-                    <Button variant="contained" startIcon={<DriveFileRenameOutlineRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Draft </Button>
-                    <Button variant="contained" startIcon={<WatchLaterRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Schedule </Button>
-                    <Button variant="contained" startIcon={<SendRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[900]}}> Send Now </Button>
+                    <Button variant="contained" startIcon={<BiSolidEdit />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Draft </Button>
+                    <Button variant="contained" startIcon={<HiClock />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Schedule </Button>
+                    <Button variant="contained" startIcon={<RiSendPlaneFill />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[900]}}> Send Now </Button>
                     </>
                 )}
             </Box>

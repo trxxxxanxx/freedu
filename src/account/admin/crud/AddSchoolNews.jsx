@@ -1,14 +1,13 @@
 import React from 'react'
 import RichTextEditor from '../shared/RichTextEditor';
-import { Box, TextField, IconButton, useTheme, Grid} from "@mui/material";
+import { Box, TextField, useTheme, Grid, Button, useMediaQuery } from "@mui/material";
 import { tokens } from "../../../theme";
-import { Button, useMediaQuery } from '@mui/material';
-import SaveAltRoundedIcon from '@mui/icons-material/SaveAltRounded';
-import DoDisturbAltRoundedIcon from '@mui/icons-material/DoDisturbAltRounded';
-import PublishedWithChangesRoundedIcon from '@mui/icons-material/PublishedWithChangesRounded';
-import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
-import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import { styles } from '../../../style';
+//Icons
+import { HiChevronLeft, HiMiniNoSymbol, HiMiniPencilSquare  } from "react-icons/hi2";
+import { HiOutlineEye } from "react-icons/hi";
+import { MdSaveAlt } from "react-icons/md";
+
 
 const AddSchoolNews = () => {
     const theme = useTheme();
@@ -18,7 +17,7 @@ const AddSchoolNews = () => {
 
     return (
         <Box m='40px'>
-            <Button href="/admin/communicate/school-news" variant="contained" startIcon={<ArrowBackIosRoundedIcon />} sx={classes.backButton}> Back </Button>
+            <Button href="/admin/communicate/school-news" variant="contained" startIcon={<HiChevronLeft />} sx={classes.backButton}> Back </Button>
                 {isSmallScreen ? (
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12} md={12} lg={8} order={{ xs: 2, sm: 2, md: 1, lg: 1 }}>
@@ -38,10 +37,10 @@ const AddSchoolNews = () => {
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={8}>
                             <Box display="flex" justifyContent="space-between" alignItems="center">
-                                <Button variant="contained" startIcon={<DoDisturbAltRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[300]}}> Cancel </Button>
-                                <Button variant="contained" startIcon={<PublishedWithChangesRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Publish </Button>
-                                <Button variant="contained" startIcon={<VisibilityRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Preview </Button>
-                                <Button variant="contained" startIcon={<SaveAltRoundedIcon />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[900]}}> Save </Button>
+                                <Button variant="contained" startIcon={<HiMiniNoSymbol />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[300]}}> Cancel </Button>
+                                <Button variant="contained" startIcon={<HiMiniPencilSquare  />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Publish </Button>
+                                <Button variant="contained" startIcon={<HiOutlineEye />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[400]}}> Preview </Button>
+                                <Button variant="contained" startIcon={<MdSaveAlt />} sx={classes.defaultButton} style={{backgroundColor: colors.freeduAccent[900]}}> Save </Button>
                             </Box> 
                         </Grid>
                     </Box>

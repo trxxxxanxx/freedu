@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Box, Typography, IconButton, Menu, MenuItem } from "@mui/material";
+import { Box, Typography, IconButton, Menu, MenuItem, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockEnrolledStudent } from "../../data/mockDataFreEdu";
-import { useTheme } from "@mui/material";
-import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
-import { useNavigate } from "react-router-dom";
 import { styles } from '../../style';
+import { useNavigate } from "react-router-dom";
+import { mockEnrolledStudent } from "../../data/mockDataFreEdu";
+// Icons
+import { LuMoreHorizontal } from "react-icons/lu";
 
 
 const EnrollmentReports = () => {
@@ -65,7 +65,7 @@ const EnrollmentReports = () => {
                 aria-label="more"
                 onClick={(e) => handleMenuClick(e, params.row)}
               >
-                <MoreHorizRoundedIcon />
+                <LuMoreHorizontal />
               </IconButton>
               <Menu
                 anchorEl={anchorEl}

@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { Box, Typography, IconButton, Menu, MenuItem, TextField } from "@mui/material";
+import { Box, Typography, IconButton, Menu, MenuItem, TextField, useTheme, Modal, Button, useMediaQuery } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockCategoryLevels } from "../../data/mockDataFreEdu";
-import { useTheme } from "@mui/material";
-import { Button, useMediaQuery } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
-import Modal from '@mui/material/Modal';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { styles } from '../../style';
-
+import { mockCategoryLevels } from "../../data/mockDataFreEdu";
+// Icons
+import { IoClose } from "react-icons/io5";
+import { IoIosAdd } from "react-icons/io";
+import { LuMoreHorizontal } from "react-icons/lu";
 
 const CategoryLevels = () => {
     const theme = useTheme();
@@ -61,7 +58,7 @@ const CategoryLevels = () => {
                 aria-label="more"
                 onClick={(e) => handleMenuClick(e, params.row)}
               >
-                <MoreHorizRoundedIcon />
+                <LuMoreHorizontal />
               </IconButton>
               <Menu
                 anchorEl={anchorEl}
@@ -87,15 +84,15 @@ const CategoryLevels = () => {
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant = "h4" sx={classes.title}> Category Level </Typography>
                 {isSmallScreen ? (
-                  <IconButton onClick={handleOpen} sx={classes.addButton} > <AddIcon /> </IconButton>
+                  <IconButton onClick={handleOpen} sx={classes.addButton} > <IoIosAdd /> </IconButton>
                 ) : (
-                  <Button onClick={handleOpen} variant="contained" startIcon={<AddIcon />} sx={classes.addButton}> Add Category Level </Button>
+                  <Button onClick={handleOpen} variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add Category Level </Button>
                 )}
                 <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
                     <Box sx={classes.modalBox}>
                         <Box sx={{ px:2, py: 1, borderBottom: '1px solid #E5E7E8'}} display='flex' justifyContent='space-between' alignItems='center'>
                             <Typography id="modal-modal-title" variant="h5" fontWeight='bold'> Add Category Level </Typography>
-                            <IconButton onClick={handleClose} > <CloseRoundedIcon /> </IconButton>
+                            <IconButton onClick={handleClose} > <IoClose /> </IconButton>
                         </Box>
                         <Box sx={{ p:2}}>
                             <Typography variant="h6"> Name </Typography>
