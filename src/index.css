@@ -199,3 +199,11 @@ input[type="file"] {
   padding-right: 0;
 
 }
+
+.react-datecalendar__input-container {
+  width: inherit;
+}
+
+.react-datecalendar-wrapper {
+  width: 100%;
+}

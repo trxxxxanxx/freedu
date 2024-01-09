@@ -6,6 +6,9 @@ import backgroundImage3 from "../../data/img/news3.jpg";
 import { tokens } from "../../theme";
 import { styles } from "../../style";
 import TodoList from "./shared/TodoList";
+import AnnouncementCard from "./shared/AnnouncementCard";
+import CallToAction from "./shared/CallToAction";
+import Calendar from "./shared/CalendarComponent";
 
 
 
@@ -30,9 +33,8 @@ const Dashboard = () => {
       <Grid container spacing={2}>
         {/* ROW 1 */}
         {/* NEWS */}
-        <Grid item xs={12} sm={12} md={12} lg={8}>
+        <Grid item xs={12} sm={12} md={12} lg={8} xl={9}>
           <Box
-            // backgroundColor={colors.primary[400]}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -192,17 +194,18 @@ const Dashboard = () => {
         </Grid>
         {/* END NEWS */}
 
-        <Grid item xs={12} sm={6} md={6} lg={4}>
+        <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.freeduAccent[100]}
             display="flex"
             alignItems="center"
             justifyContent="center"
             borderRadius={6}
-            height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
+            height={{ xs: "auto", sm: "320px", md: "340px", lg: "360px" }}
+            boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
           >
             {/* Content */}
-            CALENDAR
+            <Calendar />
           </Box>
         </Grid>
         {/* ROW 1 END */}
@@ -220,8 +223,6 @@ const Dashboard = () => {
             display="flex"
             alignItems="center"
             justifyContent="center"
-            // backgroundColor={colors.primary[400]}
-            // p={{ xs: "20px", sm: "25px", md: "30px", lg: "40px" }}
             borderRadius={6}
             height="auto"
           >
@@ -237,7 +238,6 @@ const Dashboard = () => {
                     md: "340px",
                     lg: "360px",
                   }}
-                  width="100%"
                   boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
                 >
                   <TodoList
@@ -249,21 +249,24 @@ const Dashboard = () => {
                   {/* TASK */}
                 </Box>
               </Grid>
+
+              {/* ANNOUNCEMENT CARD */}
               <Grid item xs={12} sm={6} md={6} lg={6}>
                 <Box
-                  backgroundColor="GREEN"
+                  backgroundColor={colors.freeduAccent[100]}
                   borderRadius={6}
                   display="flex"
-                  alignItems="center"
+                  alignItems="flex-start"
                   justifyContent="center"
                   height={{
-                    xs: "300px",
-                    sm: "320px",
+                    xs: "auto",
+                    sm: "autopx",
                     md: "340px",
                     lg: "360px",
                   }}
+                  boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
                 >
-                  ANNOUNCEMENT
+                  <AnnouncementCard />
                 </Box>
               </Grid>
             </Grid>
@@ -288,8 +291,8 @@ const Dashboard = () => {
             }}
             height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
           >
-            JOIN NOW
             {/* Content */}
+            <CallToAction />
           </Box>
         </Grid>
         {/* ROW 2 END*/}

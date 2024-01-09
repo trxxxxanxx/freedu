@@ -71,7 +71,8 @@ export const tokens = (mode) => ({
           800: "#5b21b6",
           900: "#4c1d95",
         },
-        freeduAccent:{    //DARKMODE
+        freeduAccent: {
+          //DARKMODE
           100: "#171717", //CARD
           200: "#1E1E1E", //MAIN BG
           300: "#706E6E", //INACTIVE
@@ -81,11 +82,16 @@ export const tokens = (mode) => ({
           700: "#FFFFFF", //SHADOW
           800: "#FFFFFF", //JUST WHITE
           900: "#8AC44B", //JUST GREEN
-          1000: "#F04438",//JUST RED
+          1000: "#F04438", //JUST RED
           1100: "#005CE8", //JUST BLUE
           1200: "#141b2d", //TOPBAR BG
+<<<<<<< HEAD
+          1300: "#8A70FF", //VIOLET
+        },
+=======
           1300: "#FFFFFF", //WHITE
         }
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
       }
     : {
         grey: {
@@ -154,7 +160,8 @@ export const tokens = (mode) => ({
           800: "#5b21b6",
           900: "#4c1d95",
         },
-        freeduAccent:{    //LIGHTMODE
+        freeduAccent: {
+          //LIGHTMODE
           100: "#FFFFFF", //CARD
           200: "#F4F7FE", //MAIN BG
           300: "#A3AED0", //INACTIVE
@@ -164,12 +171,17 @@ export const tokens = (mode) => ({
           700: "#191B1C", //SHADOW
           800: "#FFFFFF", //JUST WHITE
           900: "#8AC44B", //JUST GREEN
-          1000: "#F04438",//JUST RED
+          1000: "#F04438", //JUST RED
           1100: "#005CE8", //JUST BLUE
           1200: "#F4F7FE", //TOPBAR BG
+<<<<<<< HEAD
+          1300: "#8A70FF", //VIOLET
+        },
+=======
           1300: "#000000", //BLACK
         }
         
+>>>>>>> 453f39f65ec6288bd6a2c8db779db173e3170adc
       }),
 });
 
