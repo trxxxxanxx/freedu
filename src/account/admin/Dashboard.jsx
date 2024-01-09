@@ -8,6 +8,7 @@ import { styles } from "../../style";
 import TodoList from "./shared/TodoList";
 import AnnouncementCard from "./shared/AnnouncementCard";
 import CallToAction from "./shared/CallToAction";
+import Calendar from "./shared/CalendarComponent";
 
 
 
@@ -32,7 +33,7 @@ const Dashboard = () => {
       <Grid container spacing={2}>
         {/* ROW 1 */}
         {/* NEWS */}
-        <Grid item xs={12} sm={12} md={12} lg={8}>
+        <Grid item xs={12} sm={12} md={12} lg={8} xl={9}>
           <Box
             display="flex"
             alignItems="center"
@@ -193,17 +194,18 @@ const Dashboard = () => {
         </Grid>
         {/* END NEWS */}
 
-        <Grid item xs={12} sm={6} md={6} lg={4}>
+        <Grid item xs={12} sm={6} md={6} lg={4} xl={3}>
           <Box
-            backgroundColor={colors.primary[400]}
+            backgroundColor={colors.freeduAccent[100]}
             display="flex"
             alignItems="center"
             justifyContent="center"
             borderRadius={6}
-            height={{ xs: "300px", sm: "320px", md: "340px", lg: "360px" }}
+            height={{ xs: "auto", sm: "320px", md: "340px", lg: "360px" }}
+            boxShadow="0 0 20px rgba(0, 0, 0, 0.1)"
           >
             {/* Content */}
-            CALENDAR
+            <Calendar />
           </Box>
         </Grid>
         {/* ROW 1 END */}
