@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
-import { Box, Typography, IconButton, Button, useMediaQuery, useTheme } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { Box, IconButton, Button, useMediaQuery, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { styles } from '../../style';
-import { mockSmartSendEmail, mockSmartSendSMS, mockSmartSendVoice, mockSmartSendGroup } from "../../data/mockDataFreEdu";
+import Email from "./smartsendpro/Email";
+import SMS from "./smartsendpro/SMS";
+import Voice from "./smartsendpro/Voice";
+import Group from "./smartsendpro/Group";
 // Icons
 import { MdEmail } from "react-icons/md";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { HiMiniMegaphone } from "react-icons/hi2";
-import { IoIosAdd } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
+
+
 
 const SmartSendPro = () => {
     const theme = useTheme();
@@ -17,84 +20,6 @@ const SmartSendPro = () => {
     const classes = styles(colors);
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
-    const emailColumns = [
-        { 
-            field: "EmailSubject",
-            headername: "Email Subject", 
-            flex: 1, 
-        },
-        { 
-            field: "From",
-            headername: "From", 
-            flex: 1, 
-        },
-        { 
-            field: "DateScheduled",
-            headername: "Date Scheduled", 
-            flex: 1, 
-        },
-        { 
-            field: "DateSent",
-            headername: "Date Sent", 
-            flex: 1, 
-        },
-        { 
-            field: "Status",
-            headername: "Status", 
-            flex: 1, 
-        }
-    ];
-    const SMSColumns = [
-        { 
-            field: "SMSTextMessage",
-            headername: "SMS/Text Message", 
-            flex: 1, 
-        },
-        { 
-            field: "DateScheduled",
-            headername: "Date Scheduled", 
-            flex: 1, 
-        },
-        { 
-            field: "DateSent",
-            headername: "Date Sent", 
-            flex: 1, 
-        },
-        { 
-            field: "Status",
-            headername: "Status", 
-            flex: 1, 
-        }
-    ];
-    const VoiceColumns = [
-        { 
-            field: "VoiceLength",
-            headername: "Voice Length", 
-            flex: 1, 
-        },
-        { 
-            field: "DateScheduled",
-            headername: "Date Scheduled", 
-            flex: 1, 
-        },
-        { 
-            field: "DateSent",
-            headername: "Date Sent", 
-            flex: 1, 
-        },
-        { 
-            field: "Status",
-            headername: "Status", 
-            flex: 1, 
-        }
-    ];
-    const GroupColumns = [
-        { 
-            field: "GroupName",
-            headername: "Group Name", 
-            flex: 1, 
-        }
-    ];
 
     const [activeButton, setActiveButton] = useState('button1');
     const [content, setContent] = useState('');
@@ -103,70 +28,22 @@ const SmartSendPro = () => {
         switch (buttonId) {
             case 'button1':
                 setContent(
-                    <Box m="20px">
-                        <Box display="flex" justifyContent="space-between" alignItems="center">
-                            <Typography variant = "h4" sx={classes.title}> Email List </Typography>
-                            {isSmallScreen ? (
-                                <IconButton href="/admin/communicate/smartsend-email/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
-                            ) : (
-                                <Button href="/admin/communicate/smartsend-email/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add Email </Button>
-                            )}
-                        </Box>
-                        <Box sx={classes.root} >
-                            <DataGrid checkboxSelection rows={mockSmartSendEmail} columns={emailColumns} components={{ Toolbar: GridToolbar }} />
-                        </Box>
-                    </Box>
+                    <Email />
                 );
             break;
             case 'button2':
                 setContent(
-                    <Box m="20px">
-                        <Box display="flex" justifyContent="space-between" alignItems="center">
-                            <Typography variant = "h4" sx={classes.title}> SMS/Text List </Typography>
-                            {isSmallScreen ? (
-                                <IconButton href="/admin/communicate/smartsend-sms/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
-                            ) : (
-                                <Button href="/admin/communicate/smartsend-sms/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add SMS/Text </Button>
-                            )}
-                        </Box>
-                        <Box sx={classes.root} >
-                            <DataGrid checkboxSelection rows={mockSmartSendSMS} columns={SMSColumns} components={{ Toolbar: GridToolbar }} />
-                        </Box>
-                    </Box>
+                    <SMS />
                 );
             break;
             case 'button3':
                 setContent(
-                    <Box m="20px">
-                        <Box display="flex" justifyContent="space-between" alignItems="center">
-                            <Typography variant = "h4" sx={classes.title}> Voice List </Typography>
-                            {isSmallScreen ? (
-                                <IconButton href="/admin/communicate/smartsend-voice/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
-                            ) : (
-                                <Button href="/admin/communicate/smartsend-voice/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add Voice </Button>
-                            )}
-                        </Box>
-                        <Box sx={classes.root} >
-                            <DataGrid checkboxSelection rows={mockSmartSendVoice} columns={VoiceColumns} components={{ Toolbar: GridToolbar }} />
-                        </Box>
-                    </Box>
+                    <Voice />
                 );
             break;
             case 'button4':
                 setContent(
-                    <Box m="20px">
-                        <Box display="flex" justifyContent="space-between" alignItems="center">
-                            <Typography variant = "h4" sx={classes.title}> Groups List </Typography>
-                            {isSmallScreen ? (
-                                <IconButton href="/admin/communicate/smartsend-group/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
-                            ) : (
-                                <Button href="/admin/communicate/smartsend-group/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add Group </Button>
-                            )}
-                        </Box>
-                        <Box sx={classes.root} >
-                            <DataGrid checkboxSelection rows={mockSmartSendGroup} columns={GroupColumns} components={{ Toolbar: GridToolbar }} />
-                        </Box>
-                    </Box>
+                    <Group />
                 );
             break;
             case 'default':
@@ -177,19 +54,7 @@ const SmartSendPro = () => {
 
     useEffect(() => {
         setContent(
-            <Box m="20px">
-                <Box display="flex" justifyContent="space-between" alignItems="center">
-                    <Typography variant = "h4" sx={classes.title}> Email List </Typography>
-                    {isSmallScreen ? (
-                        <IconButton href="/admin/communicate/smartsend-email/add" sx={classes.addButton} > <IoIosAdd /> </IconButton>
-                    ) : (
-                        <Button href="/admin/communicate/smartsend-email/add" variant="contained" startIcon={<IoIosAdd />} sx={classes.addButton}> Add Email </Button>
-                    )}
-                </Box>
-                <Box sx={classes.root} >
-                    <DataGrid checkboxSelection rows={mockSmartSendEmail} columns={emailColumns} components={{ Toolbar: GridToolbar }} />
-                </Box>
-            </Box>
+            <Email />
         );
       }, []); 
 

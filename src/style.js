@@ -378,7 +378,7 @@ export const styles = (colors) => ({
     backgroundColor: colors.freeduAccent[100], 
     paddingTop: 4, 
     paddingBottom: 2, 
-    paddingX: 4, 
+    paddingX: 4,
     marginY: 2, 
     borderRadius: '20px'
   },

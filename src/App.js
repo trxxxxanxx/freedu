@@ -39,6 +39,9 @@ import AddClinic from "./account/admin/crud/AddClinic";
 import ViewExams from "./account/admin/crud/ViewExams";
 import AddPhysicalExam from "./account/admin/crud/AddPhysicalExam";
 import AddHearingExam from "./account/admin/crud/AddHearingExam";
+import EditSmartSendGroup from "./account/admin/crud/EditSmartSendGroup";
+import AddVisionExam from "./account/admin/crud/AddVisionExam";
+import AddScoliosisExam from "./account/admin/crud/AddScoliosisExam";
 
 
 function App() {
@@ -54,42 +57,66 @@ function App() {
               <Topbar />
               <Routes>
                 {/* Admin */}
-                <Route path="/admin/dashboard" element={<Dashboard />} />
-                <Route path="/admin/communicate/school-news" element={<SchoolNews />} />
-                <Route path="/admin/communicate/school-news/id" element={<ViewSchoolNews />} />
-                <Route path="/admin/communicate/school-news/add" element={<AddSchoolNews />} />
-                <Route path="/admin/communicate/school-news/edit" element={<EditSchoolNews />} />
-                <Route path="/admin/communicate/smartsend-pro" element={<SmartSendPro />} />
-                <Route path="/admin/communicate/smartsend-email/add" element={<AddSmartSendEmail />} />
-                <Route path="/admin/communicate/smartsend-sms/add" element={<AddSmartSendSMS />} />
-                <Route path="/admin/communicate/smartsend-voice/add" element={<AddSmartSendVoice />} />
-                <Route path="/admin/communicate/smartsend-group/add" element={<AddSmartSendGroup />} />
-                <Route path="/admin/configurations/school-year" element={<SchoolYear />} />
-                <Route path="/admin/configurations/school-profile" element={<SchoolProfile />} />
-                <Route path="/admin/configurations/category-levels" element={<CategoryLevels />} />
-                <Route path="/admin/configurations/levels" element={<Levels />} />
-                <Route path="/admin/enrollment/import" element={<Import />} />
-                <Route path="/admin/enrollment/reports" element={<EnrollmentReports />} />
-                <Route path="/admin/enrollment/promote" element={<Promote />} />
-                <Route path="/admin/enrollment/promote/grade/id" element={<ViewGrade />} />
-                <Route path="/admin/enrollment/promote/grade/id/section" element={<ViewSection />} />
-                <Route path="/admin/enrollment/prospects" element={<Prospects />} />
-                <Route path="/admin/enrollment/prospects/add" element={<AddProspects />} />
-                <Route path="/admin/account/student" element={<Student />} />
-                <Route path="/admin/account/student/id" element={<ViewStudent />} />
-                <Route path="/admin/account/student/clinic/add" element={<AddClinic />} />
-                <Route path="/admin/account/student/exams" element={<ViewExams />} />
-                <Route path="/admin/account/student/exams/physical/add" element={<AddPhysicalExam />} />
-                <Route path="/admin/account/student/exams/hearing/add" element={<AddHearingExam />} />
-                <Route path="/admin/account/parent" element={<Parent />} />
-                <Route path="/admin/account/teacher" element={<Teacher />} />
-                <Route path="/admin/financial/ledger" element={<Ledger />} />
-                <Route path="/admin/financial/contract" element={<Contract />} />
-                <Route path="/admin/financial/payments" element={<Payments />} />
-                <Route path="/admin/financial/reports" element={<FinancialReports />} />
-                <Route path="/admin/curriculum/library" element={<Library />} />
-                <Route path="/admin/curriculum/subject" element={<Subject />} />
-                <Route path="/admin/reports/administrator" element={<AdministratorReport />} />
+                    {/* Dashboard */}
+                    <Route path="/admin/dashboard" element={<Dashboard />} />
+                    {/* School News */}
+                    <Route path="/admin/communicate/school-news" element={<SchoolNews />} />
+                    <Route path="/admin/communicate/school-news/id" element={<ViewSchoolNews />} />
+                    <Route path="/admin/communicate/school-news/add" element={<AddSchoolNews />} />
+                    <Route path="/admin/communicate/school-news/edit" element={<EditSchoolNews />} />
+                    {/* SmartSend Pro */}
+                    <Route path="/admin/communicate/smartsend-pro" element={<SmartSendPro />} />
+                    <Route path="/admin/communicate/smartsend-email/add" element={<AddSmartSendEmail />} />
+                    <Route path="/admin/communicate/smartsend-sms/add" element={<AddSmartSendSMS />} />
+                    <Route path="/admin/communicate/smartsend-voice/add" element={<AddSmartSendVoice />} />
+                    <Route path="/admin/communicate/smartsend-group/add" element={<AddSmartSendGroup />} />
+                    <Route path="/admin/communicate/smartsend-group/edit" element={<EditSmartSendGroup />} />
+                    {/* School Year */}
+                    <Route path="/admin/configurations/school-year" element={<SchoolYear />} />
+                    {/* School Profile */}
+                    <Route path="/admin/configurations/school-profile" element={<SchoolProfile />} />
+                    {/* Category Levels */}
+                    <Route path="/admin/configurations/category-levels" element={<CategoryLevels />} />
+                    {/* Levels */}
+                    <Route path="/admin/configurations/levels" element={<Levels />} />
+                    {/* Import */}
+                    <Route path="/admin/enrollment/import" element={<Import />} />
+                    {/* Enrollment Reports */}
+                    <Route path="/admin/enrollment/reports" element={<EnrollmentReports />} />
+                    {/* Promote */}
+                    <Route path="/admin/enrollment/promote" element={<Promote />} />
+                    <Route path="/admin/enrollment/promote/grade/id" element={<ViewGrade />} />
+                    <Route path="/admin/enrollment/promote/grade/id/section" element={<ViewSection />} />
+                    {/* Prospects */}
+                    <Route path="/admin/enrollment/prospects" element={<Prospects />} />
+                    <Route path="/admin/enrollment/prospects/add" element={<AddProspects />} />
+                    {/* Student */}
+                    <Route path="/admin/account/student" element={<Student />} />
+                    <Route path="/admin/account/student/id" element={<ViewStudent />} />
+                    <Route path="/admin/account/student/clinic/add" element={<AddClinic />} />
+                    <Route path="/admin/account/student/exams" element={<ViewExams />} />
+                    <Route path="/admin/account/student/exams/physical/add" element={<AddPhysicalExam />} />
+                    <Route path="/admin/account/student/exams/hearing/add" element={<AddHearingExam />} />
+                    <Route path="/admin/account/student/exams/vision/add" element={<AddVisionExam />} />
+                    <Route path="/admin/account/student/exams/scoliosis/add" element={<AddScoliosisExam />} />
+                    {/* Parent */}
+                    <Route path="/admin/account/parent" element={<Parent />} />
+                    {/* Teacher */}
+                    <Route path="/admin/account/teacher" element={<Teacher />} />
+                    {/* Ledger */}
+                    <Route path="/admin/financial/ledger" element={<Ledger />} />
+                    {/* Contract */}
+                    <Route path="/admin/financial/contract" element={<Contract />} />
+                    {/* Payments */}
+                    <Route path="/admin/financial/payments" element={<Payments />} />
+                    {/* Financial Reports */}
+                    <Route path="/admin/financial/reports" element={<FinancialReports />} />
+                    {/* Library */}
+                    <Route path="/admin/curriculum/library" element={<Library />} />
+                    {/* Subject */}
+                    <Route path="/admin/curriculum/subject" element={<Subject />} />
+                    {/* Administrator Report */}
+                    <Route path="/admin/reports/administrator" element={<AdministratorReport />} />
               </Routes>
             </main>
           </div>
